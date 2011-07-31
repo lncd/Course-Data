@@ -1,5 +1,3 @@
-# Letter of Commitment
-
 31st July 2011
 
 To the JISC Executive,
