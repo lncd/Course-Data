@@ -14,9 +14,11 @@ This programme of work receives support from the following key staff at the Univ
 * Course Marketing: Elly Sample (Director of Communications Development & Marketing)
 * Student Recruitment: Judith Carey (Director of Student Affairs)
 * Student Admissions: Caroline Connell (Admissions Manager)
-* Management Information Systems: Ian Marshall (ICT Infrastructure Manager)
-* IT and Institutional course websites: Lynne Berrie (Senior Project Manager, Business Systems) 
-* Academic Registry: Chris Spendlove (University Registrar)
+* Curriculum Development and Quality: Anne Rixom (Head of Quality Standards and Partnerships)
+* Management Information Systems: Lynne Berrie (Senior Project Manager, Business Systems) 
+* IT and Institutional course websites: Chris Goddard (Web Manager)
+* Curriculum Information: Caroline Low (Director of Planning)
+* Registry: Chris Spendlove (University Registrar)
 
 Signed:
 
