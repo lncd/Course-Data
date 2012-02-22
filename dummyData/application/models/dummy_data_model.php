@@ -47,6 +47,7 @@ class Dummy_data_model extends CI_Model {
 		$lincoln = array();
 		$lincoln['_id'] = 10007151; //InstitutionUKPRN - used as unique id for each institution's document
 		$lincoln['recordTypeIndicator'] = '12061   2012/13 Key Information Set (KIS) Record';
+		$lincoln['kisInstitutionName'] = 'The University of Lincoln';
 		$lincoln['accomodationCostURL'] = 'http://lincoln.ac.uk/home/campuslife/accommodation/accommodationcosts/';
 		//Accomodation Cost URL Welsh
 		$lincoln['institutionBedNumber'] = 1037;
@@ -136,6 +137,19 @@ class Dummy_data_model extends CI_Model {
 		$course['employment']['other'] = 6.1;
 		$course['employment']['unemployed'] = 14.6;
 		$course['studentsUnion']['impact'] = 75.0;
+		$course['modules'] = array();
+		$username = "root";
+		$password = "root";
+		$hostname = "localhost";	
+		$dbh = mysql_connect($hostname, $username, $password) or die("Unable to connect to MySQL");
+		mysql_select_db('modules',$dbh);
+		
+		$sql = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
+		$results = mysql_query($sql) or die('Didnt work.');
+		while($row = mysql_fetch_array($results,MYSQL_ASSOC))
+		{
+			$course['modules'][] = $row['moduleCode'];
+		}
 		
 		$this->mongo_db->insert('kisCourses', $course);
 		return 'Inserted Lincoln G403 <br>';
@@ -222,6 +236,19 @@ class Dummy_data_model extends CI_Model {
 		$course['employment']['other'] = 1.8;
 		$course['employment']['unemployed'] = 12.5;
 		$course['studentsUnion']['impact'] = 75.0;
+		$username = "root";
+		$password = "root";
+		$hostname = "localhost";	
+		$dbh = mysql_connect($hostname, $username, $password) or die("Unable to connect to MySQL");
+		mysql_select_db('modules',$dbh);
+		
+		$sql = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
+		$results = mysql_query($sql) or die('Didnt work.');
+		while($row = mysql_fetch_array($results,MYSQL_ASSOC))
+		{
+			$course['modules'][] = $row['moduleCode'];
+		}
+
 
 		$this->mongo_db->insert('kisCourses', $course);
 		return 'Inserted Lincoln P500 <br>';
@@ -303,6 +330,19 @@ class Dummy_data_model extends CI_Model {
 		$course['employment']['other'] = 6.1;
 		$course['employment']['unemployed'] = 14.6;
 		$course['studentsUnion']['impact'] = 75.0;
+		$username = "root";
+		$password = "root";
+		$hostname = "localhost";	
+		$dbh = mysql_connect($hostname, $username, $password) or die("Unable to connect to MySQL");
+		mysql_select_db('modules',$dbh);
+		
+		$sql = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
+		$results = mysql_query($sql) or die('Didnt work.');
+		while($row = mysql_fetch_array($results,MYSQL_ASSOC))
+		{
+			$course['modules'][] = $row['moduleCode'];
+		}
+
 
 		$this->mongo_db->insert('kisCourses', $course);
 		return 'Inserted Lincoln G500 <br>';
@@ -384,6 +424,19 @@ class Dummy_data_model extends CI_Model {
 		$course['employment']['other'] = 6.1;
 		$course['employment']['unemployed'] = 14.6;
 		$course['studentsUnion']['impact'] = 75.0;
+		$username = "root";
+		$password = "root";
+		$hostname = "localhost";	
+		$dbh = mysql_connect($hostname, $username, $password) or die("Unable to connect to MySQL");
+		mysql_select_db('modules',$dbh);
+		
+		$sql = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
+		$results = mysql_query($sql) or die('Didnt work.');
+		while($row = mysql_fetch_array($results,MYSQL_ASSOC))
+		{
+			$course['modules'][] = $row['moduleCode'];
+		}
+
 
 		$this->mongo_db->insert('kisCourses', $course);
 		return 'Inserted Lincoln G401 <br>';
@@ -465,7 +518,19 @@ class Dummy_data_model extends CI_Model {
 		//$course['employment']['other'] = 6.1;
 		//$course['employment']['unemployed'] = 14.6;
 		//$course['studentsUnion']['impact'] = 75.0;
-		$course['modules'][0] = 'AGR1009M';
+		$username = "root";
+		$password = "root";
+		$hostname = "localhost";	
+		$dbh = mysql_connect($hostname, $username, $password) or die("Unable to connect to MySQL");
+		mysql_select_db('modules',$dbh);
+		
+		$sql = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
+		$results = mysql_query($sql) or die('Didnt work.');
+		while($row = mysql_fetch_array($results,MYSQL_ASSOC))
+		{
+			$course['modules'][] = $row['moduleCode'];
+		}
+
 		
 
 		$this->mongo_db->insert('kisCourses', $course);
@@ -548,6 +613,19 @@ class Dummy_data_model extends CI_Model {
 		$course['employment']['other'] = 1.4;
 		$course['employment']['unemployed'] = 4.3;
 		$course['studentsUnion']['impact'] = 75.0;
+		$username = "root";
+		$password = "root";
+		$hostname = "localhost";	
+		$dbh = mysql_connect($hostname, $username, $password) or die("Unable to connect to MySQL");
+		mysql_select_db('modules',$dbh);
+		
+		$sql = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
+		$results = mysql_query($sql) or die('Didnt work.');
+		while($row = mysql_fetch_array($results,MYSQL_ASSOC))
+		{
+			$course['modules'][] = $row['moduleCode'];
+		}
+
 
 		$this->mongo_db->insert('kisCourses', $course);
 		return 'Inserted Lincoln W290 <br>';
@@ -634,6 +712,19 @@ class Dummy_data_model extends CI_Model {
 		$course['employment']['other'] = 0.0;
 		$course['employment']['unemployed'] = 17.2;
 		$course['studentsUnion']['impact'] = 75.0;
+		$username = "root";
+		$password = "root";
+		$hostname = "localhost";	
+		$dbh = mysql_connect($hostname, $username, $password) or die("Unable to connect to MySQL");
+		mysql_select_db('modules',$dbh);
+		
+		$sql = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
+		$results = mysql_query($sql) or die('Didnt work.');
+		while($row = mysql_fetch_array($results,MYSQL_ASSOC))
+		{
+			$course['modules'][] = $row['moduleCode'];
+		}
+
 
 		$this->mongo_db->insert('kisCourses', $course);
 		return 'Inserted Lincoln N400 <br>';
@@ -715,6 +806,19 @@ class Dummy_data_model extends CI_Model {
 		$course['employment']['other'] = 3.1;
 		$course['employment']['unemployed'] = 6.7;
 		$course['studentsUnion']['impact'] = 75.0;
+		$username = "root";
+		$password = "root";
+		$hostname = "localhost";	
+		$dbh = mysql_connect($hostname, $username, $password) or die("Unable to connect to MySQL");
+		mysql_select_db('modules',$dbh);
+		
+		$sql = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
+		$results = mysql_query($sql) or die('Didnt work.');
+		while($row = mysql_fetch_array($results,MYSQL_ASSOC))
+		{
+			$course['modules'][] = $row['moduleCode'];
+		}
+
 
 		$this->mongo_db->insert('kisCourses', $course);
 		return 'Inserted Lincoln CN85 <br>';
