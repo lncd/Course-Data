@@ -26,4 +26,7 @@ Courses
 **nssEnthusiastic** - accepted int or decimal value. Returns courses that have a >= score for the 'Staff are enthusiastic about what they are teaching'. Relates to nss->teaching->enthusiastic in the schema. <br>
 **nssStimulating** - accepted int or decimal value. Returns courses that have a >= score for the 'The course is intellectually stimulating' question on the nss. Relates to nss->teaching->stimulating on the schema.
 **nssCriteria** - accepted int or decimal value. Returns courses that have a >= score the for 'The criteria used in marking have been clear in advance' NSS question. Realtes to the nss->assessment->criteria in the schema. <br>
-**nssFair** - accepted int or decimal value. Returns courses that have a >= score for the 'Assessment arrangements and marking have been fair' question on NSS. Relates to nss->assessment->fair in the schema.
+**nssFair** - accepted int or decimal value. Returns courses that have a >= score for the 'Assessment arrangements and marking have been fair' question on NSS. Relates to nss->assessment->fair in the schema. <br>
+**nssPrompt** - accepted int or decimal value. Returns courses that have a >= score for the 'Feedback on my work has been prompt' question on NSS. Relates to nss->assessment->prompt in the schema. <br>
+**nssComments** - accepted int or decimal value. Returns courses that have a >= score for the 'I have received detailed comments on my work' question on NSS. Relates to nss->assessment->comments in the schema. <br>
+**nssClarify** - accepted int or decimal value. Returns courses that have a >= score for the 'Feedback on my work has helped me clarify things I did not understand.' question on NSS. Relates to nss->assessment->clarify in the schema. <br>

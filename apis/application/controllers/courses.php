@@ -99,10 +99,16 @@ class Courses extends CI_Controller {
 			$this->mongo_db->where_gte('nss.assessment.criteria', floatval($_GET['nssCriteria']));
 			
 		if(isset($_GET['nssFair']))
-			$this->mongo_db->where_gtre('nss.assessment.fair', floatval($_GET['nssFair']));
+			$this->mongo_db->where_gte('nss.assessment.fair', floatval($_GET['nssFair']));
 		
-		
+		if(isset($_GET['nssPrompt']))
+			$this->mongo_db->where_gte('nss.assessment.prompt', floatval($_GET['nssPrompt']));
 			
+		if(isset($_GET['nssComments']))
+			$this->mongo_db->where_gte('nss.assessment.comments', floatval($_GET['nssComments']));
+		
+		if(isset($_GET['nssClarify']))
+			$this->mongo_db->where_gte('nss.assessment.clarify', floatval($_GET['nssClarify']));	
 		
 		$output = $this->mongo_db->get('kisCourses');
 		
