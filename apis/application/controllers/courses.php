@@ -37,7 +37,7 @@ class Courses extends CI_Controller {
 		
 		//Using kis course id
 		if(isset($_GET['kisID']))
-			$this->mongo_db->where('_id', $_GET['id']);
+			$this->mongo_db->where('_id', $_GET['kisID']);
 		
 		//Using institution ukprn
 		if(isset($_GET['institution']))
@@ -69,57 +69,40 @@ class Courses extends CI_Controller {
 			
 		//UCAS code for course
 		if(isset($_GET['ucas']))
-			$this->mongo_db->where('ucasProgrammeCode', $_GET['ucas']);
+			$this->mongo_db->where('ucasProgrammeCode', $_GET['ucas']);			
+		
+		if(isset($_GET['feeWaiver']))
+			$this->mongo_db->where('feeWaiver', $_GET['feeWaiver']);
 			
-		if(isset($_GET['ssQuality']))
-			$this->mongo_db->where_gte('studentSatisfaction.quality', intval($_GET['ssQuality']));
-		
-		if(isset($_GET['ssExplaining']))
-			$this->mongo_db->where_gte('studentSatisfaction.explaining', intval($_GET['ssExplaining']));
-		
-		if(isset($_GET['ssInteresting']))
-			$this->mongo_db->where_gte('studentSatisfaction.interesting', intval($_GET['ssInteresting']));
-		
-		if(isset($_GET['ssSupport']))
-			$this->mongo_db->where_gte('studentSatisfaction.quality', intval($_GET['ssSupport']));
-
-		if(isset($_GET['ssPrompt']))
-			$this->mongo_db->where_gte('studentSatisfaction.quality', intval($_GET['ssPrompt']));
-		
-		if(isset($_GET['ssClarify']))
-			$this->mongo_db->where_gte('studentSatisfaction.quality', intval($_GET['ssClarify']));
-		
-		if(isset($_GET['ssLibrary']))
-			$this->mongo_db->where_gte('studentSatisfaction.quality', intval($_GET['ssLibrary']));
-		
-		if(isset($_GET['ssIct']))
-			$this->mongo_db->where_gte('studentSatisfaction.quality', intval($_GET['ssIct']));
-		
-		if(isset($_GET['emGraduate']))
-			$this->mongo_db->where_gte('employment.graduateEmployment', (float) $_GET['emGraduate']);
-		
-		if(isset($_GET['emSixMonth']))
-			$this->mongo_db->where_gte('employment.sixMonth', (float) $_GET['emSixMonth']);
-		
-		if(isset($_GET['emWorkOrStudy']))
-			$this->mongo_db->where_gte('employment.workOrStudy',(float) $_GET['emWorkOrStudy']);
-		
-		if(isset($_GET['emWorkOnly']))
-			$this->mongo_db->where_gte('employment.workOnly', (float) $_GET['emWorkOnly']);
+		if(isset($_GET['maxFee']))
+			$this->mongo_db->where_lte('maxFee', intval($_GET['maxFee']));
 			
-		if(isset($_GET['emStudyOnly']))
-			$this->mongo_db->where_gte('employment.studyOnly', (float) $_GET['emStudyOnly']);
-		
-		if(isset($_GET['emWorkAndStudy']))
-			$this->mongo_db->where_gte('employment.workAndStudy', (float) $_GET['emWorkAndStudy']);
-		
-		if(isset($_GET['emOther']))
-			$this->mongo_db->where_gte('employment.other', (float) $_GET['emOther']);
+		if(isset($_GET['meansTested']))
+			$this->mongo_db->where('meansTested', intval($_GET['meansTested']));
 			
-		if(isset($_GET['emUnemployed']))
-			$this->mongo_db->where_lte('employment.unemployed', (float) $_GET['emUnemployed']);
+		if(isset($_GET['nssQuality']))
+			$this->mongo_db->where_gte('nss.overall.quality', floatval($_GET['nssQuality']));
 			
+		if(isset($_GET['nssExplaining']))
+			$this->mongo_db->where_gte('nss.teaching.explaining', floatval($_GET['nssTeaching']));
+			
+		if(isset($_GET['nssInteresting']))
+			$this->mongo_db->where_gte('nss.teaching.interesting', floatval($_GET['nssInteresting']));
+			
+		if(isset($_GET['nssEnthusiastic']))
+			$this->mongo_db->where_gte('nss.teaching.enthusiastic', floatval($_GET['nssEnthusiastic']));	
 		
+		if(isset($_GET['nssStimulating']))
+			$this->mongo_db->where_gte('nss.teaching.stimulating', floatval($_GET['nssStimulating']));
+			
+		if(isset($_GET['nssCriteria']))
+			$this->mongo_db->where_gte('nss.assessment.criteria', floatval($_GET['nssCriteria']));
+			
+		if(isset($_GET['nssFair']))
+			$this->mongo_db->where_gtre('nss.assessment.fair', floatval($_GET['nssFair']));
+		
+		
+			
 		
 		$output = $this->mongo_db->get('kisCourses');
 		
