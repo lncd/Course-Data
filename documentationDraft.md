@@ -2,7 +2,8 @@ Course Data API documentation
 ===
 Institutions
 --
-Something here
+**id** - requires the full UKPRN for the institution. Returns details for that institution. <br>
+**name** - returns institutions that have names 'like' the specified term. I.e, ?name=lincoln will return University of Lincoln <br>
 
 
 Courses

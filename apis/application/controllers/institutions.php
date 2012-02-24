@@ -37,7 +37,9 @@ class Institutions extends CI_Controller {
 			$results['error'] = 1;
 		$results['kisInstitutions'] = $output;
 		
-		echo '<pre>'; print_r($results); echo '</pre>';
+		echo '<pre>'; 
+		print_r($results); 
+		echo '</pre>';
 	}
 	
 	
