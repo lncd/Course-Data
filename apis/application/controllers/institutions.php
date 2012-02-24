@@ -32,10 +32,14 @@ class Institutions extends CI_Controller {
 		{
 			$results['error'] = 0;
 			$results['count'] = count($output);
+			$results['kisInstitutions'] = $output;
 		}
 		else
+		{
 			$results['error'] = 1;
-		$results['kisInstitutions'] = $output;
+			$results['message'] = 'No results returned. Sorry';
+		}	
+		
 		
 		echo '<pre>'; 
 		print_r($results); 

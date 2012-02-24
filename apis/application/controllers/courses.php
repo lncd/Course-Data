@@ -154,16 +154,16 @@ class Courses extends CI_Controller {
 		if(isset($_GET['lowerSecond']))
 			$this->mongo_db->where_gte('classification.lowerSecond', floatval($_GET['lowerSecond']));
 		
-		
+		$this->mongo_db->limit(50);
 		$output = $this->mongo_db->get('kisCourses');
 		
 		if(($output !== NULL) && (count($output) !== 0))
 		{
-			$results['err'] = 0;
+			$results['error'] = 0;
 			$results['count'] = count($output);
 			if(count($output) > 50)
 				$results['message'] = 'Amount of potential results is greater than 50. Please narrow your search using more parameters, or more specific search terms.';
-			$results['kisCourses'] = $output;
+			$results['courses'] = $output;
 		}
 		else
 		{

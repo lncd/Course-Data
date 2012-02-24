@@ -59,8 +59,17 @@ class Modules extends CI_Controller {
 			
 		$output = $this->mongo_db->get('modules');
 			
-		$results['modules'] = $output;
-		
+		if($output != null)
+		{
+			$results['error'] = 0;
+			$results['count'] = count($output);
+			$results['modules'] = $output;
+		}
+		else
+		{
+			$results['error'] = 1;
+			$results['message'] = 'No results returned. Sorry';
+		}		
 		echo '<pre>'; 
 		print_r($results); 
 		echo '</pre>';
