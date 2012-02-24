@@ -57,3 +57,15 @@ Courses
 **upperSecond** - accepted int or decimal value. Returns courses that have a >= % of upper second class degrees. Relates to classification->upperSecond in the schema.
 
 **lowerSecond** - accepted int or decimal value. Returns courses that have a >= % of lower second class degrees. Relates to classification->lowerSecond in the schema.
+
+Modules
+---
+<p>The following criteria relate to module data.</p>
+**code** - Returns a module that has the specified module code. Relates to _id in the schema. <br>
+**title** - Returns modules that have a title 'like' the specified key words. Relates to title in the schema. <br>
+**department** - Returns modules that have an owning department 'like' the one specified. Relates to owningDepartment in schema. <br>
+**subject** - Returns modules that have a subject 'like' the one specified. Relates to subject in the schema. <br>
+**synopsis** - Accepts a comma delimited list of words or phrases, returns modules that have these words contained in the synopses. Relates to moduleSynopsis in the schema. Done on an and/or basis.<br>
+**syllabus** - Accepts a comma delimited list of words or phrases, returns modules that have these words contained in the syllabus. Relates to outlineSyllabus in the schema. Done on an and/or basis.<br>
+**jacs** - Accepts a comma delimited list of jacs codes, returns modules that have these codes. Relates to jacsCodes in the schema. Done on an and/or basis.<br>
+**outcomes** - Accepts a comma delimited list of words or phrases, returns modules that have these in their learning outcomes. Done on an and/or basis.
