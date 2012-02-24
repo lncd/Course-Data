@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<catalog 
+	xmlns="http://xcri.org/profiles/1.2/catalog"
+	xmlns:xcriTerms="http://xcri.org/profiles/catalog/terms"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:credit="http://purl.org/net/cm"
+	xmlns:mlo="http://purl.org/net/mlo"
+	xmlns:courseDataProgramme="http://xcri.co.uk"
+	xsi:schemaLocation="http://xcri.org/profiles/1.2/catalog 
+	http://www.xcri.co.uk/bindings/xcri_cap_1_2.xsd 
+	http://xcri.org/profiles/1.2/catalog/terms  
+	http://www.xcri.co.uk/bindings/xcri_cap_terms_1_2.xsd 
+	http://xcri.co.uk  
+	http://www.xcri.co.uk/bindings/coursedataprogramme.xsd"
+	generated="2012-01-19T17:36:22.218Z">
+    <provider>
+        <dc:identifier>http://www.lincoln.ac.uk</dc:identifier>
+        <dc:identifier xsi:type="ukrlp:ukprn">10007151</dc:identifier>
+        <dc:title>University of Lincoln</dc:title>
+        <mlo:url>http://www.lincoln.ac.uk/</mlo:url>
+        <mlo:location>
+			<mlo:postcode>LN6 7TS</mlo:postcode>
+			<mlo:address>University of Lincoln</mlo:address>
+			<mlo:address>Brayford Pool</mlo:address>
+			<mlo:address>Lincolns</mlo:address>
+			<mlo:phone>01522 882000</mlo:phone>
+			<mlo:address xsi:type="geo:lat">53.228582</mlo:address>
+			<mlo:address xsi:type="geo:long">-0.5479</mlo:address>
+		</mlo:location>
+		<course>
+			<dc:identifier>http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/computerscience/</dc:identifier>
+            <dc:identifier xsi:type="courseDataProgramme:internalID">45</dc:identifier>
+            <dc:identifier>UCAS: G403</dc:identifier>
+            <dc:subject>Computer Science</dc:subject>
+            <dc:subject identifier="I100" xsi:type="courseDataProgramme:JACS3">Computer Science</dc: subject>
+            <dc:description>The BSc (Hons) Computer Science degree provides teaching and experience in the practical design and development of a range of software and IT systems.</dc:description>
+            <mlo:qualification>
+            	<dc:identifier>http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/computerscience</dc:identifier>
+                <dc:title>BSc (Hons) in Computer Science</dc:title>
+                <dcterms:educationLevel>Undergraduate</dcterms:educationLevel>
+            </mlo:qualification>
+            <presentation>
+                <dc:identifier>45</dc:identifier>
+                <mlo:duration interval="P3Y">3 - 4 Years</duration>
+                <studyMode>Full Time</studyMode>
+                <attendanceMode>Campus</attendanceMode>
+                <mlo:languageOfInstruction>en</mlo:languageOfInstruction>
+                <attendancePattern identifier="DT">Daytime</attendancePattern>
+            </presentation>
+		</course>
+		
+		<course>
+			<dc:identifier>http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/gamescomputing/</identifier>
+            <dc:identifier xsi:type="courseDataProgramme:internalID">47</dc:identifier>
+            <dc:identifier>UCAS: G401</dc:identifier>
+            <dc:subject>Games Computing</dc:subject>
+            <dc:description>BSc (Hons) Games Computing is one of the Department of Computing and Informatics’ portfolio of Computing and Media Technology programmes.</dc:description>
+            <mlo:qualification>
+            	<dc:identifier>http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/gamescomputing/</dc:identifier>
+                <dc:title>BSc (Hons) in Games Computing</dc:title>
+               	<dcterms:educationLevel>Undergraduate</dcterms:educationLevel>
+            </mlo:qualification>
+            <presentation>
+                <dc:identifier>47</dc:identifier>
+                <mlo:duration interval="P3Y">3 - 4 Years</mlo:duration>
+                <studyMode>Full Time</studyMode>
+                <attendanceMode>Campus</attendanceMode>
+                <attendancePattern identifier="DT">Daytime</attendancePattern>
+            </presentation>
+		</course>
+		
+		<course>
+            <dc:identifier xsi:type="courseDataProgramme:internalID">123</dc:identifier>
+            <identifier>UCAS: G500</identifier>
+            <title>Computer Information Systems</title>
+            <subject>G500</subject>
+            <description xsi:type="terms:topic">BSc (Hons) Computer Information Systems equips graduates for employment in a wide range of roles in the IT industry.</description>
+            <url>http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/computerinformationsystemsbsc/</url>
+            <qualification>
+                <title>BSc (Hons) in Computer Information Systems</title>
+                <level>6</level>
+                <type>BSc (Hons)</type>
+            </qualification>
+            <presentation>
+                <identifier>123</identifier>
+                <duration>3-4 Years</duration>
+                <studyMode xsi:type="terms:studyModeType">Full Time</studyMode>
+                <attendanceMode>Campus</attendanceMode>
+                <attendancePattern>daytime</attendancePattern>
+                <applyTo>admissions@lincoln.ac.uk</applyTo>
+                <enquireTo>Admissions: 01522 882000</enquireTo>
+            </presentation>
+</course>
+<course>
+            <identifier>72</identifier>
+            <identifier>UCAS: W290</identifier>
+            <title>Graphic Design</title>
+            <subject>W290</subject>
+            <description xsi:type="terms:topic">Graphic Design is about communication. Our students work with design briefs to create stimulating, challenging, beautiful and effective design solutions in response to wide ranging communication problems.</description>
+            <url>http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/graphicdesign/</url>
+            <qualification>
+                <title>BA (Hons) in Graphic Design</title>
+                <level>6</level>
+                <type>BA (Hons)</type>
+            </qualification>
+            <presentation>
+                <identifier>72</identifier>
+                <duration>3 Years</duration>
+                <studyMode xsi:type="terms:studyModeType">Full Time</studyMode>
+                <attendanceMode>Campus</attendanceMode>
+                <attendancePattern>daytime</attendancePattern>
+                <applyTo>admissions@lincoln.ac.uk</applyTo>
+                <enquireTo>Admissions: 01522 882000</enquireTo>
+            </presentation>
+</course>
+<course>
+            <identifier>586</identifier>
+            <identifier>UCAS: D490</identifier>
+            <title>Agriculture and Environmental Management</title>
+            <subject>D490</subject>
+            <description xsi:type="terms:topic">The BSc Agriculture and Environmental Management will provide you with a thorough understanding of production methods, and an awareness of the social and environmental impact on agriculture, to help you manage a successful business.</description>
+            <url>http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/agricultureandenvironmentalmanagement/</url>
+            <qualification>
+                <title>BSc (Hons) in Agriculture and Environmental Management</title>
+                <level>6</level>
+                <type>BSc (Hons)</type>
+            </qualification>
+            <presentation>
+                <identifier>586</identifier>
+                <duration>4 years</duration>
+                <studyMode xsi:type="terms:studyModeType">Full Time</studyMode>
+                <attendanceMode>Campus</attendanceMode>
+                <attendancePattern>daytime</attendancePattern>
+                <applyTo>admissions@lincoln.ac.uk</applyTo>
+                <enquireTo>Admissions: 01522 882000</enquireTo>
+            </presentation>
+</course>
+</provider>
+</catalog>
