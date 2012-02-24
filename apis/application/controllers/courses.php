@@ -108,7 +108,25 @@ class Courses extends CI_Controller {
 			$this->mongo_db->where_gte('nss.assessment.comments', floatval($_GET['nssComments']));
 		
 		if(isset($_GET['nssClarify']))
-			$this->mongo_db->where_gte('nss.assessment.clarify', floatval($_GET['nssClarify']));	
+			$this->mongo_db->where_gte('nss.assessment.clarify', floatval($_GET['nssClarify']));
+			
+		if(isset($_GET['nssSupport']))
+			$this->mongo_db->where_gte('nss.academic.support', floatval($_GET['nssSupport']));	
+			
+		if(isset($_GET['nssContact']))
+			$this->mongo_db->where_gte('nss.academic.contact', floatval($_GET['nssContact']));	
+			
+		if(isset($_GET['nssAdvice']))
+			$this->mongo_db->where_gte('nss.academic.advice', floatval($_GET['nssAdvice']));	
+			
+		if(isset($_GET['nssTimetable']))
+			$this->mongo_db->where_gte('nss.organisation.timetable', floatval($_GET['nssTimetable']));
+			
+		if(isset($_GET['nssChanges']))
+			$this->mongo_db->where_gte('nss.organisation.changes', floatval($_GET['nssChanges']));
+			
+		if(isset($_GET['nssOrganised']))
+			$this->mongo_db->where_gte('nss.organisation.organised', floatval($_GET['nssOrganised']));
 		
 		$output = $this->mongo_db->get('kisCourses');
 		
