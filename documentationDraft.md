@@ -42,4 +42,17 @@ Courses
 **nssConfidence** - accepted int or decmial value. Returns courses that have a >= score for the 'The course has helped me present myself with confidence.' question on NSS. Relates to nss->development->confidence in the schema. <br>
 **nssCommunication** - accepted int or decmial value. Returns courses that have a >= score for the 'My communication skills have improved' question on NSS. Relates to nss->development->communication in the schema. <br>
 **nssUnfamiliar** - accepted int or decmial value. Returns courses that have a >= score for the 'As a result of the course, I feel confident in tackling unfamiliar problems' question on NSS. Relates to nss->development->unfamiliar in the schema. <br>
-**nssImpact** - accepted int or decmial value. Returns courses that have a >= score for the 'To what extent do you agree the student’s union has had a positive impact on your time as a student' question on NSS. Relates to nss->studentsUnion->impact in the schema. <br>
+**nssImpact** - accepted int or decmial value. Returns courses that have a >= score for the 'To what extent do you agree the student’s union has had a positive impact on your time as a student' question on NSS. Relates to nss->studentsUnion->impact in the schema. <br><br>
+
+**The next criteria relate to employment statistics of graduates from this course (or related courses)**<br><br>
+
+**graduateEmployment** - accepted int or decimal value. Returns courses that have a >= % of graduates in graduate jobs. Relates to employment->graduate employment in the schema. <br>
+**sixMonth** - accepted int values only. Returns courses that have an average graduate salaray >= specified amount, 6 months after course completion. Relats to employment->sixMonth in the schema. <br><br>
+
+**The next criteria relate to degree classification statistics for this course (or related courses)**<br><br>
+
+**first** - accepted int or decimal value. Returns courses that have a >= % of first class degrees. Relates to classification->first in the schema.
+
+**upperSecond** - accepted int or decimal value. Returns courses that have a >= % of upper second class degrees. Relates to classification->upperSecond in the schema.
+
+**lowerSecond** - accepted int or decimal value. Returns courses that have a >= % of lower second class degrees. Relates to classification->lowerSecond in the schema.
