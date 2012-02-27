@@ -47,7 +47,7 @@ class Dummy_data_model extends CI_Model {
 		$lincoln = array();
 		$lincoln['_id'] = 10007151; //InstitutionUKPRN - used as unique id for each institution's document
 		$lincoln['recordTypeIndicator'] = '12061   2012/13 Key Information Set (KIS) Record';
-		$lincoln['kisInstitutionName'] = 'The University of Lincoln';
+		$lincoln['institutionName'] = 'The University of Lincoln';
 		$lincoln['accomodationCostURL'] = 'http://lincoln.ac.uk/home/campuslife/accommodation/accommodationcosts/';
 		//Accomodation Cost URL Welsh
 		$lincoln['institutionBedNumber'] = 1037;
@@ -57,7 +57,8 @@ class Dummy_data_model extends CI_Model {
 		$lincoln['privateBedUQC'] = 4000;
 		$lincoln['scholarshipProgrammeParticipation'] = 1;
 
-		$this->mongo_db->insert('kisInstitutions', $lincoln);
+		$this->mongo_db->where(array('_id' => intval($lincoln['_id'])));
+		$this->mongo_db->update('institutions', $lincoln, array('upsert' => true));
 		return 'Inserted institution: Lincoln <br>';
 	}
 
@@ -206,7 +207,7 @@ class Dummy_data_model extends CI_Model {
 		
 		
 		
-		$this->mongo_db->insert('kisCourses', $course);
+		$this->mongo_db->insert('courses', $course);
 		return 'Inserted Lincoln G403 <br>';
 	}
 
@@ -364,7 +365,7 @@ class Dummy_data_model extends CI_Model {
 		$course['classification']['notClassified'] = 1;
 
 
-		$this->mongo_db->insert('kisCourses', $course);
+		$this->mongo_db->insert('courses', $course);
 		return 'Inserted Lincoln P500 <br>';
 	}
 	
@@ -516,7 +517,7 @@ class Dummy_data_model extends CI_Model {
 		$course['classification']['notClassified'] = 1;
 
 
-		$this->mongo_db->insert('kisCourses', $course);
+		$this->mongo_db->insert('courses', $course);
 		return 'Inserted Lincoln G500 <br>';
 	}
 	
@@ -669,7 +670,7 @@ class Dummy_data_model extends CI_Model {
 
 
 
-		$this->mongo_db->insert('kisCourses', $course);
+		$this->mongo_db->insert('courses', $course);
 		return 'Inserted Lincoln G401 <br>';
 	}
 	
@@ -814,7 +815,7 @@ class Dummy_data_model extends CI_Model {
 		$course['classification']['otherHonours'] = 5;
 		$course['classification']['ordinaryDegree'] = 0;
 		$course['classification']['notClassified'] = 0;
-		$this->mongo_db->insert('kisCourses', $course);
+		$this->mongo_db->insert('courses', $course);
 		return 'Inserted Lincoln D490 <br>';
 	}
 	
@@ -965,7 +966,7 @@ class Dummy_data_model extends CI_Model {
 		$course['classification']['ordinaryDegree'] = 0;
 		$course['classification']['notClassified'] = 1;
 
-		$this->mongo_db->insert('kisCourses', $course);
+		$this->mongo_db->insert('courses', $course);
 		return 'Inserted Lincoln W290 <br>';
 	}
 	
@@ -1113,7 +1114,7 @@ class Dummy_data_model extends CI_Model {
 		$course['classification']['notClassified'] = 0;
 
 
-		$this->mongo_db->insert('kisCourses', $course);
+		$this->mongo_db->insert('courses', $course);
 		return 'Inserted Lincoln N400 <br>';
 	}
 	
@@ -1272,7 +1273,7 @@ class Dummy_data_model extends CI_Model {
 		$course['classification']['notClassified'] = 0; 
 
 
-		$this->mongo_db->insert('kisCourses', $course);
+		$this->mongo_db->insert('courses', $course);
 		return 'Inserted Lincoln CN85 <br>';
 	}
 
@@ -1289,7 +1290,7 @@ class Dummy_data_model extends CI_Model {
 	function remove_kis_data()
 	{
 		$this->mongo_db->drop_collection('courseData', 'kisInstitutions');
-		$this->mongo_db->drop_collection('courseData', 'kisCourses');
+		$this->mongo_db->drop_collection('courseData', 'courses');
 		$this->mongo_db->drop_collection('courseData', 'modules');
 		return 'Removed KIS institution and course data collections.<br>';
 	}

@@ -155,7 +155,7 @@ class Courses extends CI_Controller {
 			$this->mongo_db->where_gte('classification.lowerSecond', floatval($_GET['lowerSecond']));
 		
 		$this->mongo_db->limit(50);
-		$output = $this->mongo_db->get('kisCourses');
+		$output = $this->mongo_db->get('courses');
 		
 		if(($output !== NULL) && (count($output) !== 0))
 		{
