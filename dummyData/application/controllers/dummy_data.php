@@ -65,7 +65,7 @@ class Dummy_data extends CI_Controller {
 		return $output;
 	}
 	
-	public function xcri($url = 'http://localhost:8888/cdata/xcri.xml')
+	public function xcri($url = 'http://localhost:8888/cdata/dummyData/xcri.xml')
 	{
 		if(isset($_GET['url']))
 			$url = $_GET['url'];
@@ -110,7 +110,11 @@ class Dummy_data extends CI_Controller {
 						'telephone' => $institution['telephone']))->update('institutions');
 		
 		
+		//Get course details now 
+		foreach($xcriArray['catalog']['provider']['course'] as $course)
+		{
 		
+		}
 	}
 	
 	
