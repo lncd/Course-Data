@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 /**
  * MyClass File Doc Comment
  *
@@ -105,17 +107,76 @@ class Dummy_data extends CI_Controller {
 			$institution['telephone'] = $provider['mlo:location']['mlo:phone']['value'];
 		
 		$this->mongo_db->where(array('_id' => $institution['_id']))
-						->set(array('identifiers' => 			$institution['identifiers'], 
+						->set(array('identifiers' => $institution['identifiers'], 
 						'location' => $institution['location'], 'url' => $institution['url'], 
 						'telephone' => $institution['telephone']))->update('institutions');
 		
-		
-		//Get course details now 
-		foreach($xcriArray['catalog']['provider']['course'] as $course)
+		for($i = 0; $i < count($xcriArray['catalog']['provider']['course']); $i++)
 		{
-		
+			$courses = array();
+			$course = $xcriArray['catalog']['provider']['course'][$i];
+			
+			$courses['_id'] = '';
+			$courses['identifiers'] = array();
+			foreach($course['dc:identifier'] as $identifier)
+			{
+				if((isset($identifier['attr']['xsi:type'])) && ($identifier['attr']['xsi:type'] == 'ucas:courseID'))
+					$courses['_id'] = $identifier['value'];
+				elseif((isset($identifier['attr']['xsi:type'])) && ($identifier['attr']['xsi:type'] == 'courseDataProgramme:internalID'))
+					$courses['identifiers']['internalID'] = $identifier['value'];
+				else
+					$courses['identifiers'][] = $identifier['value'];
+			}
+			if(isset($course['dc:description']))
+				$courses['description'] = $course['dc:description']['value'];
+			
+			if(isset($course['presentation'][0]))
+			{	
+				foreach($course['presentation'] as $presentation)
+				{
+					$thisPresentation = array();
+					if(isset($presentation['dc:identifier']))
+						$thisPresentation['identifiers'] = $presentation['dc:identifier'];
+					if(isset($presentation['mlo:duration']))
+						$thisPresentation['duration'] = $presentation['mlo:duration']['value'];
+					if(isset($presentation['studyMode']))
+						$thisPresentation['studyMode'] = $presentation['studyMode']['value'];
+					if(isset($presentation['attendanceMode']))
+						$thisPresentation['attendanceMode'] = $presentation['attendanceMode']['value'];
+					if(isset($presentation['attendancePattern']))
+						$thisPresentation['attendancePattern'] = $presentation['attendancePattern']['value'];
+					$courses['presentation'][] = $thisPresentation;
+				}
+			}
+			elseif(isset($course['presentation']))
+			{
+				if(isset($course['presentation']['dc:identifier']))
+						$thisPresentation['identifiers'] = $course['presentation']['dc:identifier'];
+				if(isset($course['presentation']['mlo:duration']))
+					$thisPresentation['duration'] = $course['presentation']['mlo:duration']['value'];
+				if(isset($course['presentation']['studyMode']))
+					$thisPresentation['studyMode'] = $course['presentation']['studyMode']['value'];
+				if(isset($course['presentation']['attendanceMode']))
+					$thisPresentation['attendanceMode'] = $course['presentation']['attendanceMode']['value'];
+				if(isset($course['presentation']['attendancePattern']))
+					$thisPresentation['attendancePattern'] = $course['presentation']['attendancePattern']['value'];
+				$courses['presentation'][] = $thisPresentation;
+			}
+			
+			$this->mongo_db->where(array('ucasProgrammeCode' => strval(($courses['_id']))))
+						->set(array('identifiers' => $courses['identifiers']));
+			if(isset($courses['description'])) 
+						$this->mongo_db->set(array('description' => $courses['description']));
+			if(isset($courses['presentation']))
+						$this->mongo_db->set(array('presentation' => $courses['presentation']))->update('courses');
+			
+			
+			
+			
 		}
-	}
+				
+}
+		
 	
 	
 	
