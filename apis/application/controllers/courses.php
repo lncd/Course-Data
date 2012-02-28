@@ -154,6 +154,18 @@ class Courses extends CI_Controller {
 		if(isset($_GET['lowerSecond']))
 			$this->mongo_db->where_gte('classification.lowerSecond', floatval($_GET['lowerSecond']));
 		
+		if(isset($_GET['presDesc']))
+			$this->mongo_db->like('description', $_GET['presDesc']);
+		
+		if(isset($_GET['presID']))
+			$this->mongo_db->where('presentation.presentationID', intval($_GET['presID']));
+		
+		if(isset($_GET['presIdentifier']))
+			$this->mongo_db->where('presentation.identifiers', $_GET['preseIdentifier']);
+		
+		if(isset($_GET['presInternalID']))
+			$this->mongo_db->where('presentation.identifiers.internalID', intval($_GET['internalID']));
+		
 		$this->mongo_db->limit(50);
 		$output = $this->mongo_db->get('courses');
 		
