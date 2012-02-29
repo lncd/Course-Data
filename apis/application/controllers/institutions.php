@@ -27,12 +27,12 @@ class Institutions extends CI_Controller {
 		if(isset($_GET['name']))
 			$this->mongo_db->like('kisInstitutionName', $_GET['name']);
 			
-		$output = $this->mongo_db->get('kisInstitutions');
+		$output = $this->mongo_db->get('institutions');
 		if($output != null)
 		{
 			$results['error'] = 0;
 			$results['count'] = count($output);
-			$results['kisInstitutions'] = $output;
+			$results['institutions'] = $output;
 		}
 		else
 		{
