@@ -169,23 +169,33 @@ class Courses extends CI_Controller {
 		$this->mongo_db->limit(50);
 		$output = $this->mongo_db->get('courses');
 		
-		if(($output !== NULL) && (count($output) !== 0))
+		if($this->mongo_db->getWheres() > 0)
 		{
+			
+			if((isset($output)) && (count($output) !== 0))
+			{
+
 			$results['error'] = 0;
 			$results['count'] = count($output);
 			if(count($output) > 50)
 				$results['message'] = 'Amount of potential results is greater than 50. Please narrow your search using more parameters, or more specific search terms.';
 			$results['courses'] = $output;
+			}
+			else
+			{
+			$results['error'] = 1;
+			$results['message'] = 'No results returned.';
+			}
 		}
 		else
 		{
 			$results['error'] = 1;
-			$results['message'] = 'No results returned.';
-		}	
+			$results['message'] = 'No valid criteria specified. ';
+		}
 		
 		
-		echo '<pre>'; 
-		print_r($results); 
+		echo '<pre>';
+		print_r($results);
 		echo '</pre>';
 	}
 }

@@ -33,7 +33,7 @@ class Dummy_data extends CI_Controller {
 	* @access Public
 	*/
 	public function index()
-	{        
+	{
 		$this->load->model('dummy_data_model');
 		$data['output'] = $this->dummy_data_model->remove_kis_data();
 		$data['output'].= $this->_create_kis_data();
@@ -67,7 +67,7 @@ class Dummy_data extends CI_Controller {
 		return $output;
 	}
 	
-	public function xcri($url = 'http://localhost:8888/cdata/dummyData/xcri.xml')
+	public function xcri($url = 'http://127.0.0.1/coursedata/dummyData/xcri.xml')
 	{
 		if(isset($_GET['url']))
 			$url = $_GET['url'];

@@ -37,6 +37,7 @@ class Mongo_db {
 	public  $wheres = array(); // Public to make debugging easier
 	private $sorts = array();
 	public $updates = array(); // Public to make debugging easier
+	public $amountWheres = 0;
 	
 	private $limit = 999999;
 	private $offset = 0;
@@ -600,6 +601,7 @@ class Mongo_db {
 	 		 	
 	 	$documents = $this->db->{$collection}->find($this->wheres, $this->selects)->limit((int) $this->limit)->skip((int) $this->offset)->sort($this->sorts);
 	 	
+		$this->amountWheres = sizeof($this->wheres);
 	 	// Clear
 	 	$this->_clear();
 	 	
@@ -1530,6 +1532,11 @@ class Mongo_db {
 		{
 			$this->updates[ $method ] = array();
 		}
+	}
+	
+	public function getWheres()
+	{
+		return $this->amountWheres;
 	}
 	
 }
