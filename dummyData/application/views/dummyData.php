@@ -56,7 +56,13 @@ ini_set('display_errors', '1'); ?>
 	<section class="cwd_container" id="cwd_content" role="main">
 	
 		<div class="grid_12">
+		<h2>Data Creation Progress:</h2>
 		<?php echo $output; ?>
+		<hr>
+		<h2>API Testing:</h2>
+		<p>Tests carried out: <?php echo $amountTest; ?></p>
+		<p>Tests passed: <?php echo $amountPass; ?></p>
+		<p>Tests failed: <?php echo $amountFail; ?></p>
 		</div>
 		
 		

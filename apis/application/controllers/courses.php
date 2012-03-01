@@ -184,19 +184,19 @@ class Courses extends CI_Controller {
 			else
 			{
 			$results['error'] = 1;
+			$results['count'] = 0;
 			$results['message'] = 'No results returned.';
 			}
 		}
 		else
 		{
 			$results['error'] = 1;
+			$results['cout'] = 0;
 			$results['message'] = 'No valid criteria specified. ';
 		}
 		
 		
-		echo '<pre>';
-		print_r($results);
-		echo '</pre>';
+		echo json_encode($results);
 	}
 }
 

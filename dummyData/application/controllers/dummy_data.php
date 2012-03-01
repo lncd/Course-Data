@@ -37,8 +37,57 @@ class Dummy_data extends CI_Controller {
 		$this->load->model('dummy_data_model');
 		$data['output'] = $this->dummy_data_model->remove_kis_data();
 		$data['output'].= $this->_create_kis_data();
+		$results = $this->_test_api();
+		$data['amountTest'] = $results['amount'];
+		$data['amountPass'] = $results['pass'];
+		$data['amountFail'] = $results['fail'];
 		$this->load->view('dummyData.php', $data);
 		$this->xcri();
+	}
+	
+	private function _test_api($filename = "strategy.txt")
+	{
+        $lines = array();
+        $handle = @fopen($filename, "r");
+        
+        if ($handle)
+        {
+            while (($buffer = fgets($handle, 4096)) !== false){
+            $lines[] = explode(';',$buffer);
+            }
+            if (!feof($handle)) {
+                echo "Error: unexpected fgets() fail\n";
+            }
+            fclose($handle);
+            $results = array('amount' => sizeof($lines) - 1, 'pass' => 0, 'fail' => 0);
+            try{
+                if((sizeof($lines[0])) == 1)
+                {
+                    $newlines = array("\t","\n","\r","\x20\x20","\0","\x0B");
+                    $urlBase = str_replace($newlines, "", html_entity_decode($lines[0][0]));
+                }
+                else
+                    throw new Exception('Line 1 did not contain the base url.');
+            
+                for($i = 1; $i < sizeof($lines); $i++)
+                {
+                    $url = $urlBase . $lines[$i][0] . '?' . $lines[$i][1];
+                    $url = str_replace(' ','',$url);
+                    $check = json_decode(file_get_contents($url));
+                
+                    if(($check->error == strval($lines[$i][2])) && ($check->count == strval($lines[$i][3])))
+                        $results['pass'] += 1;
+                    else
+                        $results['fail'] += 1;
+                }
+            }
+            catch(Exception $e)
+            {
+                echo $e;
+            }
+        
+            return $results;
+        }
 	}
 	
 	/**
