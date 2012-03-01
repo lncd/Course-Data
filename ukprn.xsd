@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ukprn"
+    targetNamespace="http://www.ukrlp.co.uk"
+    elementFormDefault="qualified"
+    xmlns="http://www.ukrlp.co.uk"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xcri="http://xcri.org/profiles/catalog" 
+>
+  <xs:import namespace="http://xcri.org/profiles/1.2/catalog" schemaLocation="http://www.xcri.org/bindings/xcri_cap_1_2.xsd" />
+  <xs:simpleType name="ukprn">
+    <xs:restriction base="xcri:identifierDType">
+      <xs:pattern value="[0-9]{8}" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
