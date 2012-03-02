@@ -74,7 +74,7 @@ class Courses extends CI_Controller {
 			$this->mongo_db->where_gte('nss.overall.quality', floatval($_GET['nssQuality']));
 			
 		if(isset($_GET['nssExplaining']))
-			$this->mongo_db->where_gte('nss.teaching.explaining', floatval($_GET['nssTeaching']));
+			$this->mongo_db->where_gte('nss.teaching.explaining', floatval($_GET['nssExplaining']));
 			
 		if(isset($_GET['nssInteresting']))
 			$this->mongo_db->where_gte('nss.teaching.interesting', floatval($_GET['nssInteresting']));
