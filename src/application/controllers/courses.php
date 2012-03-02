@@ -34,8 +34,8 @@ class Courses extends CI_Controller {
 	{
 		$results = array();
 		
-		if(isset($_GET['kisID']))
-			$this->mongo_db->where('_id', $_GET['kisID']);
+		if(isset($this->mongo_db->get('kisID'))
+			$this->mongo_db->where('_id', $this->mongo_db->get('kisID'));
 		
 		if(isset($_GET['institution']))
 			$this->mongo_db->where('applicationUKPRN', $_GET['institution']);
