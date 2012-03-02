@@ -1064,7 +1064,7 @@ class Dummy_data_model extends CI_Model {
 		
 		$sqla = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
 		$results = mysql_query($sqla) OR die('Didnt work.');
-		while($row = mysql_fetch_array($results,MYSQL_ASSOC))
+		while($a_row = mysql_fetch_array($results,MYSQL_ASSOC))
 		{
 			$course['modules'][] = $a_row['moduleCode'];
 		}
@@ -1325,7 +1325,7 @@ class Dummy_data_model extends CI_Model {
 			$module['moduleSynopsis'] = preg_replace('/[^(\x20-\x7F)]*/','', nl2br($a_row['moduleSynopsis']));
 			$module['outlineSyllabus'] = preg_replace('/[^(\x20-\x7F)]*/','', nl2br($a_row['outlineSyllabus']));
 			$module['ltMethods'] = preg_replace('/[^(\x20-\x7F)]*/','', nl2br($a_row['l_tMethods']));
-			if($row['accreditation'] != '')
+			if($a_row['accreditation'] != '')
 				$module['accreditation'] = $a_row['accreditation'];
 			else
 				$module['accreditation'] = '';
@@ -1408,13 +1408,9 @@ class Dummy_data_model extends CI_Model {
 		}
 		
 		return $returning;
-		
-		
-	
-
 	}
 	
-	public function xcri($url = 'http://127.0.0.1/coursedata/dummyData/xcri.xml')
+	public function xcri($aurl = 'http://127.0.0.1/coursedata/dummyData/xcri.xml')
 	{
 		if($this->input->get('url'))
 			$aurl = $this->input->get('url');
