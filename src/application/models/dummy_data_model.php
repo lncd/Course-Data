@@ -70,89 +70,89 @@ class Dummy_data_model extends CI_Model {
 	*/
 	function lincoln_g403()
 	{
-		$course = array();
-		$course['_id'] = '123456'; //kisCourseIdentifier
-		$course['kisType'] = 1;
-		$course['applicationUKPRN'] = '10007151';
-		$course['assessmentMethodsURL'] = 'http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/computerscience/#10265';
-		$course['coursePageURL'] = 'http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/computerscience/';
-		$course['courseTitle'] = 'BSc (Hons) Computer Science';
-		$course['distanceLearningOnly'] = 0;
-		$course['employmentDetailsURL'] = '';
-		$course['feeWaiver'] = 0;
-		$course['feesConfirmation'] = 1;
-		$course['learningTeachingURL'] = 'http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/computerscience/#10262';
-		$course['levelOfAward'] = 'F';
-		$course['maxFeeEngland'] = 9000;
-		$course['maxFeeNI'] = 9000;
-		$course['meansTestedSupport'] = 1;
-		$course['partTimeOnly'] = 0;
-		$course['fullJacs'][0] = 'G400';
-		$course['supportDetailsURL'] = 'http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/feesandfunding/';
-		$course['teacherTraining'] = 0;
-		$course['ucasProgrammeCode'] = 'G403';
-		$course['variableFee'] = 0;
-		$course['ilr'][0]['code'] = '1278125';
-		$course['ilr'][0]['year'] = 'BOTH';
-		$course['courseStages'][0]['ltaStage'] = 1;
-		$course['courseStages'][0]['learningAndTeaching']['ltMethodIndicator'] = 'A';
-		$course['courseStages'][0]['learningAndTeaching']['scheduledPercentage'] = 21.6;
-		$course['courseStages'][0]['learningAndTeaching']['independentStudyPercentage'] = 78.4;
-		$course['courseStages'][0]['learningAndTeaching']['placementStudyPercentage'] =  0.0;
-		$course['courseStages'][0]['assessment']['assessmentMethodIndicator'] = 'A';
-		$course['courseStages'][0]['assessment']['courseWorkPercentage'] = 56.0;
-		$course['courseStages'][0]['assessment']['practicalExamPercentage'] = 11.0;
-		$course['courseStages'][0]['assessment']['writtenExamPercentage'] = 33.0;
-		$course['courseStages'][1]['ltaStage'] = 2;
-		$course['courseStages'][1]['learningAndTeaching']['ltMethodIndicator'] = 'A';
-		$course['courseStages'][1]['learningAndTeaching']['scheduledPercentage'] = 18.0;
-		$course['courseStages'][1]['learningAndTeaching']['independentStudyPercentage'] = 82.0;
-		$course['courseStages'][1]['learningAndTeaching']['placementStudyPercentage'] =  0.0;
-		$course['courseStages'][1]['assessment']['assessmentMethodIndicator'] = 'A';
-		$course['courseStages'][1]['assessment']['courseWorkPercentage'] = 76.0;
-		$course['courseStages'][1]['assessment']['practicalExamPercentage'] = 0.0;
-		$course['courseStages'][1]['assessment']['writtenExamPercentage'] = 24.0;
-		$course['courseStages'][2]['ltaStage'] = 3;
-		$course['courseStages'][2]['learningAndTeaching']['ltMethodIndicator'] = 'A';
-		$course['courseStages'][2]['learningAndTeaching']['scheduledPercentage'] = 13.8;
-		$course['courseStages'][2]['learningAndTeaching']['independentStudyPercentage'] = 86.2;
-		$course['courseStages'][2]['learningAndTeaching']['placementStudyPercentage'] =  0.0;
-		$course['courseStages'][2]['assessment']['assessmentMethodIndicator'] = 'A';
-		$course['courseStages'][2]['assessment']['courseWorkPercentage'] = 62.0;
-		$course['courseStages'][2]['assessment']['practicalExamPercentage'] = 6.0;
-		$course['courseStages'][2]['assessment']['writtenExamPercentage'] = 32.0;
-		$course['nss']['overall']['quality'] = 75;
-		$course['nss']['teaching']['explaining'] = 81;
-		$course['nss']['teaching']['interesting'] = 72;
-		$course['nss']['teaching']['enthusiastic'] = 78;
-		$course['nss']['teaching']['stimulating'] = 70;
-		$course['nss']['assessment']['criteria'] = 85;
-		$course['nss']['assessment']['fair'] = 79;
-		$course['nss']['assessment']['prompt'] = 58;
-		$course['nss']['assessment']['comments'] = 60;
-		$course['nss']['assessment']['clarify'] = 57;
-		$course['nss']['academic']['support'] = 70;
-		$course['nss']['academic']['contact'] = 72;
-		$course['nss']['academic']['advice'] = 67;
-		$course['nss']['organisation']['timetable'] = 82;
-		$course['nss']['organisation']['changes'] = 76;
-		$course['nss']['organisation']['organised'] = 73;
-		$course['nss']['resources']['library'] = 79;
-		$course['nss']['resources']['ict'] = 86;
-		$course['nss']['resources']['specialist'] = 85;
-		$course['nss']['development']['confidence'] = 76;
-		$course['nss']['development']['communication'] = 82;
-		$course['nss']['development']['unfamiliar'] = 81;
-		$course['nss']['studentsUnion']['impact'] = 75;
-		$course['employment']['graduateEmployment'] = 70.7;
-		$course['employment']['sixMonth'] = 17483;
-		$course['employment']['workOrStudy'] = 79.3;
-		$course['employment']['workOnly'] = 67.1;
-		$course['employment']['studyOnly'] = 8.5;
-		$course['employment']['workAndStudy'] = 3.7;
-		$course['employment']['other'] = 6.1;
-		$course['employment']['unemployed'] = 14.6;
-		$course['modules'] = array();
+		$courses = array();
+		$courses['_id'] = '123456'; //kisCourseIdentifier
+		$courses['kisType'] = 1;
+		$courses['applicationUKPRN'] = '10007151';
+		$courses['assessmentMethodsURL'] = 'http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/computerscience/#10265';
+		$courses['coursePageURL'] = 'http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/computerscience/';
+		$courses['courseTitle'] = 'BSc (Hons) Computer Science';
+		$courses['distanceLearningOnly'] = 0;
+		$courses['employmentDetailsURL'] = '';
+		$courses['feeWaiver'] = 0;
+		$courses['feesConfirmation'] = 1;
+		$courses['learningTeachingURL'] = 'http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/computerscience/#10262';
+		$courses['levelOfAward'] = 'F';
+		$courses['maxFeeEngland'] = 9000;
+		$courses['maxFeeNI'] = 9000;
+		$courses['meansTestedSupport'] = 1;
+		$courses['partTimeOnly'] = 0;
+		$courses['fullJacs'][0] = 'G400';
+		$courses['supportDetailsURL'] = 'http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/feesandfunding/';
+		$courses['teacherTraining'] = 0;
+		$courses['ucasProgrammeCode'] = 'G403';
+		$courses['variableFee'] = 0;
+		$courses['ilr'][0]['code'] = '1278125';
+		$courses['ilr'][0]['year'] = 'BOTH';
+		$courses['courseStages'][0]['ltaStage'] = 1;
+		$courses['courseStages'][0]['learningAndTeaching']['ltMethodIndicator'] = 'A';
+		$courses['courseStages'][0]['learningAndTeaching']['scheduledPercentage'] = 21.6;
+		$courses['courseStages'][0]['learningAndTeaching']['independentStudyPercentage'] = 78.4;
+		$courses['courseStages'][0]['learningAndTeaching']['placementStudyPercentage'] =  0.0;
+		$courses['courseStages'][0]['assessment']['assessmentMethodIndicator'] = 'A';
+		$courses['courseStages'][0]['assessment']['courseWorkPercentage'] = 56.0;
+		$courses['courseStages'][0]['assessment']['practicalExamPercentage'] = 11.0;
+		$courses['courseStages'][0]['assessment']['writtenExamPercentage'] = 33.0;
+		$courses['courseStages'][1]['ltaStage'] = 2;
+		$courses['courseStages'][1]['learningAndTeaching']['ltMethodIndicator'] = 'A';
+		$courses['courseStages'][1]['learningAndTeaching']['scheduledPercentage'] = 18.0;
+		$courses['courseStages'][1]['learningAndTeaching']['independentStudyPercentage'] = 82.0;
+		$courses['courseStages'][1]['learningAndTeaching']['placementStudyPercentage'] =  0.0;
+		$courses['courseStages'][1]['assessment']['assessmentMethodIndicator'] = 'A';
+		$courses['courseStages'][1]['assessment']['courseWorkPercentage'] = 76.0;
+		$courses['courseStages'][1]['assessment']['practicalExamPercentage'] = 0.0;
+		$courses['courseStages'][1]['assessment']['writtenExamPercentage'] = 24.0;
+		$courses['courseStages'][2]['ltaStage'] = 3;
+		$courses['courseStages'][2]['learningAndTeaching']['ltMethodIndicator'] = 'A';
+		$courses['courseStages'][2]['learningAndTeaching']['scheduledPercentage'] = 13.8;
+		$courses['courseStages'][2]['learningAndTeaching']['independentStudyPercentage'] = 86.2;
+		$courses['courseStages'][2]['learningAndTeaching']['placementStudyPercentage'] =  0.0;
+		$courses['courseStages'][2]['assessment']['assessmentMethodIndicator'] = 'A';
+		$courses['courseStages'][2]['assessment']['courseWorkPercentage'] = 62.0;
+		$courses['courseStages'][2]['assessment']['practicalExamPercentage'] = 6.0;
+		$courses['courseStages'][2]['assessment']['writtenExamPercentage'] = 32.0;
+		$courses['nss']['overall']['quality'] = 75;
+		$courses['nss']['teaching']['explaining'] = 81;
+		$courses['nss']['teaching']['interesting'] = 72;
+		$courses['nss']['teaching']['enthusiastic'] = 78;
+		$courses['nss']['teaching']['stimulating'] = 70;
+		$courses['nss']['assessment']['criteria'] = 85;
+		$courses['nss']['assessment']['fair'] = 79;
+		$courses['nss']['assessment']['prompt'] = 58;
+		$courses['nss']['assessment']['comments'] = 60;
+		$courses['nss']['assessment']['clarify'] = 57;
+		$courses['nss']['academic']['support'] = 70;
+		$courses['nss']['academic']['contact'] = 72;
+		$courses['nss']['academic']['advice'] = 67;
+		$courses['nss']['organisation']['timetable'] = 82;
+		$courses['nss']['organisation']['changes'] = 76;
+		$courses['nss']['organisation']['organised'] = 73;
+		$courses['nss']['resources']['library'] = 79;
+		$courses['nss']['resources']['ict'] = 86;
+		$courses['nss']['resources']['specialist'] = 85;
+		$courses['nss']['development']['confidence'] = 76;
+		$courses['nss']['development']['communication'] = 82;
+		$courses['nss']['development']['unfamiliar'] = 81;
+		$courses['nss']['studentsUnion']['impact'] = 75;
+		$courses['employment']['graduateEmployment'] = 70.7;
+		$courses['employment']['sixMonth'] = 17483;
+		$courses['employment']['workOrStudy'] = 79.3;
+		$courses['employment']['workOnly'] = 67.1;
+		$courses['employment']['studyOnly'] = 8.5;
+		$courses['employment']['workAndStudy'] = 3.7;
+		$courses['employment']['other'] = 6.1;
+		$courses['employment']['unemployed'] = 14.6;
+		$courses['modules'] = array();
 		$username = "root";
 		$password = "root";
 		$hostname = "localhost";	
@@ -163,51 +163,51 @@ class Dummy_data_model extends CI_Model {
 		$results = mysql_query($sql) or die('Didnt work.');
 		while($row = mysql_fetch_array($results,MYSQL_ASSOC))
 		{
-			$course['modules'][] = $row['moduleCode'];
+			$courses['modules'][] = $row['moduleCode'];
 		}
 		
-		$course['entryPoints'][0]['lower'] = 120;
-		$course['entryPoints'][0]['upper'] = 159;
-		$course['entryPoints'][0]['amount'] = 1;
-		$course['entryPoints'][1]['lower'] = 160;
-		$course['entryPoints'][1]['upper'] = 199;
-		$course['entryPoints'][1]['amount'] = 8;
-		$course['entryPoints'][2]['lower'] = 200;
-		$course['entryPoints'][2]['upper'] = 239;
-		$course['entryPoints'][2]['amount'] = 14;
-		$course['entryPoints'][3]['lower'] = 247;
-		$course['entryPoints'][3]['upper'] = 279;
-		$course['entryPoints'][3]['amount'] = 17;
-		$course['entryPoints'][4]['lower'] = 280;
-		$course['entryPoints'][4]['upper'] = 319;
-		$course['entryPoints'][4]['amount'] = 23;
-		$course['entryPoints'][5]['lower'] = 320;
-		$course['entryPoints'][5]['upper'] = 359;
-		$course['entryPoints'][5]['amount'] = 13;
-		$course['entryPoints'][6]['lower'] = 360;
-		$course['entryPoints'][6]['upper'] = 399;
-		$course['entryPoints'][6]['amount'] = 20;
-		$course['entryPoints'][7]['lower'] = 400;
-		$course['entryPoints'][7]['upper'] = 439;
-		$course['entryPoints'][7]['amount'] = 3;
-		$course['students']['registered'] = 390;
-		$course['students']['male'] = 92.0;
-		$course['students']['female'] = 8;
-		$course['students']['mature'] = 22;
-		$course['students']['overseas'] = 1;
-		$course['students']['fullTime'] = 92;
-		$course['students']['partTime'] = 8;
-		$course['classification']['first'] = 10;
-		$course['classification']['upperSecond'] = 44;
-		$course['classification']['lowerSecond'] = 33;
-		$course['classification']['otherHonours'] = 11;
-		$course['classification']['ordinaryDegree'] = 0;
-		$course['classification']['notClassified'] = 2;
+		$courses['entryPoints'][0]['lower'] = 120;
+		$courses['entryPoints'][0]['upper'] = 159;
+		$courses['entryPoints'][0]['amount'] = 1;
+		$courses['entryPoints'][1]['lower'] = 160;
+		$courses['entryPoints'][1]['upper'] = 199;
+		$courses['entryPoints'][1]['amount'] = 8;
+		$courses['entryPoints'][2]['lower'] = 200;
+		$courses['entryPoints'][2]['upper'] = 239;
+		$courses['entryPoints'][2]['amount'] = 14;
+		$courses['entryPoints'][3]['lower'] = 247;
+		$courses['entryPoints'][3]['upper'] = 279;
+		$courses['entryPoints'][3]['amount'] = 17;
+		$courses['entryPoints'][4]['lower'] = 280;
+		$courses['entryPoints'][4]['upper'] = 319;
+		$courses['entryPoints'][4]['amount'] = 23;
+		$courses['entryPoints'][5]['lower'] = 320;
+		$courses['entryPoints'][5]['upper'] = 359;
+		$courses['entryPoints'][5]['amount'] = 13;
+		$courses['entryPoints'][6]['lower'] = 360;
+		$courses['entryPoints'][6]['upper'] = 399;
+		$courses['entryPoints'][6]['amount'] = 20;
+		$courses['entryPoints'][7]['lower'] = 400;
+		$courses['entryPoints'][7]['upper'] = 439;
+		$courses['entryPoints'][7]['amount'] = 3;
+		$courses['students']['registered'] = 390;
+		$courses['students']['male'] = 92.0;
+		$courses['students']['female'] = 8;
+		$courses['students']['mature'] = 22;
+		$courses['students']['overseas'] = 1;
+		$courses['students']['fullTime'] = 92;
+		$courses['students']['partTime'] = 8;
+		$courses['classification']['first'] = 10;
+		$courses['classification']['upperSecond'] = 44;
+		$courses['classification']['lowerSecond'] = 33;
+		$courses['classification']['otherHonours'] = 11;
+		$courses['classification']['ordinaryDegree'] = 0;
+		$courses['classification']['notClassified'] = 2;
 		
 		
 		
 		
-		$this->mongo_db->insert('courses', $course);
+		$this->mongo_db->insert('courses', $courses);
 		return 'Inserted Lincoln G403 <br>';
 	}
 
@@ -1424,6 +1424,248 @@ class Dummy_data_model extends CI_Model {
 	
 
 	}
+	
+	public function xcri($url = 'http://127.0.0.1/coursedata/dummyData/xcri.xml')
+	{
+		if(isset($_GET['url']))
+			$url = $_GET['url'];
+		
+		$xcriArray = $this->xml2array(file_get_contents($url));
+		$provider = $xcriArray['catalog']['provider'];
+		$institution = array();
+		$institution['_id'] = 0;
+		foreach($provider['dc:identifier'] as $identifier)
+		{
+				if((isset($identifier['attr']['xsi:type'])) && ($identifier['attr']['xsi:type'] == 'ukrlp:ukprn'))
+					$institution['_id'] = intval($identifier['value']);
+				else
+					$institution['identifiers'][] = $identifier['value'];
+		}
+		
+		if(isset($provider['mlo:url']))
+			$institution['url'] = $provider['mlo:url']['value'];
+			
+		if(isset($provider['mlo:location']['mlo:postcode']))
+			$institution['location']['postcode'] = $provider['mlo:location']['mlo:postcode']['value'];
+			
+		if(isset($provider['mlo:location']['mlo:address']))
+		{
+			foreach($provider['mlo:location']['mlo:address'] as $addressLine)
+			{
+				if((isset($addressLine['attr']['xsi:type'])) && ($addressLine['attr']['xsi:type'] == 'geo:lat'))
+					$institution['location']['latitude'] = $addressLine['value'];
+				elseif((isset($addressLine['attr']['xsi:type'])) && ($addressLine['attr']['xsi:type'] == 'geo:long'))
+					$institution['location']['longitude'] = $addressLine['value'];
+				else
+					$institution['location']['address'][] = $addressLine['value'];
+			}
+		}
+		
+		if(isset($provider['mlo:location']['mlo:phone']))
+			$institution['telephone'] = $provider['mlo:location']['mlo:phone']['value'];
+		
+		$this->mongo_db->where(array('_id' => $institution['_id']))
+						->set(array('identifiers' => $institution['identifiers'], 
+						'location' => $institution['location'], 'url' => $institution['url'], 
+						'telephone' => $institution['telephone']))->update('institutions');
+		
+		for($i = 0; $i < count($xcriArray['catalog']['provider']['course']); $i++)
+		{
+			$courses = array();
+			$course = $xcriArray['catalog']['provider']['course'][$i];
+			
+			$courses['_id'] = '';
+			$courses['identifiers'] = array();
+			foreach($course['dc:identifier'] as $identifier)
+			{
+				if((isset($identifier['attr']['xsi:type'])) && ($identifier['attr']['xsi:type'] == 'ucas:courseID'))
+					$courses['_id'] = $identifier['value'];
+				elseif((isset($identifier['attr']['xsi:type'])) && ($identifier['attr']['xsi:type'] == 'courseDataProgramme:internalID'))
+					$courses['identifiers']['internalID'] = $identifier['value'];
+				else
+					$courses['identifiers'][] = $identifier['value'];
+			}
+			if(isset($course['dc:description']))
+				$courses['description'] = $course['dc:description']['value'];
+			
+			if(isset($course['presentation'][0]))
+			{	
+				foreach($course['presentation'] as $presentation)
+				{
+					$thisPresentation = array();
+					if(isset($presentation['dc:identifier']))
+						$thisPresentation['identifiers'] = $presentation['dc:identifier'];
+					if(isset($presentation['mlo:duration']))
+						$thisPresentation['duration'] = $presentation['mlo:duration']['value'];
+					if(isset($presentation['studyMode']))
+						$thisPresentation['studyMode'] = $presentation['studyMode']['value'];
+					if(isset($presentation['attendanceMode']))
+						$thisPresentation['attendanceMode'] = $presentation['attendanceMode']['value'];
+					if(isset($presentation['attendancePattern']))
+						$thisPresentation['attendancePattern'] = $presentation['attendancePattern']['value'];
+					$courses['presentation'][] = $thisPresentation;
+				}
+			}
+			elseif(isset($course['presentation']))
+			{
+				if(isset($course['presentation']['dc:identifier']))
+						$thisPresentation['identifiers'] = $course['presentation']['dc:identifier'];
+				if(isset($course['presentation']['mlo:duration']))
+					$thisPresentation['duration'] = $course['presentation']['mlo:duration']['value'];
+				if(isset($course['presentation']['studyMode']))
+					$thisPresentation['studyMode'] = $course['presentation']['studyMode']['value'];
+				if(isset($course['presentation']['attendanceMode']))
+					$thisPresentation['attendanceMode'] = $course['presentation']['attendanceMode']['value'];
+				if(isset($course['presentation']['attendancePattern']))
+					$thisPresentation['attendancePattern'] = $course['presentation']['attendancePattern']['value'];
+				$courses['presentation'][] = $thisPresentation;
+			}
+			
+			$this->mongo_db->where(array('ucasProgrammeCode' => strval(($courses['_id']))))
+						->set(array('identifiers' => $courses['identifiers']));
+			if(isset($courses['description'])) 
+						$this->mongo_db->set(array('description' => $courses['description']));
+			if(isset($courses['presentation']))
+						$this->mongo_db->set(array('presentation' => $courses['presentation']))->update('courses');	
+		}
+				
+}
+		
+	
+	
+	
+	
+	/** 
+ 	* xml2array() will convert the given XML text to an array in the XML structure. 
+ 	* Link: http://www.bin-co.com/php/scripts/xml2array/ 
+ 	* Arguments : $contents - The XML text 
+ 	*                $get_attributes - 1 or 0. If this is 1 the function will get the attributes as well as the tag values - this results in a different array structure in the return value.
+ 	*                $priority - Can be 'tag' or 'attribute'. This will change the way the resulting array sturcture. For 'tag', the tags are given more importance.
+ 	* Return: The parsed XML in an array form. Use print_r() to see the resulting array structure.
+ 	* Examples: $array =  xml2array(file_get_contents('feed.xml')); 
+ 	*              $array =  xml2array(file_get_contents('feed.xml', 1, 'attribute')); 
+ 	*/ 
+	function xml2array($contents, $get_attributes=1, $priority = 'attribute') { 
+    if(!$contents) return array(); 
+
+    if(!function_exists('xml_parser_create')) { 
+        //print "'xml_parser_create()' function not found!"; 
+        return array(); 
+    } 
+
+    //Get the XML parser of PHP - PHP must have this module for the parser to work 
+    $parser = xml_parser_create(''); 
+    xml_parser_set_option($parser, XML_OPTION_TARGET_ENCODING, "UTF-8"); # http://minutillo.com/steve/weblog/2004/6/17/php-xml-and-character-encodings-a-tale-of-sadness-rage-and-data-loss 
+    xml_parser_set_option($parser, XML_OPTION_CASE_FOLDING, 0); 
+    xml_parser_set_option($parser, XML_OPTION_SKIP_WHITE, 1); 
+    xml_parse_into_struct($parser, trim($contents), $xml_values); 
+    xml_parser_free($parser); 
+
+    if(!$xml_values) return;//Hmm... 
+
+    //Initializations 
+    $xml_array = array(); 
+
+    $current = &$xml_array; //Refference 
+
+    //Go through the tags. 
+    $repeated_tag_index = array();//Multiple tags with same name will be turned into an array
+    foreach($xml_values as $data) { 
+        unset($attributes,$value);//Remove existing values, or there will be trouble 
+
+        //This command will extract these variables into the foreach scope 
+        // tag(string), type(string), level(int), attributes(array). 
+        extract($data);//We could use the array by itself, but this cooler. 
+
+        $result = array(); 
+        $attributes_data = array(); 
+         
+        if(isset($value)) { 
+            if($priority == 'tag') $result = $value; 
+            else $result['value'] = $value; //Put the value in a assoc array if we are in the 'Attribute' mode
+        } 
+
+        //Set the attributes too. 
+        if(isset($attributes) and $get_attributes) { 
+            foreach($attributes as $attr => $val) { 
+                if($priority == 'tag') $attributes_data[$attr] = $val; 
+                else $result['attr'][$attr] = $val; //Set all the attributes in a array called 'attr' 
+            } 
+        } 
+
+        //See tag status and do the needed. 
+        if($type == "open") {//The starting of the tag '<tag>' 
+            $parent[$level-1] = &$current; 
+            if(!is_array($current) or (!in_array($tag, array_keys($current)))) { //Insert New tag
+                $current[$tag] = $result; 
+                if($attributes_data) $current[$tag. '_attr'] = $attributes_data; 
+                $repeated_tag_index[$tag.'_'.$level] = 1; 
+
+                $current = &$current[$tag]; 
+
+            } else { //There was another element with the same tag name 
+
+                if(isset($current[$tag][0])) {//If there is a 0th element it is already an array 
+                    $current[$tag][$repeated_tag_index[$tag.'_'.$level]] = $result; 
+                    $repeated_tag_index[$tag.'_'.$level]++; 
+                } else {//This section will make the value an array if multiple tags with the same name appear together
+                    $current[$tag] = array($current[$tag],$result);//This will combine the existing item and the new item together to make an array
+                    $repeated_tag_index[$tag.'_'.$level] = 2; 
+                     
+                    if(isset($current[$tag.'_attr'])) { //The attribute of the last(0th) tag must be moved as well
+                        $current[$tag]['0_attr'] = $current[$tag.'_attr']; 
+                        unset($current[$tag.'_attr']); 
+                    } 
+
+                } 
+                $last_item_index = $repeated_tag_index[$tag.'_'.$level]-1; 
+                $current = &$current[$tag][$last_item_index]; 
+            } 
+
+        } elseif($type == "complete") { //Tags that ends in 1 line '<tag />' 
+            //See if the key is already taken. 
+            if(!isset($current[$tag])) { //New Key 
+                $current[$tag] = $result; 
+                $repeated_tag_index[$tag.'_'.$level] = 1; 
+                if($priority == 'tag' and $attributes_data) $current[$tag. '_attr'] = $attributes_data;
+
+            } else { //If taken, put all things inside a list(array) 
+                if(isset($current[$tag][0]) and is_array($current[$tag])) {//If it is already an array... 
+
+                    // ...push the new element into that array. 
+                    $current[$tag][$repeated_tag_index[$tag.'_'.$level]] = $result; 
+                     
+                    if($priority == 'tag' and $get_attributes and $attributes_data) { 
+                        $current[$tag][$repeated_tag_index[$tag.'_'.$level] . '_attr'] = $attributes_data; 
+                    } 
+                    $repeated_tag_index[$tag.'_'.$level]++; 
+
+                } else { //If it is not an array... 
+                    $current[$tag] = array($current[$tag],$result); //...Make it an array using using the existing value and the new value
+                    $repeated_tag_index[$tag.'_'.$level] = 1; 
+                    if($priority == 'tag' and $get_attributes) { 
+                        if(isset($current[$tag.'_attr'])) { //The attribute of the last(0th) tag must be moved as well
+                             
+                            $current[$tag]['0_attr'] = $current[$tag.'_attr']; 
+                            unset($current[$tag.'_attr']); 
+                        } 
+                         
+                        if($attributes_data) { 
+                            $current[$tag][$repeated_tag_index[$tag.'_'.$level] . '_attr'] = $attributes_data; 
+                        } 
+                    } 
+                    $repeated_tag_index[$tag.'_'.$level]++; //0 and 1 index is already taken 
+                } 
+            } 
+
+        } elseif($type == 'close') { //End of tag '</tag>' 
+            $current = &$parent[$level-1]; 
+        } 
+    } 
+     
+    return($xml_array); 
+	}  
+
 	
 	
 	
