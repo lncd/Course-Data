@@ -1,6 +1,27 @@
-<?php error_reporting(E_ALL);
-ini_set('display_errors', '1'); ?>
+<?php
+	/**
+ 	* MyClass File Doc Comment
+ 	*
+ 	* PHP Version 5
+ 	*
+ 	* @category CourseDataAPIs
+ 	* @package	CourseDataAPIs
+ 	* @author   Jamie Mahoney <jmahoney127@googlemail.com>
+ 	* @license  http://www.php.net/license/3_01.txt  PHP License 3.01
+ 	* @link     coursedata.blogs.lincoln.ac.uk
+ 	*
+ 	*/
 
+	/**
+ 	* DummyData View
+ 	*
+ 	* @category CourseDataAPIs
+	* @package	CourseDataAPIs
+ 	* @author   Jamie Mahoney <jmahoney127@googlemail.com>
+ 	* @license  http://www.php.net/license/3_01.txt  PHP License 3.01
+ 	* @link     coursedata.blogs.lincoln.ac.uk
+ 	*/
+ ?>
 <!doctype html>
 <!--[if IEMobile 7 ]><html class="no-js iem7" lang="en"><![endif]-->
 <!--[if lt IE 7 ]><html class="no-js ie ie6" lang="en"><![endif]-->
@@ -57,15 +78,28 @@ ini_set('display_errors', '1'); ?>
 	
 		<div class="grid_12">
 		<h2>Data Creation Progress:</h2>
-		<?php echo $output; ?>
+		<?php
+			echo $output;
+		?>
 		<hr>
 		<h2>API Testing:</h2>
-		<p>Tests carried out: <?php echo $amountTest; ?></p>
-		<p>Tests passed: <?php echo $amountPass; ?></p>
-		<p>Tests failed: <?php echo $amountFail; ?></p>
-		<?php if(isset($errors)) { ?>
+		<p>Tests carried out: <?php
+								echo $amount_test;
+								?></p>
+		<p>Tests passed: <?php
+					echo $amount_pass; ?>
+					</p>
+		<p>Tests failed: <?php 
+		echo $amount_fail; 
+		?></p>
+		
+		<?php
+		if(isset($errors)) {
+		?>
+		
 		<h3>Errors:</h3>
-			<?php foreach($errors as $error)
+			<?php
+			foreach($errors as $error)
 					echo $error . '<br>';
 					}
 			?>

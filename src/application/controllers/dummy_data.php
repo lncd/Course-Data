@@ -36,9 +36,9 @@ class Dummy_data extends CI_Controller {
 		$data['output'] = $this->dummy_data_model->remove_kis_data();
 		$data['output'].= $this->_create_kis_data();
 		$returned = $this->_test_api();
-		$data['amountTest'] = $returned['results']['amount'];
-		$data['amountPass'] = $returned['results']['pass'];
-		$data['amountFail'] = $returned['results']['fail'];
+		$data['amount_test'] = $returned['results']['amount'];
+		$data['amount_pass'] = $returned['results']['pass'];
+		$data['amount_fail'] = $returned['results']['fail'];
 		$data['errors'] = $returned['errors'];
 		$this->load->view('dummyData.php', $data);
 		$this->dummy_data_model->xcri('http://localhost:8888/cdata/dummyData/xcri.xml');
@@ -78,7 +78,7 @@ class Dummy_data extends CI_Controller {
 				for($i = 1; $i < sizeof($lines); $i++)
 				{
 					$get_url = $url_base . $lines[$i][0] . '?' . $lines[$i][1];
-					$get_url = str_replace(' ', '', $url);
+					$get_url = str_replace(' ', '', $get_url);
 					$check = json_decode(file_get_contents($get_url));
 					
 					if(($check->error === strval($lines[$i][2])) && ($check->count === strval($lines[$i][3])))
