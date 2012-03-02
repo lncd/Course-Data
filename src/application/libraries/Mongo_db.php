@@ -37,7 +37,6 @@ class Mongo_db {
 	public  $wheres = array(); // Public to make debugging easier
 	private $sorts = array();
 	public $updates = array(); // Public to make debugging easier
-	public $amountWheres = 0;
 	
 	private $limit = 999999;
 	private $offset = 0;
@@ -135,7 +134,7 @@ class Mongo_db {
 	{
 		if (empty($db))
 		{
-			show_error('Failed to drop MongoDB Coda cannot run the selected plug-in. Make sure you have execute permissions to the script or contact the plug-in author for information. because database name is empty', 500);
+			show_error('Failed to drop MongoDB collection because database name is empty', 500);
 		}
 	
 		if (empty($col))
@@ -342,8 +341,6 @@ class Mongo_db {
 		$this->wheres[$field]['$gte'] = $x;
 		return($this);
 	}
-	
-
 
 	/**
 	*	--------------------------------------------------------------------------------
@@ -445,7 +442,7 @@ class Mongo_db {
 	function where_near($field = '', $co = array())
 	{
 		$this->__where_init($field);
-		//$this->where[$what]['$near'] = $co;
+		$this->where[$what]['$near'] = $co;
 		return ($this);
 	}
 	
@@ -601,7 +598,6 @@ class Mongo_db {
 	 		 	
 	 	$documents = $this->db->{$collection}->find($this->wheres, $this->selects)->limit((int) $this->limit)->skip((int) $this->offset)->sort($this->sorts);
 	 	
-		$this->amountWheres = sizeof($this->wheres);
 	 	// Clear
 	 	$this->_clear();
 	 	
@@ -1254,7 +1250,7 @@ class Mongo_db {
 		{
 			show_error("Index could not be removed from MongoDB Collection because no keys were specified", 500);
 		}
-		/*
+		
 		if ($this->db->{$collection}->deleteIndex($keys, $options) == TRUE)
 		{
 			$this->_clear();
@@ -1263,7 +1259,7 @@ class Mongo_db {
 		else
 		{
 			show_error("An error occured when trying to remove an index from MongoDB Collection", 500);
-		}*/
+		}
 	}
 	
 	/**
