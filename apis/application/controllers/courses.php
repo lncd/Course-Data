@@ -191,7 +191,7 @@ class Courses extends CI_Controller {
 		else
 		{
 			$results['error'] = 1;
-			$results['cout'] = 0;
+			$results['count'] = 0;
 			$results['message'] = 'No valid criteria specified. ';
 		}
 		
