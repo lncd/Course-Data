@@ -155,13 +155,13 @@ class Courses extends CI_Controller {
 			$this->mongo_db->where_gte('classification.lowerSecond', floatval($this->input->get('lowerSecond')));
 		
 		if($this->input->get('presDesc'))
-			$this->mongo_db->like('description', $this->input->get('presDesc']);
+			$this->mongo_db->like('description', $this->input->get('presDesc'));
 		
 		if($this->input->get('presID'))
 			$this->mongo_db->where('presentation.presentationID', intval($this->input->get('presID')));
 		
 		if($this->input->get('presIdentifier'))
-			$this->mongo_db->where('presentation.identifiers', $this->input->get('preseIdentifier']);
+			$this->mongo_db->where('presentation.identifiers', $this->input->get('preseIdentifier'));
 		
 		if($this->input->get('presInternalID'))
 			$this->mongo_db->where('presentation.identifiers.internalID', intval($this->input->get('internalID')));
