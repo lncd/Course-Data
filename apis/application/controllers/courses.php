@@ -44,7 +44,7 @@ class Courses extends CI_Controller {
 			$this->mongo_db->like('courseTitle', $_GET['courseTitle']);
 			
 		if(isset($_GET['distance']))
-			$this->mongo_db->where('distanceLearningOnly', $_GET['distance']);
+			$this->mongo_db->where('distanceLearningOnly', intval($_GET['distance']));
 			
 		if(isset($_GET['level']))
 			$this->mongo_db->where('levelOfAward', $_GET['level']);
@@ -183,7 +183,7 @@ class Courses extends CI_Controller {
 			}
 			else
 			{
-			$results['error'] = 1;
+			$results['error'] = 0;
 			$results['count'] = 0;
 			$results['message'] = 'No results returned.';
 			}
