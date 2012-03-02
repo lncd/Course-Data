@@ -1414,7 +1414,7 @@ class Dummy_data_model extends CI_Model {
 	* Function takes data from xcri feed
 	*
 	* @return Confirmation message
-	* @aurl URL of xcri xml file
+	* @param string $aurl URL of xcri xml file.
 	* @access Public
 	*/
 	public function xcri($aurl = 'http://127.0.0.1/coursedata/dummyData/xcri.xml')
@@ -1501,7 +1501,7 @@ class Dummy_data_model extends CI_Model {
 			elseif(isset($course['presentation']))
 			{
 				if(isset($course['presentation']['dc:identifier']))
-						$thisPresentation['identifiers'] = $course['presentation']['dc:identifier'];
+						$this_resentation['identifiers'] = $course['presentation']['dc:identifier'];
 				if(isset($course['presentation']['mlo:duration']))
 					$this_presentation['duration'] = $course['presentation']['mlo:duration']['value'];
 				if(isset($course['presentation']['studyMode']))
@@ -1529,13 +1529,11 @@ class Dummy_data_model extends CI_Model {
 	
 	/** 
  	* xml2array() will convert the given XML text to an array in the XML structure. 
- 	* Link: http://www.bin-co.com/php/scripts/xml2array/ 
- 	* Arguments : $contents - The XML text 
- 	*                $get_attributes - 1 or 0. If this is 1 the function will get the attributes as well as the tag values - this results in a different array structure in the return value.
- 	*                $priority - Can be 'tag' or 'attribute'. This will change the way the resulting array sturcture. For 'tag', the tags are given more importance.
- 	* Return: The parsed XML in an array form. Use print_r() to see the resulting array structure.
- 	* Examples: $array =  xml2array(file_get_contents('feed.xml')); 
- 	*              $array =  xml2array(file_get_contents('feed.xml', 1, 'attribute')); 
+ 	*
+ 	* @param string $contents the Contents string
+ 	* @param int $get_attributes Boolean operator
+ 	* @param string $priority Denotes what elements have priority
+ 	* @return Returns array of xml elements
  	*/ 
 	function xml2array($contents, $get_attributes=1, $priority = 'attribute') { 
     if(!$contents) return array(); 
@@ -1553,12 +1551,12 @@ class Dummy_data_model extends CI_Model {
     xml_parse_into_struct($parser, trim($contents), $xml_values); 
     xml_parser_free($parser); 
 
-    if(!$xml_values) return;//Hmm... 
+    if(!$xml_values) return; 
 
     //Initializations 
     $xml_array = array(); 
 
-    $current = &$xml_array; //Refference 
+    $current = &$xml_array;
 
     //Go through the tags. 
     $repeated_tag_index = array();//Multiple tags with same name will be turned into an array
@@ -1664,5 +1662,5 @@ class Dummy_data_model extends CI_Model {
 }
 
 
-/* End of file dummy_data_model.php */
-/* Location: ./models/dummy_data_model.php */
+// End of file dummy_data_model.php
+// Location: ./models/dummy_data_model.php
