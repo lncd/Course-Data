@@ -34,137 +34,137 @@ class Courses extends CI_Controller {
 	{
 		$results = array();
 		
-		if(isset($this->mongo_db->get('kisID'))
-			$this->mongo_db->where('_id', $this->mongo_db->get('kisID'));
+		if(isset($this->input->get('kisID')))
+			$this->mongo_db->where('_id', $this->input->get(('kisID'));
 		
-		if(isset($_GET['institution']))
-			$this->mongo_db->where('applicationUKPRN', $_GET['institution']);
+		if(isset($this->input->get('institution')))
+			$this->mongo_db->where('applicationUKPRN', $this->input->get('institution']);
 			
-		if(isset($_GET['courseTitle']))
-			$this->mongo_db->like('courseTitle', $_GET['courseTitle']);
+		if(isset($this->input->get('courseTitle')))
+			$this->mongo_db->like('courseTitle', $this->input->get('courseTitle']);
 			
-		if(isset($_GET['distance']))
-			$this->mongo_db->where('distanceLearningOnly', intval($_GET['distance']));
+		if(isset($this->input->get('distance')))
+			$this->mongo_db->where('distanceLearningOnly', intval($this->input->get('distance'));
 			
-		if(isset($_GET['level']))
-			$this->mongo_db->where('levelOfAward', $_GET['level']);
+		if(isset($this->input->get('level')))
+			$this->mongo_db->where('levelOfAward', $this->input->get('level'));
 			
-		if(isset($_GET['partTime']))
-			$this->mongo_db->where('partTimeOnly', intval($_GET['partTime']));
+		if(isset($this->input->get('partTime')))
+			$this->mongo_db->where('partTimeOnly', intval($this->input->get('partTime'));
 		
-		if(isset($_GET['jacs']))
-			$this->mongo_db->where('fullJacs', $_GET['jacs']);
+		if(isset($this->input->get('jacs')))
+			$this->mongo_db->where('fullJacs', $this->input->get('jacs'));
 			
-		if(isset($_GET['teacher']))
-			$this->mongo_db->where('teacherTraining', intval($_GET['teacher']));
+		if(isset($this->input->get('teacher')))
+			$this->mongo_db->where('teacherTraining', intval($this->input->get('teacher')));
 			
-		if(isset($_GET['ucas']))
-			$this->mongo_db->where('ucasProgrammeCode', $_GET['ucas']);			
+		if(isset($this->input->get('ucas')))
+			$this->mongo_db->where('ucasProgrammeCode', $this->input->get('ucas']);			
 		
-		if(isset($_GET['feeWaiver']))
-			$this->mongo_db->where('feeWaiver', $_GET['feeWaiver']);
+		if(isset($this->input->get('feeWaiver')))
+			$this->mongo_db->where('feeWaiver', $this->input->get('feeWaiver'));
 			
-		if(isset($_GET['maxFee']))
-			$this->mongo_db->where_lte('maxFee', intval($_GET['maxFee']));
+		if(isset($this->input->get('maxFee')))
+			$this->mongo_db->where_lte('maxFee', intval($this->input->get('maxFee')));
 			
-		if(isset($_GET['meansTested']))
-			$this->mongo_db->where('meansTested', intval($_GET['meansTested']));
+		if(isset($this->input->get('meansTested')))
+			$this->mongo_db->where('meansTested', intval($this->input->get('meansTested')));
 			
-		if(isset($_GET['nssQuality']))
-			$this->mongo_db->where_gte('nss.overall.quality', floatval($_GET['nssQuality']));
+		if(isset($this->input->get('nssQuality')))
+			$this->mongo_db->where_gte('nss.overall.quality', floatval($this->input->get('nssQuality')));
 			
-		if(isset($_GET['nssExplaining']))
-			$this->mongo_db->where_gte('nss.teaching.explaining', floatval($_GET['nssExplaining']));
+		if(isset($this->input->get('nssExplaining')))
+			$this->mongo_db->where_gte('nss.teaching.explaining', floatval($this->input->get('nssExplaining')));
 			
-		if(isset($_GET['nssInteresting']))
-			$this->mongo_db->where_gte('nss.teaching.interesting', floatval($_GET['nssInteresting']));
+		if(isset($this->input->get('nssInteresting')))
+			$this->mongo_db->where_gte('nss.teaching.interesting', floatval($this->input->get('nssInteresting')));
 			
-		if(isset($_GET['nssEnthusiastic']))
-			$this->mongo_db->where_gte('nss.teaching.enthusiastic', floatval($_GET['nssEnthusiastic']));	
+		if(isset($this->input->get('nssEnthusiastic')))
+			$this->mongo_db->where_gte('nss.teaching.enthusiastic', floatval($this->input->get('nssEnthusiastic')));	
 		
-		if(isset($_GET['nssStimulating']))
-			$this->mongo_db->where_gte('nss.teaching.stimulating', floatval($_GET['nssStimulating']));
+		if(isset($this->input->get('nssStimulating')))
+			$this->mongo_db->where_gte('nss.teaching.stimulating', floatval($this->input->get('nssStimulating')));
 			
-		if(isset($_GET['nssCriteria']))
-			$this->mongo_db->where_gte('nss.assessment.criteria', floatval($_GET['nssCriteria']));
+		if(isset($this->input->get('nssCriteria')))
+			$this->mongo_db->where_gte('nss.assessment.criteria', floatval($this->input->get('nssCriteria')));
 			
-		if(isset($_GET['nssFair']))
-			$this->mongo_db->where_gte('nss.assessment.fair', floatval($_GET['nssFair']));
+		if(isset($this->input->get('nssFair')))
+			$this->mongo_db->where_gte('nss.assessment.fair', floatval($this->input->get('nssFair')));
 		
-		if(isset($_GET['nssPrompt']))
-			$this->mongo_db->where_gte('nss.assessment.prompt', floatval($_GET['nssPrompt']));
+		if(isset($this->input->get('nssPrompt')))
+			$this->mongo_db->where_gte('nss.assessment.prompt', floatval($this->input->get('nssPrompt')));
 			
-		if(isset($_GET['nssComments']))
-			$this->mongo_db->where_gte('nss.assessment.comments', floatval($_GET['nssComments']));
+		if(isset($this->input->get('nssComments')))
+			$this->mongo_db->where_gte('nss.assessment.comments', floatval($this->input->get('nssComments')));
 		
-		if(isset($_GET['nssClarify']))
-			$this->mongo_db->where_gte('nss.assessment.clarify', floatval($_GET['nssClarify']));
+		if(isset($this->input->get('nssClarify')))
+			$this->mongo_db->where_gte('nss.assessment.clarify', floatval($this->input->get('nssClarify')));
 			
-		if(isset($_GET['nssSupport']))
-			$this->mongo_db->where_gte('nss.academic.support', floatval($_GET['nssSupport']));	
+		if(isset($this->input->get('nssSupport')))
+			$this->mongo_db->where_gte('nss.academic.support', floatval($this->input->get('nssSupport')));	
 			
-		if(isset($_GET['nssContact']))
-			$this->mongo_db->where_gte('nss.academic.contact', floatval($_GET['nssContact']));	
+		if(isset($this->input->get('nssContact')))
+			$this->mongo_db->where_gte('nss.academic.contact', floatval($this->input->get('nssContact')));	
 			
-		if(isset($_GET['nssAdvice']))
-			$this->mongo_db->where_gte('nss.academic.advice', floatval($_GET['nssAdvice']));	
+		if(isset($this->input->get('nssAdvice')))
+			$this->mongo_db->where_gte('nss.academic.advice', floatval($this->input->get('nssAdvice')));	
 			
-		if(isset($_GET['nssTimetable']))
-			$this->mongo_db->where_gte('nss.organisation.timetable', floatval($_GET['nssTimetable']));
+		if(isset($this->input->get('nssTimetable')))
+			$this->mongo_db->where_gte('nss.organisation.timetable', floatval($this->input->get('nssTimetable')));
 			
-		if(isset($_GET['nssChanges']))
-			$this->mongo_db->where_gte('nss.organisation.changes', floatval($_GET['nssChanges']));
+		if(isset($this->input->get('nssChanges')))
+			$this->mongo_db->where_gte('nss.organisation.changes', floatval($this->input->get('nssChanges')));
 			
-		if(isset($_GET['nssOrganised']))
-			$this->mongo_db->where_gte('nss.organisation.organised', floatval($_GET['nssOrganised']));
+		if(isset($this->input->get('nssOrganised')))
+			$this->mongo_db->where_gte('nss.organisation.organised', floatval($this->input->get('nssOrganised')));
 			
-		if(isset($_GET['nssLibrary']))
-			$this->mongo_db->where_gte('nss.resources.library', floatval($_GET['nssLibrary']));
+		if(isset($this->input->get('nssLibrary')))
+			$this->mongo_db->where_gte('nss.resources.library', floatval($this->input->get('nssLibrary')));
 		
-		if(isset($_GET['nssICT']))
-			$this->mongo_db->where_gte('nss.resources.ict', floatval($_GET['nssICT']));
+		if(isset($this->input->get('nssICT')))
+			$this->mongo_db->where_gte('nss.resources.ict', floatval($this->input->get('nssICT')));
 			
-		if(isset($_GET['nssSpecialist']))
-			$this->mongo_db->where_gte('nss.resources.specialist', floatval($_GET['nssSpecialist']));
+		if(isset($this->input->get('nssSpecialist')))
+			$this->mongo_db->where_gte('nss.resources.specialist', floatval($this->input->get('nssSpecialist')));
 			
-		if(isset($_GET['nssConfidence']))
-			$this->mongo_db->where_gte('nss.development.confidence', floatval($_GET['nssConfidence']));
+		if(isset($this->input->get('nssConfidence')))
+			$this->mongo_db->where_gte('nss.development.confidence', floatval($this->input->get('nssConfidence')));
 		
-		if(isset($_GET['nssCommunication']))
-			$this->mongo_db->where_gte('nss.development.communication', floatval($_GET['nssCommunication']));
+		if(isset($this->input->get('nssCommunication')))
+			$this->mongo_db->where_gte('nss.development.communication', floatval($this->input->get('nssCommunication')));
 			
-		if(isset($_GET['nssUnfamiliar']))
-			$this->mongo_db->where_gte('nss.development.unfamiliar', floatval($_GET['nssUnfamiliar']));
+		if(isset($this->input->get('nssUnfamiliar')))
+			$this->mongo_db->where_gte('nss.development.unfamiliar', floatval($this->input->get('nssUnfamiliar')));
 			
-		if(isset($_GET['nssImpact']))
-			$this->mongo_db->where_gte('nss.studentsUnion.impact', floatval($_GET['nssImpact']));
+		if(isset($this->input->get('nssImpact')))
+			$this->mongo_db->where_gte('nss.studentsUnion.impact', floatval($this->input->get('nssImpact')));
 			
-		if(isset($_GET['graduateEmployment']))
-			$this->mongo_db->where_gte('employment.graduateEmployment', floatval($_GET['graduateEmployment']));
+		if(isset($this->input->get('graduateEmployment')))
+			$this->mongo_db->where_gte('employment.graduateEmployment', floatval($this->input->get('graduateEmployment')));
 		
-		if(isset($_GET['sixMonth']))
-			$this->mongo_db->where_gte('employment.sixMonth', intval($_GET['sixMonth']));
+		if(isset($this->input->get('sixMonth')))
+			$this->mongo_db->where_gte('employment.sixMonth', intval($this->input->get('sixMonth')));
 			
-		if(isset($_GET['first']))
-			$this->mongo_db->where_gte('classification.first', floatval($_GET['first']));
+		if(isset($this->input->get('first')))
+			$this->mongo_db->where_gte('classification.first', floatval($this->input->get('first')));
 		
-		if(isset($_GET['upperSecond']))
-			$this->mongo_db->where_gte('classification.upperSecond', floatval($_GET['upperSecond']));
+		if(isset($this->input->get('upperSecond')))
+			$this->mongo_db->where_gte('classification.upperSecond', floatval($this->input->get('upperSecond')));
 		
-		if(isset($_GET['lowerSecond']))
-			$this->mongo_db->where_gte('classification.lowerSecond', floatval($_GET['lowerSecond']));
+		if(isset($this->input->get('lowerSecond')))
+			$this->mongo_db->where_gte('classification.lowerSecond', floatval($this->input->get('lowerSecond')));
 		
-		if(isset($_GET['presDesc']))
-			$this->mongo_db->like('description', $_GET['presDesc']);
+		if(isset($this->input->get('presDesc')))
+			$this->mongo_db->like('description', $this->input->get('presDesc']);
 		
-		if(isset($_GET['presID']))
-			$this->mongo_db->where('presentation.presentationID', intval($_GET['presID']));
+		if(isset($this->input->get('presID')))
+			$this->mongo_db->where('presentation.presentationID', intval($this->input->get('presID')));
 		
-		if(isset($_GET['presIdentifier']))
-			$this->mongo_db->where('presentation.identifiers', $_GET['preseIdentifier']);
+		if(isset($this->input->get('presIdentifier')))
+			$this->mongo_db->where('presentation.identifiers', $this->input->get('preseIdentifier']);
 		
-		if(isset($_GET['presInternalID']))
-			$this->mongo_db->where('presentation.identifiers.internalID', intval($_GET['internalID']));
+		if(isset($this->input->get('presInternalID')))
+			$this->mongo_db->where('presentation.identifiers.internalID', intval($this->input->get('internalID')));
 		
 		$this->mongo_db->limit(50);
 		$output = $this->mongo_db->get('courses');
