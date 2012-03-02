@@ -1414,6 +1414,7 @@ class Dummy_data_model extends CI_Model {
 	* Function takes data from xcri feed
 	*
 	* @return Confirmation message
+	* @aurl URL of xcri xml file
 	* @access Public
 	*/
 	public function xcri($aurl = 'http://127.0.0.1/coursedata/dummyData/xcri.xml')
@@ -1443,9 +1444,9 @@ class Dummy_data_model extends CI_Model {
 		{
 			foreach($provider['mlo:location']['mlo:address'] as $address_line)
 			{
-				if((isset($address_line['attr']['xsi:type'])) && ($address_line['attr']['xsi:type'] == 'geo:lat'))
+				if((isset($address_line['attr']['xsi:type'])) AND ($address_line['attr']['xsi:type'] === 'geo:lat'))
 					$institution['location']['latitude'] = $address_line['value'];
-				elseif((isset($address_line['attr']['xsi:type'])) && ($address_line['attr']['xsi:type'] == 'geo:long'))
+				elseif((isset($address_line['attr']['xsi:type'])) AND ($address_line['attr']['xsi:type'] === 'geo:long'))
 					$institution['location']['longitude'] = $address_line['value'];
 				else
 					$institution['location']['address'][] = $address_line['value'];
