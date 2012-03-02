@@ -5,7 +5,7 @@
  * PHP Version 5
  *
  * @category DummyData
- * @package	DummyData
+ * @package  DummyData
  * @author   Jamie Mahoney <jmahoney127@googlemail.com>
  * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  * @link     coursedata.blogs.lincoln.ac.uk
@@ -16,7 +16,7 @@
  * Dummy_Data
  *
  * @category DummyData
- * @package	DummyData
+ * @package  DummyData
  * @author   Jamie Mahoney <jmahoney127@googlemail.com>
  * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  * @link     coursedata.blogs.lincoln.ac.uk
@@ -156,14 +156,14 @@ class Dummy_data_model extends CI_Model {
 		$username = 'root';
 		$password = 'root';
 		$hostname = 'localhost';	
-		$dbha = mysql_connect($hostname, $username, $password) or die('Unable to connect to MySQL');
+		$dbha = mysql_connect($hostname, $username, $password) OR die('Unable to connect to MySQL');
 		mysql_select_db('modules', $dbha);
 		
 		$sqla = "SELECT * FROM 13_programmes WHERE programme = '" . $courses['ucasProgrammeCode'] . "'";
-		$results = mysql_query($sqla) or die('Didnt work.');
-		while($aRow = mysql_fetch_array($results,MYSQL_ASSOC))
+		$results = mysql_query($sqla) OR die('Didnt work.');
+		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$courses['modules'][] = $aRow['moduleCode'];
+			$courses['modules'][] = $a_row['moduleCode'];
 		}
 		
 		$courses['entryPoints'][0]['lower'] = 120;
@@ -306,17 +306,17 @@ class Dummy_data_model extends CI_Model {
 		$course1['employment']['workAndStudy'] = 1.8;
 		$course1['employment']['other'] = 1.8;
 		$course1['employment']['unemployed'] = 12.5;
-		$username = "root";
-		$password = "root";
-		$hostname = "localhost";	
-		$dbha = mysql_connect($hostname, $username, $password) or die('Unable to connect to MySQL');
+		$username = 'root';
+		$password = 'root';
+		$hostname = 'localhost';	
+		$dbha = mysql_connect($hostname, $username, $password) OR die('Unable to connect to MySQL');
 		mysql_select_db('modules', $dbha);
 		
 		$sqla = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
-		$results = mysql_query($sqla) or die('Didnt work.');
-		while($aRow = mysql_fetch_array($results,MYSQL_ASSOC))
+		$results = mysql_query($sqla) OR die('Didnt work.');
+		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$course['modules'][] = $aRow['moduleCode'];
+			$course['modules'][] = $a_row['moduleCode'];
 		}
 
 
@@ -462,14 +462,14 @@ class Dummy_data_model extends CI_Model {
 		$username = 'root';
 		$password = 'root';
 		$hostname = 'localhost';	
-		$dbha = mysql_connect($hostname, $username, $password) or die('Unable to connect to MySQL');
+		$dbha = mysql_connect($hostname, $username, $password) OR die('Unable to connect to MySQL');
 		mysql_select_db('modules', $dbha);
 		
 		$sqla = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
-		$results = mysql_query($sqla) or die('Didnt work.');
-		while($aRow = mysql_fetch_array($results, MYSQL_ASSOC))
+		$results = mysql_query($sqla) OR die('Didnt work.');
+		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$course['modules'][] = $aRow['moduleCode'];
+			$course['modules'][] = $a_row['moduleCode'];
 		}
 		
 		$course2['entryPoints'][0]['lower'] = 160;
@@ -614,14 +614,14 @@ class Dummy_data_model extends CI_Model {
 		$username = 'root';
 		$password = 'root';
 		$hostname = 'localhost';	
-		$dbha = mysql_connect($hostname, $username, $password) or die('Unable to connect to MySQL');
+		$dbha = mysql_connect($hostname, $username, $password) OR die('Unable to connect to MySQL');
 		mysql_select_db('modules', $dbha);
 		
 		$sqla = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
-		$results = mysql_query($sqla) or die('Didnt work.');
-		while($aRow = mysql_fetch_array($results, MYSQL_ASSOC))
+		$results = mysql_query($sqla) OR die('Didnt work.');
+		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$course['modules'][] = $aRow['moduleCode'];
+			$course['modules'][] = $a_row['moduleCode'];
 		}
 		
 		$course3['entryPoints'][0]['lower'] = 160;
@@ -756,26 +756,17 @@ class Dummy_data_model extends CI_Model {
 		$course['nss']['development']['communication'] = 71;
 		$course['nss']['development']['unfamiliar'] = 67;
 		$course['nss']['studentsUnion']['impact'] = 75;
-		//$course['employment']['graduateEmployment'] = 70.7;
-		//$course['employment']['sixMonth'] = 17483;
-		//$course['employment']['workOrStudy'] = 79.3;
-		//$course['employment']['workOnly'] = 67.1;
-		//$course['employment']['studyOnly'] = 8.5;
-		//$course['employment']['workAndStudy'] = 3.7;
-		//$course['employment']['other'] = 6.1;
-		//$course['employment']['unemployed'] = 14.6;
-		//$course['studentsUnion']['impact'] = 75.0;
-		$username = "root";
-		$password = "root";
-		$hostname = "localhost";	
+		$username = 'root';
+		$password = 'root';
+		$hostname = 'localhost';	
 		$dbh = mysql_connect($hostname, $username, $password) or die("Unable to connect to MySQL");
 		mysql_select_db('modules',$dbh);
 		
 		$sql = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
 		$results = mysql_query($sql) or die('Didnt work.');
-		while($row = mysql_fetch_array($results,MYSQL_ASSOC))
+		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$course['modules'][] = $row['moduleCode'];
+			$course['modules'][] = $a_row['moduleCode'];
 		}
 
 		$course['entryPoints'][0]['lower'] = 160;
@@ -909,17 +900,17 @@ class Dummy_data_model extends CI_Model {
 		$course['employment']['workAndStudy'] = 2.9;
 		$course['employment']['other'] = 1.4;
 		$course['employment']['unemployed'] = 4.3;
-		$username = "root";
-		$password = "root";
-		$hostname = "localhost";	
-		$dbh = mysql_connect($hostname, $username, $password) or die("Unable to connect to MySQL");
-		mysql_select_db('modules',$dbh);
+		$username = 'root';
+		$password = 'root';
+		$hostname = 'localhost';	
+		$dbha = mysql_connect($hostname, $username, $password) OR die('Unable to connect to MySQL');
+		mysql_select_db('modules', $dbha);
 		
 		$sql = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
-		$results = mysql_query($sql) or die('Didnt work.');
-		while($row = mysql_fetch_array($results,MYSQL_ASSOC))
+		$results = mysql_query($sql) OR die('Didnt work.');
+		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$course['modules'][] = $row['moduleCode'];
+			$course['modules'][] = $a_row['moduleCode'];
 		}
 
 		$course['entryPoints'][0]['lower'] = 0;
@@ -1065,17 +1056,17 @@ class Dummy_data_model extends CI_Model {
 		$course['employment']['workAndStudy'] = 0.0;
 		$course['employment']['other'] = 0.0;
 		$course['employment']['unemployed'] = 17.2;
-		$username = "root";
-		$password = "root";
-		$hostname = "localhost";	
-		$dbh = mysql_connect($hostname, $username, $password) or die("Unable to connect to MySQL");
-		mysql_select_db('modules',$dbh);
+		$username = 'root';
+		$password = 'root';
+		$hostname = 'localhost';	
+		$dbha = mysql_connect($hostname, $username, $password) OR die("Unable to connect to MySQL");
+		mysql_select_db('modules', $dbha);
 		
-		$sql = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
-		$results = mysql_query($sql) or die('Didnt work.');
+		$sqla = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
+		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($row = mysql_fetch_array($results,MYSQL_ASSOC))
 		{
-			$course['modules'][] = $row['moduleCode'];
+			$course['modules'][] = $a_row['moduleCode'];
 		}
 		
 		$course['entryPoints'][0]['lower'] = 160;
@@ -1209,17 +1200,17 @@ class Dummy_data_model extends CI_Model {
 		$course['employment']['other'] = 3.1;
 		$course['employment']['unemployed'] = 6.7;
 		$course['studentsUnion']['impact'] = 75.0;
-		$username = "root";
-		$password = "root";
-		$hostname = "localhost";	
-		$dbh = mysql_connect($hostname, $username, $password) or die("Unable to connect to MySQL");
+		$username = 'root';
+		$password = 'root';
+		$hostname = 'localhost';	
+		$dbh = mysql_connect($hostname, $username, $password) OR die('Unable to connect to MySQL');
 		mysql_select_db('modules',$dbh);
 		
 		$sql = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
-		$results = mysql_query($sql) or die('Didnt work.');
-		while($row = mysql_fetch_array($results,MYSQL_ASSOC))
+		$results = mysql_query($sql) OR die('Didnt work.');
+		while($a_row = mysql_fetch_array($results,MYSQL_ASSOC))
 		{
-			$course['modules'][] = $row['moduleCode'];
+			$course['modules'][] = $a_row['moduleCode'];
 		}
 		
 		$course['entryPoints'][0]['lower'] = 0;
@@ -1272,7 +1263,6 @@ class Dummy_data_model extends CI_Model {
 		$course['classification']['ordinaryDegree'] = 0;
 		$course['classification']['notClassified'] = 0; 
 
-
 		$this->mongo_db->insert('courses', $course);
 		return 'Inserted Lincoln CN85 <br>';
 	}
@@ -1305,41 +1295,41 @@ class Dummy_data_model extends CI_Model {
 	*/
 	public function get_modules_sql()
 	{
-		$username = "root";
-		$password = "root";
-		$hostname = "localhost";	
-		$dbh = mysql_connect($hostname, $username, $password) or die("Unable to connect to MySQL");
-		mysql_select_db('modules',$dbh);
+		$username = 'root';
+		$password = 'root';
+		$hostname = 'localhost';	
+		$dbha = mysql_connect($hostname, $username, $password) OR die('Unable to connect to MySQL');
+		mysql_select_db('modules', $dbha);
 		
-		$returning = "";
+		$returning = '';
 		
-		$sql1 = "SELECT * FROM 03_module";
-		$result1 = mysql_query($sql1) or die('Couldn`t execute query 1.');
+		$sql1 = 'SELECT * FROM 03_module';
+		$result1 = mysql_query($sql1) OR die('Couldn`t execute query 1.');
 		$returning.= 'Amount of modules' . mysql_num_rows($result1) . '<br>';
 		//For each module
-		while($row = mysql_fetch_array($result1,MYSQL_ASSOC))
+		while($a_row = mysql_fetch_array($result1, MYSQL_ASSOC))
 		{
 			$module = array();
-			$module['_id'] = $row['code'];
-			$module['title'] = $row['title'];
-			$sql2 = "SELECT * FROM 01_department WHERE 01_department.id = " . $row['owningDepartment'];
-			$dep = mysql_fetch_row(mysql_query($sql2));
-			$module['owningDepartment'] = $dep[1];
-			$module['subject'] = $row['subject'];
-			$module['credits'] = $row['creditRating'];
-			$module['level'] = $row['level'];
-			$sql3 = "SELECT * FROM 02_staff WHERE 02_staff.staffID = " . $row['moduleCoordinator'];
+			$module['_id'] = $a_row['code'];
+			$module['title'] = $a_row['title'];
+			$sql2 = "SELECT * FROM 01_department WHERE 01_department.id = " . $a_row['owningDepartment'];
+			$depa = mysql_fetch_row(mysql_query($sql2));
+			$module['owningDepartment'] = $depa[1];
+			$module['subject'] = $a_row['subject'];
+			$module['credits'] = $a_row['creditRating'];
+			$module['level'] = $a_row['level'];
+			$sql3 = "SELECT * FROM 02_staff WHERE 02_staff.staffID = " . $a_row['moduleCoordinator'];
 			$coOrd = mysql_fetch_row(mysql_query($sql3));
 			$module['moduleCoOrdinator'] = 	$coOrd[1];
-			$module['moduleCoOrdinatorID'] = $row['moduleCoordinator'];
-			$module['moduleSynopsis'] = preg_replace('/[^(\x20-\x7F)]*/','', nl2br($row['moduleSynopsis']));
-			$module['outlineSyllabus'] = preg_replace('/[^(\x20-\x7F)]*/','', nl2br($row['outlineSyllabus']));
-			$module['ltMethods'] = preg_replace('/[^(\x20-\x7F)]*/','', nl2br($row['l_tMethods']));
+			$module['moduleCoOrdinatorID'] = $a_row['moduleCoordinator'];
+			$module['moduleSynopsis'] = preg_replace('/[^(\x20-\x7F)]*/','', nl2br($a_row['moduleSynopsis']));
+			$module['outlineSyllabus'] = preg_replace('/[^(\x20-\x7F)]*/','', nl2br($a_row['outlineSyllabus']));
+			$module['ltMethods'] = preg_replace('/[^(\x20-\x7F)]*/','', nl2br($a_row['l_tMethods']));
 			if($row['accreditation'] != '')
-				$module['accreditation'] = $row['accreditation'];
+				$module['accreditation'] = $a_row['accreditation'];
 			else
 				$module['accreditation'] = '';
-			$module['indicativeReading'] = preg_replace('/[^(\x20-\x7F)]*/','', nl2br($row['indicativeReading']));
+			$module['indicativeReading'] = preg_replace('/[^(\x20-\x7F)]*/','', nl2br($a_row['indicativeReading']));
 			$module['learningOutcomes'] = array();
 			
 			$sql4 = "SELECT * FROM 05_learningOutcomes INNER JOIN 06_moduleLearningOutcomes ON 06_moduleLearningOutcomes.outcomeID = 05_learningOutcomes.outcomeID WHERE 06_moduleLearningOutcomes.moduleCode = '" . $module['_id'] . "'";
@@ -1426,10 +1416,10 @@ class Dummy_data_model extends CI_Model {
 	
 	public function xcri($url = 'http://127.0.0.1/coursedata/dummyData/xcri.xml')
 	{
-		if(isset($_GET['url']))
-			$url = $_GET['url'];
+		if($this->input->get('url'))
+			$aurl = $this->input->get('url');
 		
-		$xcriArray = $this->xml2array(file_get_contents($url));
+		$xcriArray = $this->xml2array(file_get_contents($aurl));
 		$provider = $xcriArray['catalog']['provider'];
 		$institution = array();
 		$institution['_id'] = 0;
