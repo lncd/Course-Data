@@ -1,3 +1,0 @@
-http://localhost/coursedata/apis/index.php/
-courses;kisID=123456;0;1
-courses;kisID=321456;1;0
