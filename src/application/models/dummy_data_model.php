@@ -159,7 +159,7 @@ class Dummy_data_model extends CI_Model {
 		$dbh = mysql_connect($hostname, $username, $password) or die("Unable to connect to MySQL");
 		mysql_select_db('modules',$dbh);
 		
-		$sql = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
+		$sql = "SELECT * FROM 13_programmes WHERE programme = '" . $courses['ucasProgrammeCode'] . "'";
 		$results = mysql_query($sql) or die('Didnt work.');
 		while($row = mysql_fetch_array($results,MYSQL_ASSOC))
 		{
@@ -1315,8 +1315,7 @@ class Dummy_data_model extends CI_Model {
 		
 		$sql1 = "SELECT * FROM 03_module";
 		$result1 = mysql_query($sql1) or die('Couldn`t execute query 1.');
-		$returning.= 'Amount of modules' . mysql_num_rows($result1) . '<br>';		
-		$modules = array();
+		$returning.= 'Amount of modules' . mysql_num_rows($result1) . '<br>';
 		//For each module
 		while($row = mysql_fetch_array($result1,MYSQL_ASSOC))
 		{

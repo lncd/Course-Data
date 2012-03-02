@@ -445,7 +445,7 @@ class Mongo_db {
 	function where_near($field = '', $co = array())
 	{
 		$this->__where_init($field);
-		$this->where[$what]['$near'] = $co;
+		//$this->where[$what]['$near'] = $co;
 		return ($this);
 	}
 	
@@ -1254,7 +1254,7 @@ class Mongo_db {
 		{
 			show_error("Index could not be removed from MongoDB Collection because no keys were specified", 500);
 		}
-		
+		/*
 		if ($this->db->{$collection}->deleteIndex($keys, $options) == TRUE)
 		{
 			$this->_clear();
@@ -1263,7 +1263,7 @@ class Mongo_db {
 		else
 		{
 			show_error("An error occured when trying to remove an index from MongoDB Collection", 500);
-		}
+		}*/
 	}
 	
 	/**
