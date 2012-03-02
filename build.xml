@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Orbital Core" default="build">
+<project name="ON Course" default="build">
 	<target name="build"
-		depends="prepare,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdox,phpunit,phpcb"/>
+		depends="prepare,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdox,phpcb"/>
 	
 	<target name="build-parallel"
-		depends="prepare,lint,tools-parallel,phpunit,phpcb"/>
+		depends="prepare,lint,tools-parallel,phpcb"/>
 	
 	<target name="minimal"
 		depends="prepare,lint,phploc,pdepend,phpcpd,phpdox,phpcb" />
@@ -50,10 +50,6 @@
 				<modified />
 			</fileset>
 			
-			<fileset dir="${basedir}/tests">
-				<include name="**/*.php" />
-				<modified />
-			</fileset>
 		</apply>
 	</target>
 	
@@ -128,28 +124,6 @@
 	<target name="phpdox"
 		description="Generate API documentation using phpDox">
 		<exec executable="phpdox"/>
-	</target>
-	
-	<target name="phpunit" description="Run unit tests with PHPUnit">
-	
-		<replace file="${basedir}/tests/phpunit.xml">
-			<replacefilter token="@ORBITAL_CI_BASEURL@" value="${ORBITAL_CI_BASEURL}" />
-			<replacefilter token="@ORBITAL_CI_INDEXPAGE@" value="${ORBITAL_CI_INDEXPAGE}" />
-			<replacefilter token="@ORBITAL_CI_ENCRYPTKEY@" value="${ORBITAL_CI_ENCRYPTKEY}" />
-			<replacefilter token="@ORBITAL_CI_COOKIE_NAME_PREFIX@" value="${ORBITAL_CI_COOKIE_NAME_PREFIX}" />
-			<replacefilter token="@ORBITAL_INSTITUTION_NAME@" value="${ORBITAL_INSTITUTION_NAME}" />
-			<replacefilter token="@ORBITAL_CONTACT_NAME@" value="${ORBITAL_CONTACT_NAME}" />
-			<replacefilter token="@ORBITAL_CONTACT_EMAIL@" value="${ORBITAL_CONTACT_EMAIL}" />
-			<replacefilter token="@ORBITAL_MONGO_SERVERS@" value="${ORBITAL_MONGO_SERVERS}" />
-			<replacefilter token="@ORBITAL_MONGO_DATABASE@" value="${ORBITAL_MONGO_DATABASE}" />
-			<replacefilter token="@ORBITAL_MONGO_USER@" value="${ORBITAL_MONGO_USER}" />
-			<replacefilter token="@ORBITAL_MONGO_PASSWORD@" value="${ORBITAL_MONGO_PASSWORD}" />
-		</replace>
-	
-		<exec executable="phpunit" failonerror="true">
-			<arg value="-c" />
-			<arg path="${basedir}/tests/phpunit.xml" />
-		</exec>
 	</target>
 	
 	<target name="phpcb"
