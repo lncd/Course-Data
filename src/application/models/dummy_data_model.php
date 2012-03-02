@@ -759,11 +759,11 @@ class Dummy_data_model extends CI_Model {
 		$username = 'root';
 		$password = 'root';
 		$hostname = 'localhost';	
-		$dbh = mysql_connect($hostname, $username, $password) or die("Unable to connect to MySQL");
-		mysql_select_db('modules', $dbh);
+		$dbha = mysql_connect($hostname, $username, $password) OR die('Unable to connect to MySQL');
+		mysql_select_db('modules', $dbha);
 		
-		$sql = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
-		$results = mysql_query($sql) or die('Didnt work.');
+		$sqla = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
+		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
 			$course['modules'][] = $a_row['moduleCode'];
@@ -906,8 +906,8 @@ class Dummy_data_model extends CI_Model {
 		$dbha = mysql_connect($hostname, $username, $password) OR die('Unable to connect to MySQL');
 		mysql_select_db('modules', $dbha);
 		
-		$sql = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
-		$results = mysql_query($sql) OR die('Didnt work.');
+		$sqla = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
+		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
 			$course['modules'][] = $a_row['moduleCode'];
@@ -1059,7 +1059,7 @@ class Dummy_data_model extends CI_Model {
 		$username = 'root';
 		$password = 'root';
 		$hostname = 'localhost';	
-		$dbha = mysql_connect($hostname, $username, $password) OR die("Unable to connect to MySQL");
+		$dbha = mysql_connect($hostname, $username, $password) OR die('Unable to connect to MySQL');
 		mysql_select_db('modules', $dbha);
 		
 		$sqla = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
@@ -1203,11 +1203,11 @@ class Dummy_data_model extends CI_Model {
 		$username = 'root';
 		$password = 'root';
 		$hostname = 'localhost';	
-		$dbh = mysql_connect($hostname, $username, $password) OR die('Unable to connect to MySQL');
-		mysql_select_db('modules', $dbh);
+		$dbha = mysql_connect($hostname, $username, $password) OR die('Unable to connect to MySQL');
+		mysql_select_db('modules', $dbha);
 		
-		$sql = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
-		$results = mysql_query($sql) OR die('Didnt work.');
+		$sqla = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
+		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
 			$course['modules'][] = $a_row['moduleCode'];
@@ -1312,28 +1312,28 @@ class Dummy_data_model extends CI_Model {
 			$module = array();
 			$module['_id'] = $a_row['code'];
 			$module['title'] = $a_row['title'];
-			$sql2 = "SELECT * FROM 01_department WHERE 01_department.id = " . $a_row['owningDepartment'];
+			$sql2 = 'SELECT * FROM 01_department WHERE 01_department.id = ' . $a_row['owningDepartment'];
 			$depa = mysql_fetch_row(mysql_query($sql2));
 			$module['owningDepartment'] = $depa[1];
 			$module['subject'] = $a_row['subject'];
 			$module['credits'] = $a_row['creditRating'];
 			$module['level'] = $a_row['level'];
-			$sql3 = "SELECT * FROM 02_staff WHERE 02_staff.staffID = " . $a_row['moduleCoordinator'];
-			$coOrd = mysql_fetch_row(mysql_query($sql3));
-			$module['moduleCoOrdinator'] = 	$coOrd[1];
+			$sql3 = 'SELECT * FROM 02_staff WHERE 02_staff.staffID = ' . $a_row['moduleCoordinator'];
+			$coord = mysql_fetch_row(mysql_query($sql3));
+			$module['moduleCoOrdinator'] = 	$coord[1];
 			$module['moduleCoOrdinatorID'] = $a_row['moduleCoordinator'];
-			$module['moduleSynopsis'] = preg_replace('/[^(\x20-\x7F)]*/', '',  nl2br($a_row['moduleSynopsis']));
-			$module['outlineSyllabus'] = preg_replace('/[^(\x20-\x7F)]*/', '',  nl2br($a_row['outlineSyllabus']));
-			$module['ltMethods'] = preg_replace('/[^(\x20-\x7F)]*/', '',  nl2br($a_row['l_tMethods']));
-			if($a_row['accreditation'] != '')
+			$module['moduleSynopsis'] = preg_replace('/[^(\x20-\x7F)]*/', '', nl2br($a_row['moduleSynopsis']));
+			$module['outlineSyllabus'] = preg_replace('/[^(\x20-\x7F)]*/', '', nl2br($a_row['outlineSyllabus']));
+			$module['ltMethods'] = preg_replace('/[^(\x20-\x7F)]*/', '', nl2br($a_row['l_tMethods']));
+			if($a_row['accreditation'] !== '')
 				$module['accreditation'] = $a_row['accreditation'];
 			else
 				$module['accreditation'] = '';
-			$module['indicativeReading'] = preg_replace('/[^(\x20-\x7F)]*/', '',  nl2br($a_row['indicativeReading']));
+			$module['indicativeReading'] = preg_replace('/[^(\x20-\x7F)]*/', '', nl2br($a_row['indicativeReading']));
 			$module['learningOutcomes'] = array();
 			
 			$sql4 = "SELECT * FROM 05_learningOutcomes INNER JOIN 06_moduleLearningOutcomes ON 06_moduleLearningOutcomes.outcomeID = 05_learningOutcomes.outcomeID WHERE 06_moduleLearningOutcomes.moduleCode = '" . $module['_id'] . "'";
-			$outcomes = mysql_query($sql4) or die('Could not execute outcomes query.');
+			$outcomes = mysql_query($sql4) OR die('Could not execute outcomes query.');
 						
 			while($row1 = mysql_fetch_array($outcomes, MYSQL_ASSOC))
 			{
@@ -1341,7 +1341,7 @@ class Dummy_data_model extends CI_Model {
 			}
 			
 			$sql5 = "SELECT * FROM 07_assessments INNER JOIN 09_moduleAssessments ON 09_moduleAssessments.assessmentID = 07_assessments.assessmentID WHERE 09_moduleAssessments.moduleCode = '" . $module['_id'] . "'";
-			$assessments = mysql_query($sql5) or die('Could not execute assessments query.');
+			$assessments = mysql_query($sql5) OR die('Could not execute assessments query.');
 			$module['assessments'] = array();
 			while($row2 = mysql_fetch_array($assessments, MYSQL_ASSOC))
 			{
@@ -1353,7 +1353,7 @@ class Dummy_data_model extends CI_Model {
 												);
 			}
 			$sql6 = "SELECT * FROM 02_staff INNER JOIN 04_teachingDemoStaff ON 04_teachingDemoStaff.staffID = 02_staff.staffID WHERE 04_teachingDemoStaff.moduleCode = '" . $module['_id'] . "'";
-			$teaching = mysql_query($sql6) or die('Could not execute teaching staff query.');
+			$teaching = mysql_query($sql6) OR die('Could not execute teaching staff query.');
 			$module['teachingStaff'] = array();
 			while($row3 = mysql_fetch_array($teaching, MYSQL_ASSOC))
 			{
@@ -1362,7 +1362,7 @@ class Dummy_data_model extends CI_Model {
 			
 			$module['contactTime'] = array();
 			$sql7 = "SELECT * FROM 10_contact INNER JOIN 11_moduleContact ON 11_moduleContact.contactID = 10_contact.contactID WHERE 11_moduleContact.moduleCode = '" . $module['_id'] . "'";
-			$contacts = mysql_query($sql7) or die('Could not execute contact time query.');
+			$contacts = mysql_query($sql7) OR die('Could not execute contact time query.');
 			while($row4 = mysql_fetch_array($contacts, MYSQL_ASSOC))
 			{
 				$module['contactTime'][] = array(
@@ -1373,7 +1373,7 @@ class Dummy_data_model extends CI_Model {
 			
 			$module['jacsCodes'] = array();
 			$sql8 = "SELECT * FROM 12_jacsCodes WHERE moduleCode = '" . $module['_id'] . "'";
-			$jacs = mysql_query($sql8) or die('Could not execute JACS code query.');
+			$jacs = mysql_query($sql8) OR die('Could not execute JACS code query.');
 			while($row5 = mysql_fetch_array($jacs, MYSQL_ASSOC))
 			{
 				$module['jacsCodes'][] = $row5['jacsCode'];
@@ -1381,24 +1381,24 @@ class Dummy_data_model extends CI_Model {
 			
 			$module['preRequisites'] = array();
 			$sql9 = "SELECT * FROM 14_preReq WHERE moduleCode = '" . $module['_id'] . "'";
-			$pre = mysql_query($sql9) or die('Could not execute pre requisites query.');
-			while($row5 = mysql_fetch_array($pre, MYSQL_ASSOC))
+			$prer = mysql_query($sql9) or die('Could not execute pre requisites query.');
+			while($row5 = mysql_fetch_array($prer, MYSQL_ASSOC))
 			{
 				$module['preRequisites'][] = $row5['preRequisite'];
 			}
 			
 			$module['coRequisites'] = array();
 			$sql9 = "SELECT * FROM 15_coReq WHERE moduleCode = '" . $module['_id'] . "'";
-			$pre = mysql_query($sql9) or die('Could not execute pre requisites query.');
-			while($row5 = mysql_fetch_array($pre, MYSQL_ASSOC))
+			$core = mysql_query($sql9) OR die('Could not execute pre requisites query.');
+			while($row5 = mysql_fetch_array($core, MYSQL_ASSOC))
 			{
 				$module['coRequisites'][] = $row5['coRequisite'];
 			}
 			
 			$module['barredCombinations'] = array();
 			$sql9 = "SELECT * FROM 16_barredCombinations WHERE moduleCode1 = '" . $module['_id'] . "'";
-			$pre = mysql_query($sql9) or die('Could not execute barred combinations query.');
-			while($row5 = mysql_fetch_array($pre, MYSQL_ASSOC))
+			$barred = mysql_query($sql9) OR die('Could not execute barred combinations query.');
+			while($row5 = mysql_fetch_array($barred, MYSQL_ASSOC))
 			{
 				$module['barredCombinations'][] = $row5['moduleCode2'];
 			}
@@ -1410,13 +1410,19 @@ class Dummy_data_model extends CI_Model {
 		return $returning;
 	}
 	
+	/**
+	* Function takes data from xcri feed
+	*
+	* @return Confirmation message
+	* @access Public
+	*/
 	public function xcri($aurl = 'http://127.0.0.1/coursedata/dummyData/xcri.xml')
 	{
 		if($this->input->get('url'))
 			$aurl = $this->input->get('url');
 		
-		$xcriArray = $this->xml2array(file_get_contents($aurl));
-		$provider = $xcriArray['catalog']['provider'];
+		$xcriarray = $this->xml2array(file_get_contents($aurl));
+		$provider = $xcriarray['catalog']['provider'];
 		$institution = array();
 		$institution['_id'] = 0;
 		foreach($provider['dc:identifier'] as $identifier)
@@ -1435,14 +1441,14 @@ class Dummy_data_model extends CI_Model {
 			
 		if(isset($provider['mlo:location']['mlo:address']))
 		{
-			foreach($provider['mlo:location']['mlo:address'] as $addressLine)
+			foreach($provider['mlo:location']['mlo:address'] as $address_line)
 			{
-				if((isset($addressLine['attr']['xsi:type'])) && ($addressLine['attr']['xsi:type'] == 'geo:lat'))
-					$institution['location']['latitude'] = $addressLine['value'];
-				elseif((isset($addressLine['attr']['xsi:type'])) && ($addressLine['attr']['xsi:type'] == 'geo:long'))
-					$institution['location']['longitude'] = $addressLine['value'];
+				if((isset($address_line['attr']['xsi:type'])) && ($address_line['attr']['xsi:type'] == 'geo:lat'))
+					$institution['location']['latitude'] = $address_line['value'];
+				elseif((isset($address_line['attr']['xsi:type'])) && ($address_line['attr']['xsi:type'] == 'geo:long'))
+					$institution['location']['longitude'] = $address_line['value'];
 				else
-					$institution['location']['address'][] = $addressLine['value'];
+					$institution['location']['address'][] = $address_line['value'];
 			}
 		}
 		
@@ -1454,10 +1460,10 @@ class Dummy_data_model extends CI_Model {
 						'location' => $institution['location'], 'url' => $institution['url'], 
 						'telephone' => $institution['telephone']))->update('institutions');
 		
-		for($i = 0; $i < count($xcriArray['catalog']['provider']['course']); $i++)
+		for($i = 0; $i < count($xcriarray['catalog']['provider']['course']); $i++)
 		{
 			$courses = array();
-			$course = $xcriArray['catalog']['provider']['course'][$i];
+			$course = $xcriarray['catalog']['provider']['course'][$i];
 			
 			$courses['_id'] = '';
 			$courses['identifiers'] = array();
@@ -1477,18 +1483,18 @@ class Dummy_data_model extends CI_Model {
 			{	
 				foreach($course['presentation'] as $presentation)
 				{
-					$thisPresentation = array();
+					$this_presentation = array();
 					if(isset($presentation['dc:identifier']))
-						$thisPresentation['identifiers'] = $presentation['dc:identifier'];
+						$this_presentation['identifiers'] = $presentation['dc:identifier'];
 					if(isset($presentation['mlo:duration']))
-						$thisPresentation['duration'] = $presentation['mlo:duration']['value'];
+						$this_presentation['duration'] = $presentation['mlo:duration']['value'];
 					if(isset($presentation['studyMode']))
-						$thisPresentation['studyMode'] = $presentation['studyMode']['value'];
+						$this_presentation['studyMode'] = $presentation['studyMode']['value'];
 					if(isset($presentation['attendanceMode']))
-						$thisPresentation['attendanceMode'] = $presentation['attendanceMode']['value'];
+						$this_presentation['attendanceMode'] = $presentation['attendanceMode']['value'];
 					if(isset($presentation['attendancePattern']))
-						$thisPresentation['attendancePattern'] = $presentation['attendancePattern']['value'];
-					$courses['presentation'][] = $thisPresentation;
+						$this_presentation['attendancePattern'] = $presentation['attendancePattern']['value'];
+					$courses['presentation'][] = $this_presentation;
 				}
 			}
 			elseif(isset($course['presentation']))
@@ -1496,14 +1502,14 @@ class Dummy_data_model extends CI_Model {
 				if(isset($course['presentation']['dc:identifier']))
 						$thisPresentation['identifiers'] = $course['presentation']['dc:identifier'];
 				if(isset($course['presentation']['mlo:duration']))
-					$thisPresentation['duration'] = $course['presentation']['mlo:duration']['value'];
+					$this_presentation['duration'] = $course['presentation']['mlo:duration']['value'];
 				if(isset($course['presentation']['studyMode']))
-					$thisPresentation['studyMode'] = $course['presentation']['studyMode']['value'];
+					$this_presentation['studyMode'] = $course['presentation']['studyMode']['value'];
 				if(isset($course['presentation']['attendanceMode']))
-					$thisPresentation['attendanceMode'] = $course['presentation']['attendanceMode']['value'];
+					$this_presentation['attendanceMode'] = $course['presentation']['attendanceMode']['value'];
 				if(isset($course['presentation']['attendancePattern']))
-					$thisPresentation['attendancePattern'] = $course['presentation']['attendancePattern']['value'];
-				$courses['presentation'][] = $thisPresentation;
+					$this_presentation['attendancePattern'] = $course['presentation']['attendancePattern']['value'];
+				$courses['presentation'][] = $this_presentation;
 			}
 			
 			$this->mongo_db->where(array('ucasProgrammeCode' => strval(($courses['_id']))))
