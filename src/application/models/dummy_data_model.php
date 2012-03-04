@@ -1564,7 +1564,7 @@ class Dummy_data_model extends CI_Model {
 	//Go through the tags.
 	$repeated_tag_index = array();//Multiple tags with same name will be turned into an array
 	foreach($xml_values as $data) {
-		unset($attributes,$value ue);//Remove existing values, or there will be trouble
+		unset($attributes,$value);//Remove existing values, or there will be trouble
 
 	//This command will extract these variables into the foreach scope
 	// tag(string), type(string), level(int), attributes(array).
@@ -1573,9 +1573,9 @@ class Dummy_data_model extends CI_Model {
 	$result = array();
 	$attributes_data = array();
 	
-	if(isset($value ue)) {
-		if($priority === 'tag') $result = $value ue;
-		else $result['value'] = $value ue; //Put the value in a assoc array if we are in the 'Attribute' mode
+	if(isset($value)) {
+		if($priority === 'tag') $result = $value;
+		else $result['value'] = $value; //Put the value in a assoc array if we are in the 'Attribute' mode
 	}
 
 	//Set the attributes too.
