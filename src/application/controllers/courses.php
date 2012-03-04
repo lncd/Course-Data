@@ -5,7 +5,7 @@
  	* PHP Version 5
  	*
  	* @category CourseDataAPIs
- 	* @package	CourseDataAPIs
+ 	* @package  CourseDataAPIs
  	* @author   Jamie Mahoney <jmahoney127@googlemail.com>
  	* @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  	* @link     coursedata.blogs.lincoln.ac.uk
@@ -16,7 +16,7 @@
  	* Courses
  	*
  	* @category CourseDataAPIs
-	* @package	CourseDataAPIs
+	* @package  CourseDataAPIs
  	* @author   Jamie Mahoney <jmahoney127@googlemail.com>
  	* @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  	* @link     coursedata.blogs.lincoln.ac.uk
@@ -200,5 +200,5 @@ class Courses extends CI_Controller {
 	}
 }
 
-/* End of file courses.php */
-/* Location: ./application/controllers/courses.php */
+// End of file courses.php
+// Location: ./controllers/courses.php

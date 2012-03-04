@@ -1,11 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/**
+	/**
  	* MyClass File Doc Comment
  	*
  	* PHP Version 5
  	*
  	* @category CourseDataAPIs
- 	* @package	CourseDataAPIs
+ 	* @package  CourseDataAPIs
  	* @author   Jamie Mahoney <jmahoney127@googlemail.com>
  	* @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  	* @link     coursedata.blogs.lincoln.ac.uk
@@ -16,7 +16,7 @@
  	* Institutions
  	*
  	* @category CourseDataAPIs
-	* @package	CourseDataAPIs
+	* @package  CourseDataAPIs
  	* @author   Jamie Mahoney <jmahoney127@googlemail.com>
  	* @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  	* @link     coursedata.blogs.lincoln.ac.uk
@@ -61,5 +61,5 @@ class Institutions extends CI_Controller {
 	
 }
 
-// End of file welcome.php 
-// Location: ./application/controllers/welcome.php 
+// End of file institutions.php 
+// Location: ./controllers/welcome.php 

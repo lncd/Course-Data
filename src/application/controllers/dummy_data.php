@@ -5,7 +5,7 @@
  * PHP Version 5
  *
  * @category DummyData
- * @package	 DummyData
+ * @package  DummyData
  * @author   Jamie Mahoney <jmahoney127@googlemail.com>
  * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  * @link     coursedata.blogs.lincoln.ac.uk
@@ -16,7 +16,7 @@
  * Dummy_Data
  *
  * @category DummyData
- * @package	DummyData
+ * @package  DummyData
  * @author   Jamie Mahoney <jmahoney127@googlemail.com>
  * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  * @link     coursedata.blogs.lincoln.ac.uk
@@ -47,6 +47,8 @@ class Dummy_data extends CI_Controller {
 	/**
 	* Function to test api is functioning as expected
 	*
+	* @param string $filename Filename of testing strategy document
+	* 
 	* @return Nothing
 	* @access Private
 	*/
@@ -54,19 +56,21 @@ class Dummy_data extends CI_Controller {
 	{
 		$lines = array();
 		$handle = @fopen($filename, 'r');
-        
-        if ($handle)
-        {
-        	while (($buffer = fgets($handle, 4096)) !== FALSE){
-        	$lines[] = explode(';', $buffer);
+        if($handle)
+	{
+        	while (($buffer = fgets($handle, 4096)) !== FALSE)
+		{
+			$lines[] = explode(';', $buffer);
         	}
-        	if (! feof($handle)) {
+        	if (! feof($handle))
+			{
 				echo "Error: unexpected fgets() fail\n";
 			}
 			fclose($handle);
 			$results = array('amount' => sizeof($lines) - 1, 'pass' => 0, 'fail' => 0);
 			$errors = array();
-			try{
+			try
+			{
 				if((sizeof($lines[0])) === 1)
 				{
 					$newlines = array('\t','\n','\r','\x20\x20','\0','\x0B');
@@ -94,7 +98,7 @@ class Dummy_data extends CI_Controller {
 			{
 				echo $error_message;
 			}
-			
+
 			return array('results' => $results, 'errors' => $errors);
 			}
 	}
@@ -120,15 +124,9 @@ class Dummy_data extends CI_Controller {
 		$output.= $this->dummy_data_model->lincoln_n400();
 		$output.= $this->dummy_data_model->lincoln_cn85();
 		$output.= $this->dummy_data_model->get_modules_sql();
-
-
 		return $output;
 	}
-	
-	
-	
 }
-
 
 // End of file dummy_data.php 
 // Location: ./application/controllers/dummy_data.php

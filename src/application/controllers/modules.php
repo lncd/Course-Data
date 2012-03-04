@@ -5,7 +5,7 @@
  	* PHP Version 5
  	*
  	* @category CourseDataAPIs
- 	* @package	CourseDataAPIs
+ 	* @package  CourseDataAPIs
  	* @author   Jamie Mahoney <jmahoney127@googlemail.com>
  	* @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  	* @link     coursedata.blogs.lincoln.ac.uk
@@ -16,7 +16,7 @@
  	* Modules
  	*
  	* @category CourseDataAPIs
-	* @package	CourseDataAPIs
+	* @package  CourseDataAPIs
  	* @author   Jamie Mahoney <jmahoney127@googlemail.com>
  	* @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  	* @link     coursedata.blogs.lincoln.ac.uk
@@ -48,26 +48,26 @@ class Modules extends CI_Controller {
 		
 		if($this->input->get('synopsis')){
 			$parameters = explode(',', $this->input->get('synopsis'));
-			foreach($parameters as $p)
-				$this->mongo_db->like('moduleSynopsis', $p);
+			foreach($parameters as $param)
+				$this->mongo_db->like('moduleSynopsis', $param);
 		}
 		
 		if($this->input->get('syllabus')){
 			$parameters = explode(',', $this->input->get('syllabus'));
-			foreach($parameters as $p)
-				$this->mongo_db->like('outlineSyllabus', $p);
+			foreach($parameters as $param)
+				$this->mongo_db->like('outlineSyllabus', $param);
 		}
 		
 		if($this->input->get('jacs')){
 			$parameters = explode(',', $this->input->get('jacs'));
-			foreach($parameters as $p)
-				$this->mongo_db->like('jacsCodes', $p);
+			foreach($parameters as $param)
+				$this->mongo_db->like('jacsCodes', $param);
 		}
 		
 		if($this->input->get('outcomes')){
 			$parameters = explode(',', $this->input->get('outcomes'));
-			foreach($parameters as $p)
-				$this->mongo_db->like('learningOutcomes', $p);
+			foreach($parameters as $param)
+				$this->mongo_db->like('learningOutcomes', $param);
 		}
 			
 		$output = $this->mongo_db->get('modules');
@@ -91,5 +91,5 @@ class Modules extends CI_Controller {
 	
 }
 
-// End of file welcome.php
-// Location: ./application/controllers/welcome.php
+// End of file modules.php
+// Location: ./controllers/welcome.php
