@@ -59,14 +59,14 @@ class Dummy_data extends CI_Controller {
 		$handle = @fopen($filename, 'r');
 	if($handle)
 	{
-        	while (($buffer = fgets($handle, 4096)) !== FALSE)
-		{
-			$lines[] = explode(';', $buffer);
-		}
-        	if( ! feof($handle))
+		while(($buffer = fgets($handle, 4096)) !== FALSE)
 			{
-				echo "Error: unexpected fgets() fail\n";
+			$lines[] = explode(';', $buffer);
 			}
+		if( ! feof($handle))
+		{
+			echo "Error: unexpected fgets() fail\n";
+		}
 			fclose($handle);
 			$results = array('amount' => sizeof($lines) - 1, 'pass' => 0, 'fail' => 0);
 			$errors = array();

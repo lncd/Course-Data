@@ -1876,6 +1876,7 @@ class Mongo_db {
 	 *
 	 * @param string $collection Collection being used
 	 * @param string $action     Action being carried out
+	 * 
 	 * @access private
 	 * @return void
 	 */
@@ -1946,7 +1947,7 @@ class Mongo_db {
 	 *
 	 * @access private
 	 * @return void
-	 */
+         */
 	private function _show_error($error_message = '', $response_code = 500)
 	{
 		if ( ! function_exists('show_error')) // If we're not using CodeIgniter throw a normal exception
@@ -1975,4 +1976,5 @@ class Mongo_db {
 	
 }
 
-// End of file mongo_db.php
+// End of file Mongo_db.php
+// Location: ./libraries/Mongo_db.php
