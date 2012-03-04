@@ -1381,7 +1381,7 @@ class Dummy_data_model extends CI_Model {
 			
 			$module['preRequisites'] = array();
 			$sql9 = "SELECT * FROM 14_preReq WHERE moduleCode = '" . $module['_id'] . "'";
-			$prer = mysql_query($sql9) or die('Could not execute pre requisites query.');
+			$prer = mysql_query($sql9) OR die('Could not execute pre requisites query.');
 			while($row5 = mysql_fetch_array($prer, MYSQL_ASSOC))
 			{
 				$module['preRequisites'][] = $row5['preRequisite'];
@@ -1413,8 +1413,9 @@ class Dummy_data_model extends CI_Model {
 	/**
 	* Function takes data from xcri feed
 	*
-	* @return Confirmation message
 	* @param string $aurl URL of xcri xml file.
+	* 
+	* @return Confirmation message
 	* @access Public
 	*/
 	public function xcri($aurl = 'http://127.0.0.1/coursedata/dummyData/xcri.xml')
@@ -1428,7 +1429,7 @@ class Dummy_data_model extends CI_Model {
 		$institution['_id'] = 0;
 		foreach($provider['dc:identifier'] as $identifier)
 		{
-				if((isset($identifier['attr']['xsi:type'])) AND ($identifier['attr']['xsi:type'] == 'ukrlp:ukprn'))
+				if((isset($identifier['attr']['xsi:type'])) AND ($identifier['attr']['xsi:type'] === 'ukrlp:ukprn'))
 					$institution['_id'] = intval($identifier['value']);
 				else
 					$institution['identifiers'][] = $identifier['value'];
@@ -1470,9 +1471,9 @@ class Dummy_data_model extends CI_Model {
 			$courses['identifiers'] = array();
 			foreach($course['dc:identifier'] as $identifier)
 			{
-				if((isset($identifier['attr']['xsi:type'])) AND ($identifier['attr']['xsi:type'] == 'ucas:courseID'))
+				if((isset($identifier['attr']['xsi:type'])) AND ($identifier['attr']['xsi:type'] === 'ucas:courseID'))
 					$courses['_id'] = $identifier['value'];
-				elseif((isset($identifier['attr']['xsi:type'])) AND ($identifier['attr']['xsi:type'] == 'courseDataProgramme:internalID'))
+				elseif((isset($identifier['attr']['xsi:type'])) AND ($identifier['attr']['xsi:type'] === 'courseDataProgramme:internalID'))
 					$courses['identifiers']['internalID'] = $identifier['value'];
 				else
 					$courses['identifiers'][] = $identifier['value'];
@@ -1530,16 +1531,18 @@ class Dummy_data_model extends CI_Model {
 	/** 
  	* xml2array() will convert the given XML text to an array in the XML structure. 
  	*
- 	* @param string $contents 	the Contents string
- 	* @param int 	$get_attributes Boolean operator
- 	* @param string $priority 	Denotes what elements have priority
+ 	* @param string	$contents 	the Contents string
+ 	* @param int	$get_attributes Boolean operator
+ 	* @param string	$priority 	Denotes what elements have priority
+ 	* 
  	* @return Returns array of xml elements
  	*/ 
-	function xml2array($contents, $get_attributes=1, $priority = 'attribute') {
-	if(!$contents)
+	function xml2array($contents, $get_attributes=1, $priority = 'attribute')
+	{
+	if( ! $contents)
 		return array();
 	
-	if(!function_exists('xml_parser_create'))
+	if( ! function_exists('xml_parser_create'))
 	{
 	// print "'xml_parser_create()' function not found!"
 	return array();
@@ -1553,7 +1556,7 @@ class Dummy_data_model extends CI_Model {
 	xml_parse_into_struct($parser, trim($contents), $xml_values);
 	xml_parser_free($parser);
 	
-	if(!$xml_values)
+	if( ! $xml_values)
 		return;
 	
 	//Initializations 
@@ -1590,14 +1593,15 @@ class Dummy_data_model extends CI_Model {
 	if($type === 'open')
 	{//The starting of the tag '<tag>'
 		$parent[$level-1] = &$current;
-		if(!is_array($current) or (!in_array($a_tag, array_keys($current)))){//Insert New tag
+		if( ! is_array($current) OR (!in_array($a_tag, array_keys($current))))
+		{//Insert New tag
 			$current[$a_tag] = $result;
 		if($attributes_data) $current[$a_tag. '_attr'] = $attributes_data;
 			$repeated_tag_index[$a_tag.'_'.$level] = 1;
 
 		$current = &$current[$a_tag];
 		
-	}
+		}
 	else
 	{//There was another element with the same tag name
 		
@@ -1622,11 +1626,11 @@ class Dummy_data_model extends CI_Model {
 	}elseif($type === 'complete')
 	{//Tags that ends in 1 line '<tag />'
 		//See if the key is already taken.
-		if(!isset($current[$a_tag]))
+		if( ! isset($current[$a_tag]))
 		{//New Key
 		$current[$a_tag] = $result;
 		$repeated_tag_index[$a_tag.'_'.$level] = 1;
-		if($priority === 'tag' and $attributes_data) $current[$a_tag. '_attr'] = $attributes_data;
+		if($priority === 'tag' AND $attributes_data) $current[$a_tag. '_attr'] = $attributes_data;
 		
 		}
 	else
@@ -1637,7 +1641,7 @@ class Dummy_data_model extends CI_Model {
 		// ...push the new element into that array.
 		$current[$a_tag][$repeated_tag_index[$a_tag.'_'.$level]] = $result;
 
-		if($priority == 'tag' AND $get_attributes AND $attributes_data)
+		if($priority === 'tag' AND $get_attributes AND $attributes_data)
 		{
 			$current[$a_tag][$repeated_tag_index[$a_tag.'_'.$level] . '_attr'] = $attributes_data;
 		}
@@ -1648,14 +1652,15 @@ class Dummy_data_model extends CI_Model {
 		{//If it is not an array...
 			$current[$a_tag] = array($current[$a_tag],$result);//...Make it an array using using the existing value and the new value
 			$repeated_tag_index[$a_tag.'_'.$level] = 1;
-                if($priority === 'tag' AND $get_attributes)
+		if($priority === 'tag' AND $get_attributes)
 		{
 			if(isset($current[$a_tag.'_attr']))
 			{ //The attribute of the last(0th) tag must be moved as well
 				$current[$a_tag]['0_attr'] = $current[$a_tag.'_attr'];
 				unset($current[$a_tag.'_attr']);
 			}
-			if($attributes_data) {
+			if($attributes_data)
+			{
 				$current[$a_tag][$repeated_tag_index[$a_tag.'_'.$level] . '_attr'] = $attributes_data;
 			}
 		}
