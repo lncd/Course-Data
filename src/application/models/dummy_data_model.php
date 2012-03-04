@@ -1502,7 +1502,7 @@ class Dummy_data_model extends CI_Model {
 			elseif(isset($course['presentation']))
 			{
 				if(isset($course['presentation']['dc:identifier']))
-						$this_resentation['identifiers'] = $course['presentation']['dc:identifier'];
+						$this_presentation['identifiers'] = $course['presentation']['dc:identifier'];
 				if(isset($course['presentation']['mlo:duration']))
 					$this_presentation['duration'] = $course['presentation']['mlo:duration']['value'];
 				if(isset($course['presentation']['studyMode']))
