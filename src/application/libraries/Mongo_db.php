@@ -29,7 +29,7 @@ class Mongo_db {
 	private $_config_file = 'mongodb';
 	
 	/**
-	 * Config file data
+	 * Config file data.
 	 * 
 	 * @var array
 	 * @access private
@@ -236,7 +236,7 @@ class Mongo_db {
 			$this->_config_data = $config;
 		}
 		
-		elseif (is_string($config) && $this->_ci)
+		elseif (is_string($config) AND $this->_ci)
 		{
 			$this->_config_data = $this->_ci->config->item($config);
 		}
@@ -1812,7 +1812,7 @@ class Mongo_db {
 		} 
 		catch (MongoConnectionException $exception)
 		{
-			if($this->_ci && $this->_ci->config->item('mongo_supress_connect_error'))
+			if($this->_ci AND $this->_ci->config->item('mongo_supress_connect_error'))
 			{
 				$this->_show_error('Unable to connect to MongoDB', 500);
 			}
@@ -1873,7 +1873,9 @@ class Mongo_db {
 	
 	/**
 	 * Reset the class variables to default settings.
-	 * 
+	 *
+	 * @param string $collection Collection being used
+	 * @param string $action     Action being carried out
 	 * @access private
 	 * @return void
 	 */
@@ -1958,10 +1960,19 @@ class Mongo_db {
 		}
 	}
 	
-	public function getWheres()
+        /**
+         * Get amount of wheres specified.
+         *
+         * Will return the amount of where criteria specified before querying
+         *
+         * @access public
+         * @return void
+         * /
+	public function get_wheres()
 	{
 		return $this->amountWheres;
 	}
 	
 }
+
 // End of file mongo_db.php

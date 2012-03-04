@@ -56,10 +56,8 @@ class Institutions extends CI_Controller {
 		echo '<pre>'; 
 		print_r($results); 
 		echo '</pre>';
-	}
-	
-	
+	}	
 }
 
 // End of file institutions.php 
-// Location: ./controllers/welcome.php 
+// Location: ./controllers/institutions.php 

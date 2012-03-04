@@ -87,9 +87,7 @@ class Modules extends CI_Controller {
 		print_r($results); 
 		echo '</pre>';
 	}
-	
-	
 }
 
 // End of file modules.php
-// Location: ./controllers/welcome.php
+// Location: ./controllers/modules.php

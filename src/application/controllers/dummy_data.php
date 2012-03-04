@@ -51,18 +51,19 @@ class Dummy_data extends CI_Controller {
 	* 
 	* @return Nothing
 	* @access Private
+	* @throws Exception when something goes wrong
 	*/
 	private function _test_api($filename = 'strategy.txt')
 	{
 		$lines = array();
 		$handle = @fopen($filename, 'r');
-        if($handle)
+	if($handle)
 	{
         	while (($buffer = fgets($handle, 4096)) !== FALSE)
 		{
 			$lines[] = explode(';', $buffer);
-        	}
-        	if (! feof($handle))
+		}
+        	if( ! feof($handle))
 			{
 				echo "Error: unexpected fgets() fail\n";
 			}
@@ -85,7 +86,7 @@ class Dummy_data extends CI_Controller {
 					$get_url = str_replace(' ', '', $get_url);
 					$check = json_decode(file_get_contents($get_url));
 					
-					if(($check->error === strval($lines[$i][2])) && ($check->count === strval($lines[$i][3])))
+					if(($check->error === strval($lines[$i][2])) AND ($check->count === strval($lines[$i][3])))
 						$results['pass'] += 1;
 					else
 					{
@@ -100,7 +101,7 @@ class Dummy_data extends CI_Controller {
 			}
 
 			return array('results' => $results, 'errors' => $errors);
-			}
+	}
 	}
 	
 	/**
@@ -129,4 +130,4 @@ class Dummy_data extends CI_Controller {
 }
 
 // End of file dummy_data.php 
-// Location: ./application/controllers/dummy_data.php
+// Location: ./controllers/dummy_data.php

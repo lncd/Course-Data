@@ -1531,9 +1531,9 @@ class Dummy_data_model extends CI_Model {
 	/** 
  	* xml2array() will convert the given XML text to an array in the XML structure. 
  	*
- 	* @param string	$contents 	the Contents string
- 	* @param int	$get_attributes Boolean operator
- 	* @param string	$priority 	Denotes what elements have priority
+ 	* @param string $contents       the Contents string
+ 	* @param int    $get_attributes Boolean operator
+ 	* @param string $priority       Denotes what elements have priority
  	* 
  	* @return Returns array of xml elements
  	*/ 
@@ -1593,7 +1593,7 @@ class Dummy_data_model extends CI_Model {
 	if($type === 'open')
 	{//The starting of the tag '<tag>'
 		$parent[$level-1] = &$current;
-		if( ! is_array($current) OR (!in_array($a_tag, array_keys($current))))
+		if( ! is_array($current) OR ( ! in_array($a_tag, array_keys($current))))
 		{//Insert New tag
 			$current[$a_tag] = $result;
 		if($attributes_data) $current[$a_tag. '_attr'] = $attributes_data;

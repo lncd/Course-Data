@@ -169,7 +169,7 @@ class Courses extends CI_Controller {
 		$this->mongo_db->limit(50);
 		$output = $this->mongo_db->get('courses');
 		
-		if($this->mongo_db->getWheres() > 0)
+		if($this->mongo_db->get_wheres() > 0)
 		{
 			
 			if((isset($output)) AND (count($output) !== 0))
