@@ -1967,7 +1967,7 @@ class Mongo_db {
          *
          * @access public
          * @return void
-         * /
+         */
 	public function get_wheres()
 	{
 		return $this->amountWheres;
