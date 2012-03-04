@@ -21,7 +21,7 @@
  	* @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  	* @link     coursedata.blogs.lincoln.ac.uk
  	*/
- ?>
+?>
 <!doctype html>
 <!--[if IEMobile 7 ]><html class="no-js iem7" lang="en"><![endif]-->
 <!--[if lt IE 7 ]><html class="no-js ie ie6" lang="en"><![endif]-->
@@ -78,20 +78,21 @@
 	
 		<div class="grid_12">
 		<h2>Data Creation Progress:</h2>
-		<?php
+<?php
 			echo $output;
-		?>
+?>
 		<hr>
 		<h2>API Testing:</h2>
-		<p>Tests carried out: <?php
-								echo $amount_test;
-								?></p>
-		<p>Tests passed: <?php
-					echo $amount_pass; ?>
+		<p>Tests carried out:
+<?php
+		echo $amount_test;
+?></p>
+		<p>Tests passed:
+<?php
+					echo $amount_pass;?>
 					</p>
-		<p>Tests failed: <?php 
-		echo $amount_fail; 
-		?></p>
+		<p>Tests failed:<?php
+		echo $amount_fail;?></p>
 		
 		<?php
 		if(isset($errors)) {
