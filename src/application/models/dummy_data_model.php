@@ -1535,45 +1535,46 @@ class Dummy_data_model extends CI_Model {
  	* @param string $priority Denotes what elements have priority
  	* @return Returns array of xml elements
  	*/ 
-	function xml2array($contents, $get_attributes=1, $priority = 'attribute') { 
-    if(!$contents) return array(); 
+	function xml2array($contents, $get_attributes=1, $priority = 'attribute') {
+	if(!$contents) return array();
 
-    if(!function_exists('xml_parser_create')) { 
-        //print "'xml_parser_create()' function not found!"; 
-        return array(); 
-    } 
 
-    //Get the XML parser of PHP - PHP must have this module for the parser to work 
-    $parser = xml_parser_create(''); 
-    xml_parser_set_option($parser, XML_OPTION_TARGET_ENCODING, "UTF-8"); # http://minutillo.com/steve/weblog/2004/6/17/php-xml-and-character-encodings-a-tale-of-sadness-rage-and-data-loss 
-    xml_parser_set_option($parser, XML_OPTION_CASE_FOLDING, 0); 
-    xml_parser_set_option($parser, XML_OPTION_SKIP_WHITE, 1); 
-    xml_parse_into_struct($parser, trim($contents), $xml_values); 
-    xml_parser_free($parser); 
+	if(!function_exists('xml_parser_create')) {
+	//print "'xml_parser_create()' function not found!";
+	return array();
+	}
 
-    if(!$xml_values) return; 
+	//Get the XML parser of PHP - PHP must have this module for the parser to work
+	$parser = xml_parser_create('');
+	xml_parser_set_option($parser, XML_OPTION_TARGET_ENCODING, "UTF-8"); # http://minutillo.com/steve/weblog/2004/6/17/php-xml-and-character-encodings-a-tale-of-sadness-rage-and-data-loss
+	xml_parser_set_option($parser, XML_OPTION_CASE_FOLDING, 0);
+	xml_parser_set_option($parser, XML_OPTION_SKIP_WHITE, 1);
+	xml_parse_into_struct($parser, trim($contents), $xml_values);
+	xml_parser_free($parser);
 
-    //Initializations 
-    $xml_array = array(); 
+	if(!$xml_values) return;
 
-    $current = &$xml_array;
+	//Initializations 
+	$xml_array = array();
 
-    //Go through the tags. 
-    $repeated_tag_index = array();//Multiple tags with same name will be turned into an array
-    foreach($xml_values as $data) { 
-        unset($attributes,$value);//Remove existing values, or there will be trouble 
+	$current = &$xml_array;
 
-        //This command will extract these variables into the foreach scope 
-        // tag(string), type(string), level(int), attributes(array). 
-        extract($data);//We could use the array by itself, but this cooler. 
+	//Go through the tags.
+	$repeated_tag_index = array();//Multiple tags with same name will be turned into an array
+	foreach($xml_values as $data) {
+		unset($attributes,$value);//Remove existing values, or there will be trouble
+		
+	//This command will extract these variables into the foreach scope
+	// tag(string), type(string), level(int), attributes(array).
+	extract($data);//We could use the array by itself, but this cooler.
 
-        $result = array(); 
-        $attributes_data = array(); 
-         
-        if(isset($value)) { 
-            if($priority == 'tag') $result = $value; 
-            else $result['value'] = $value; //Put the value in a assoc array if we are in the 'Attribute' mode
-        } 
+	$result = array();
+	$attributes_data = array();
+        
+	if(isset($value)) {
+		if($priority == 'tag') $result = $value;
+		else $result['value'] = $value; //Put the value in a assoc array if we are in the 'Attribute' mode
+	}
 
         //Set the attributes too. 
         if(isset($attributes) and $get_attributes) { 
