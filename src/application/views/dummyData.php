@@ -80,31 +80,7 @@
 		<h2>Data Creation Progress:</h2>
 <?php
 			echo $output;
-?>
-		<hr>
-		<h2>API Testing:</h2>
-		<p>Tests carried out:
-<?php
-		echo $amount_test;
-?></p>
-		<p>Tests passed:
-<?php
-					echo $amount_pass;?>
-					</p>
-		<p>Tests failed:<?php
-		echo $amount_fail;?></p>
-		
-		<?php
-		if(isset($errors)) {
-		?>
-		
-		<h3>Errors:</h3>
-			<?php
-			foreach($errors as $error)
-					echo $error . '<br>';
-					}
-			?>
-		
+?>		
 		</div>
 		
 		

@@ -1,0 +1,10 @@
+Testing URL was here
+courses;kisID=123456;0;1
+courses;;1;0
+courses;kisID=123456&institution=10007151;0;1
+courses;institution=10007151&distance=1;0;0
+courses;institution=10007151&distance=0;0;8
+courses;institution=10007151&partTime=1;0;0
+courses;institution=10007151&jacs=D490;0;1
+courses;institution=10007151&teacher=1;0;0
+courses;institution=10007151&teacher=0;0;8

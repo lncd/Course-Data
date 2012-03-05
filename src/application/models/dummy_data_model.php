@@ -312,7 +312,7 @@ class Dummy_data_model extends CI_Model {
 		$dbha = mysql_connect($hostname, $username, $password) OR die('Unable to connect to MySQL');
 		mysql_select_db('modules', $dbha);
 		
-		$sqla = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
+		$sqla = "SELECT * FROM 13_programmes WHERE programme = '" . $course1['ucasProgrammeCode'] . "'";
 		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
@@ -465,7 +465,7 @@ class Dummy_data_model extends CI_Model {
 		$dbha = mysql_connect($hostname, $username, $password) OR die('Unable to connect to MySQL');
 		mysql_select_db('modules', $dbha);
 		
-		$sqla = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
+		$sqla = "SELECT * FROM 13_programmes WHERE programme = '" . $course2['ucasProgrammeCode'] . "'";
 		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
@@ -617,7 +617,7 @@ class Dummy_data_model extends CI_Model {
 		$dbha = mysql_connect($hostname, $username, $password) OR die('Unable to connect to MySQL');
 		mysql_select_db('modules', $dbha);
 		
-		$sqla = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
+		$sqla = "SELECT * FROM 13_programmes WHERE programme = '" . $course3['ucasProgrammeCode'] . "'";
 		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
@@ -1593,78 +1593,78 @@ class Dummy_data_model extends CI_Model {
 	if($type === 'open')
 	{//The starting of the tag '<tag>'
 		$parent[$level-1] = &$current;
-		if( ! is_array($current) OR ( ! in_array($a_tag, array_keys($current))))
+		if( ! is_array($current) OR ( ! in_array($tag, array_keys($current))))
 		{//Insert New tag
-			$current[$a_tag] = $result;
-		if($attributes_data) $current[$a_tag. '_attr'] = $attributes_data;
-			$repeated_tag_index[$a_tag.'_'.$level] = 1;
+			$current[$tag] = $result;
+		if($attributes_data) $current[$tag. '_attr'] = $attributes_data;
+			$repeated_tag_index[$tag.'_'.$level] = 1;
 
-		$current = &$current[$a_tag];
+		$current = &$current[$tag];
 		
 		}
 	else
 	{//There was another element with the same tag name
 		
-		if(isset($current[$a_tag][0])) {//If there is a 0th element it is already an array
-			$current[$a_tag][$repeated_tag_index[$a_tag.'_'.$level]] = $result;
-			$repeated_tag_index[$a_tag.'_'.$level]++;
+		if(isset($current[$tag][0])) {//If there is a 0th element it is already an array
+			$current[$tag][$repeated_tag_index[$tag.'_'.$level]] = $result;
+			$repeated_tag_index[$tag.'_'.$level]++;
 		} else {//This section will make the value an array if multiple tags with the same name appear together
-			$current[$a_tag] = array($current[$a_tag],$result);//This will combine the existing item and the new item together to make an array
-			$repeated_tag_index[$a_tag.'_'.$level] = 2;
+			$current[$tag] = array($current[$tag],$result);//This will combine the existing item and the new item together to make an array
+			$repeated_tag_index[$tag.'_'.$level] = 2;
 			
-		if(isset($current[$a_tag.'_attr']))
+		if(isset($current[$tag.'_attr']))
 		{ //The attribute of the last(0th) tag must be moved as well
-			$current[$a_tag]['0_attr'] = $current[$a_tag.'_attr'];
-			unset($current[$a_tag.'_attr']);
+			$current[$tag]['0_attr'] = $current[$tag.'_attr'];
+			unset($current[$tag.'_attr']);
 		}
 		
 		}
-		$last_item_index = $repeated_tag_index[$a_tag.'_'.$level]-1;
-		$current = &$current[$a_tag][$last_item_index];
+		$last_item_index = $repeated_tag_index[$tag.'_'.$level]-1;
+		$current = &$current[$tag][$last_item_index];
 	}
 	
 	}elseif($type === 'complete')
 	{//Tags that ends in 1 line '<tag />'
 		//See if the key is already taken.
-		if( ! isset($current[$a_tag]))
+		if( ! isset($current[$tag]))
 		{//New Key
-		$current[$a_tag] = $result;
-		$repeated_tag_index[$a_tag.'_'.$level] = 1;
-		if($priority === 'tag' AND $attributes_data) $current[$a_tag. '_attr'] = $attributes_data;
+		$current[$tag] = $result;
+		$repeated_tag_index[$tag.'_'.$level] = 1;
+		if($priority === 'tag' AND $attributes_data) $current[$tag. '_attr'] = $attributes_data;
 		
 		}
 	else
 	{//If taken, put all things inside a list(array)
-		if(isset($current[$a_tag][0]) AND is_array($current[$a_tag]))
+		if(isset($current[$tag][0]) AND is_array($current[$tag]))
 		{//If it is already an array...
 	
 		// ...push the new element into that array.
-		$current[$a_tag][$repeated_tag_index[$a_tag.'_'.$level]] = $result;
+		$current[$tag][$repeated_tag_index[$tag.'_'.$level]] = $result;
 
 		if($priority === 'tag' AND $get_attributes AND $attributes_data)
 		{
-			$current[$a_tag][$repeated_tag_index[$a_tag.'_'.$level] . '_attr'] = $attributes_data;
+			$current[$tag][$repeated_tag_index[$tag.'_'.$level] . '_attr'] = $attributes_data;
 		}
-		$repeated_tag_index[$a_tag.'_'.$level]++;
+		$repeated_tag_index[$tag.'_'.$level]++;
 
 		}
 		else
 		{//If it is not an array...
-			$current[$a_tag] = array($current[$a_tag],$result);//...Make it an array using using the existing value and the new value
-			$repeated_tag_index[$a_tag.'_'.$level] = 1;
+			$current[$tag] = array($current[$tag],$result);//...Make it an array using using the existing value and the new value
+			$repeated_tag_index[$tag.'_'.$level] = 1;
 		if($priority === 'tag' AND $get_attributes)
 		{
-			if(isset($current[$a_tag.'_attr']))
+			if(isset($current[$tag.'_attr']))
 			{ //The attribute of the last(0th) tag must be moved as well
-				$current[$a_tag]['0_attr'] = $current[$a_tag.'_attr'];
-				unset($current[$a_tag.'_attr']);
+				$current[$tag]['0_attr'] = $current[$tag.'_attr'];
+				unset($current[$tag.'_attr']);
 			}
 			if($attributes_data)
 			{
-				$current[$a_tag][$repeated_tag_index[$a_tag.'_'.$level] . '_attr'] = $attributes_data;
+				$current[$tag][$repeated_tag_index[$tag.'_'.$level] . '_attr'] = $attributes_data;
 			}
 		}
-		$repeated_tag_index[$a_tag.'_'.$level]++; //0 and 1 index is already taken
+		$repeated_tag_index[$tag.'_'.$level]++; //0 and 1 index is already taken
 		}
 	}    
 	} elseif($type === 'close') { //End of tag '</tag>'

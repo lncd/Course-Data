@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 	/**
  	* MyClass File Doc Comment
  	*
@@ -68,7 +70,7 @@ class Courses extends CI_Controller {
 			$this->mongo_db->where_lte('maxFee', intval($this->input->get('maxFee')));
 			
 		if($this->input->get('meansTested'))
-			$this->mongo_db->where('meansTested', intval($this->input->get('meansTested')));
+			$this->mongo_db->where('meansTestedSupport', intval($this->input->get('meansTested')));
 			
 		if($this->input->get('nssQuality'))
 			$this->mongo_db->where_gte('nss.overall.quality', floatval($this->input->get('nssQuality')));
