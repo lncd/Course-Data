@@ -37,25 +37,37 @@ class Institutions extends CI_Controller {
 		if($this->input->get('id'))
 			$this->mongo_db->where('_id', intval($this->input->get('id')));		
 		if($this->input->get('name'))
-			$this->mongo_db->like('kisInstitutionName', $this->input->get('name'));
+			$this->mongo_db->like('institutionName', $this->input->get('name'));
 			
 		$output = $this->mongo_db->get('institutions');
-		if($output !== NULL)
+		if($this->mongo_db->get_wheres() > 0)
 		{
+			
+			if((isset($output)) AND (count($output) !== 0))
+			{
+
 			$results['error'] = 0;
 			$results['count'] = count($output);
-			$results['institutions'] = $output;
+			if(count($output) > 50)
+				$results['message'] = 'Amount of potential results is greater than 50. Please narrow your search using more parameters, or more specific search terms.';
+			$results['courses'] = $output;
+			}
+			else
+			{
+			$results['error'] = 0;
+			$results['count'] = 0;
+			$results['message'] = 'No results returned.';
+			}
 		}
 		else
 		{
 			$results['error'] = 1;
-			$results['message'] = 'No results returned. Sorry';
-		}	
+			$results['count'] = 0;
+			$results['message'] = 'No valid criteria specified. ';
+		}
 		
 		
-		echo '<pre>'; 
-		print_r($results); 
-		echo '</pre>';
+		echo json_encode($results);
 	}	
 }
 

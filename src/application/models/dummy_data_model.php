@@ -1440,18 +1440,22 @@ class Dummy_data_model extends CI_Model {
 			
 		if(isset($provider['mlo:location']['mlo:postcode']))
 			$institution['location']['postcode'] = $provider['mlo:location']['mlo:postcode']['value'];
-			
+		$tempLon = 0.0;
+		$tempLat = 0.0;
 		if(isset($provider['mlo:location']['mlo:address']))
 		{
 			foreach($provider['mlo:location']['mlo:address'] as $address_line)
 			{
 				if((isset($address_line['attr']['xsi:type'])) AND ($address_line['attr']['xsi:type'] === 'geo:lat'))
-					$institution['location']['latitude'] = $address_line['value'];
+					$tempLat = $address_line['value'];
 				elseif((isset($address_line['attr']['xsi:type'])) AND ($address_line['attr']['xsi:type'] === 'geo:long'))
-					$institution['location']['longitude'] = $address_line['value'];
+					$tempLon = $address_line['value'];
 				else
 					$institution['location']['address'][] = $address_line['value'];
 			}
+			
+			if(($tempLon != 0.0) AND ($tempLat != 0.0))
+				$institution['location']['geo'] = array($tempLat, $tempLon);
 		}
 		
 		if(isset($provider['mlo:location']['mlo:phone']))
