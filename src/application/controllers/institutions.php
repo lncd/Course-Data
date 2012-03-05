@@ -38,6 +38,15 @@ class Institutions extends CI_Controller {
 			$this->mongo_db->where('_id', intval($this->input->get('id')));		
 		if($this->input->get('name'))
 			$this->mongo_db->like('institutionName', $this->input->get('name'));
+		if($this->input->get('near'))
+		{
+			$nearArray = explode(',', $this->input->get('near'));
+			if(sizeof($nearArray === 4))
+			{
+				// Lon, lat, radius, limit
+			}
+			
+		}
 			
 		$output = $this->mongo_db->get('institutions');
 		if($this->mongo_db->get_wheres() > 0)

@@ -112,7 +112,6 @@
 			<arg path="${basedir}/src/application/controllers" />
 			<arg path="${basedir}/src/application/models" />
 			<arg path="${basedir}/src/application/views" />
-			<arg path="${basedir}/src/application/libraries" />
 		</exec>
 	</target>
 	
