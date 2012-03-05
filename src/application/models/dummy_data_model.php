@@ -1455,7 +1455,7 @@ class Dummy_data_model extends CI_Model {
 			}
 			
 			if(($tempLon != 0.0) AND ($tempLat != 0.0))
-				$institution['location']['geo'] = array($tempLat, $tempLon);
+				$institution['location']['geo'] = array(floatval($tempLat), floatval($tempLon));
 		}
 		
 		if(isset($provider['mlo:location']['mlo:phone']))
