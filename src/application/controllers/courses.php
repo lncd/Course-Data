@@ -67,7 +67,7 @@ class Courses extends CI_Controller {
 			$this->mongo_db->where('feeWaiver', $this->input->get('feeWaiver'));
 			
 		if($this->input->get('maxFee'))
-			$this->mongo_db->where_lte('maxFee', intval($this->input->get('maxFee')));
+			$this->mongo_db->where_lte('maxFeeEngland', intval($this->input->get('maxFee')));
 			
 		if($this->input->get('meansTested'))
 			$this->mongo_db->where('meansTestedSupport', intval($this->input->get('meansTested')));
