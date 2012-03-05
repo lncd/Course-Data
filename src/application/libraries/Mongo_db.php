@@ -1621,7 +1621,7 @@ class Mongo_db {
 			$this->_show_error('Index could not be removed from MongoDB Collection because no keys were specified', 500);
 		}
 		
-		if ($this->_dbhandle->{$collection}->deleteIndex($keys, $options === TRUE)
+		if ($this->_dbhandle->{$collection}->deleteIndex($keys, $options === TRUE))
 		{
 			$this->_clear($collection, 'remove_index');
 			return $this;

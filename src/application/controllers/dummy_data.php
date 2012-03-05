@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 /**
  * MyClass File Doc Comment
  *
@@ -41,7 +43,7 @@ class Dummy_data extends CI_Controller {
 		$data['amount_fail'] = $returned['results']['fail'];
 		$data['errors'] = $returned['errors'];
 		$this->load->view('dummyData.php', $data);
-		$this->dummy_data_model->xcri('http://localhost:8888/cdata/dummyData/xcri.xml');
+		$this->dummy_data_model->xcri('http://localhost:8888/cdata/src/xcri.xml');
 	}
 	
 	/**
