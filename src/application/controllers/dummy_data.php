@@ -60,9 +60,9 @@ class Dummy_data extends CI_Controller {
 	if($handle)
 	{
 		while(($buffer = fgets($handle, 4096)) !== FALSE)
-		{
+	  {
 			$lines[] = explode(';', $buffer);
-		}
+	  }
 		if( ! feof($handle))
 		{
 			echo "Error: unexpected fgets() fail\n";
