@@ -109,7 +109,8 @@
 			<arg value="--standard=${basedir}/build/phpcs.xml" />
 			<arg value="--extensions=php" />
 			<arg value="--ignore=third_party/CIUnit" />
-			<arg path="${basedir}/src/application" />
+			<arg path="${basedir}/src/application/controllers" />
+			<arg path="${basedir}/src/application/models" />
 		</exec>
 	</target>
 	
