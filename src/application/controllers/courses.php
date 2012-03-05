@@ -46,31 +46,31 @@ class Courses extends CI_Controller {
 			$this->mongo_db->like('courseTitle', $this->input->get('courseTitle'));
 			
 		if($this->input->get('distance'))
-			$this->mongo_db->where('distanceLearningOnly', intval($this->input->get('distance')));
+			$this->mongo_db->where('distanceLearningOnly', $this->input->get('distance'));
 			
 		if($this->input->get('level'))
 			$this->mongo_db->where('levelOfAward', $this->input->get('level'));
 			
 		if($this->input->get('partTime'))
-			$this->mongo_db->where('partTimeOnly', intval($this->input->get('partTime')));
+			$this->mongo_db->where('partTimeOnly', $this->input->get('partTime'));
 		
 		if($this->input->get('jacs'))
 			$this->mongo_db->where('fullJacs', $this->input->get('jacs'));
 			
 		if($this->input->get('teacher'))
-			$this->mongo_db->where('teacherTraining', intval($this->input->get('teacher')));
+			$this->mongo_db->where('teacherTraining', $this->input->get('teacher'));
 			
 		if($this->input->get('ucas'))
 			$this->mongo_db->where('ucasProgrammeCode', $this->input->get('ucas'));			
 		
 		if($this->input->get('feeWaiver'))
-			$this->mongo_db->where('feeWaiver', intval($this->input->get('feeWaiver')));
+			$this->mongo_db->where('feeWaiver', $this->input->get('feeWaiver'));
 			
 		if($this->input->get('maxFee'))
-			$this->mongo_db->where_lte('maxFeeEngland', intval($this->input->get('maxFee')));
+			$this->mongo_db->where_lte('maxFeeEngland', $this->input->get('maxFee'));
 			
 		if($this->input->get('meansTested'))
-			$this->mongo_db->where('meansTestedSupport', intval($this->input->get('meansTested')));
+			$this->mongo_db->where('meansTestedSupport', $this->input->get('meansTested'));
 			
 		if($this->input->get('nssQuality'))
 			$this->mongo_db->where_gte('nss.overall.quality', floatval($this->input->get('nssQuality')));

@@ -79,7 +79,7 @@ class Dummy_data_model extends CI_Model {
 		$courses['courseTitle'] = 'BSc (Hons) Computer Science';
 		$courses['distanceLearningOnly'] = 0;
 		$courses['employmentDetailsURL'] = '';
-		$courses['feeWaiver'] = 0;
+		$courses['feeWaiver'] = 'n';
 		$courses['feesConfirmation'] = 1;
 		$courses['learningTeachingURL'] = 'http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/computerscience/#10262';
 		$courses['levelOfAward'] = 'F';
@@ -228,7 +228,7 @@ class Dummy_data_model extends CI_Model {
 		$course1['courseTitle'] = 'BA (Hons) Journalism';
 		$course1['distanceLearningOnly'] = 0;
 		$course1['employmentDetailsURL'] = '';
-		$course1['feeWaiver'] = 0;
+		$course1['feeWaiver'] = 'n';
 		$course1['feesConfirmation'] = 1;
 		$course1['learningTeachingURL'] = 'http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/journalism/#5252';
 		$course1['levelOfAward'] = 'F';
@@ -316,7 +316,7 @@ class Dummy_data_model extends CI_Model {
 		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$course['modules'][] = $a_row['moduleCode'];
+			$course1['modules'][] = $a_row['moduleCode'];
 		}
 
 
@@ -386,7 +386,7 @@ class Dummy_data_model extends CI_Model {
 		$course2['courseTitle'] = 'BSc (Hons) Computer Information Systems';
 		$course2['distanceLearningOnly'] = 0;
 		$course2['employmentDetailsURL'] = 'http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/computerinformationsystemsbsc/#10257';
-		$course2['feeWaiver'] = 0;
+		$course2['feeWaiver'] = 'n';
 		$course2['feesConfirmation'] = 1;
 		$course2['learningTeachingURL'] = 'http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/computerinformationsystemsbsc/#10255';
 		$course2['levelOfAward'] = 'F';
@@ -469,7 +469,7 @@ class Dummy_data_model extends CI_Model {
 		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$course['modules'][] = $a_row['moduleCode'];
+			$course2['modules'][] = $a_row['moduleCode'];
 		}
 		
 		$course2['entryPoints'][0]['lower'] = 160;
@@ -538,7 +538,7 @@ class Dummy_data_model extends CI_Model {
 		$course3['courseTitle'] = 'BSc (Hons) Games Computing';
 		$course3['distanceLearningOnly'] = 0;
 		$course3['employmentDetailsURL'] = 'http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/gamescomputing/#5011';
-		$course3['feeWaiver'] = 0;
+		$course3['feeWaiver'] = 'n';
 		$course3['feesConfirmation'] = 1;
 		$course3['learningTeachingURL'] = 'http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/gamescomputing/#8225';
 		$course3['levelOfAward'] = 'F';
@@ -621,7 +621,7 @@ class Dummy_data_model extends CI_Model {
 		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$course['modules'][] = $a_row['moduleCode'];
+			$course3['modules'][] = $a_row['moduleCode'];
 		}
 		
 		$course3['entryPoints'][0]['lower'] = 160;
@@ -691,7 +691,7 @@ class Dummy_data_model extends CI_Model {
 		$course['courseTitle'] = 'BSc (Hons) Agriculture and Environmental Management';
 		$course['distanceLearningOnly'] = 0;
 		$course['employmentDetailsURL'] = 'http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/agricultureandenvironmentalmanagement/#5135';
-		$course['feeWaiver'] = 0;
+		$course['feeWaiver'] = 'n';
 		$course['feesConfirmation'] = 1;
 		$course['learningTeachingURL'] = 'http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/agricultureandenvironmentalmanagement/#8349';
 		$course['levelOfAward'] = 'F';
@@ -827,7 +827,7 @@ class Dummy_data_model extends CI_Model {
 		$course['courseTitle'] = 'BA (Hons) Graphic Design';
 		$course['distanceLearningOnly'] = 0;
 		$course['employmentDetailsURL'] = 'http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/graphicdesign/#4961';
-		$course['feeWaiver'] = 0;
+		$course['feeWaiver'] = 'n';
 		$course['feesConfirmation'] = 1;
 		$course['learningTeachingURL'] = 'http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/graphicdesign/#8175';
 		$course['levelOfAward'] = 'F';
@@ -978,7 +978,7 @@ class Dummy_data_model extends CI_Model {
 		$course['courseTitle'] = 'BA (Hons) Accountancy and Finance';
 		$course['distanceLearningOnly'] = 0;
 		$course['employmentDetailsURL'] = 'http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/accountancyandfinance/#4939';
-		$course['feeWaiver'] = 0;
+		$course['feeWaiver'] = 'n';
 		$course['feesConfirmation'] = 1;
 		$course['learningTeachingURL'] = 'http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/accountancyandfinance/#4551';
 		$course['levelOfAward'] = 'F';
@@ -1126,7 +1126,7 @@ class Dummy_data_model extends CI_Model {
 		$course['courseTitle'] = 'BSc (Hons) Psychology and Marketing';
 		$course['distanceLearningOnly'] = 0;
 		$course['employmentDetailsURL'] = 'http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/psychologyandmarketing/#5101';
-		$course['feeWaiver'] = 0;
+		$course['feeWaiver'] = 'n';
 		$course['feesConfirmation'] = 1;
 		$course['learningTeachingURL'] = 'http://www.lincoln.ac.uk/home/studyatlincoln/undergraduatecourses/psychologyandmarketing/#8315';
 		$course['levelOfAward'] = 'F';
