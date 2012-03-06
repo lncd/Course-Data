@@ -1440,22 +1440,22 @@ class Dummy_data_model extends CI_Model {
 			
 		if(isset($provider['mlo:location']['mlo:postcode']))
 			$institution['location']['postcode'] = $provider['mlo:location']['mlo:postcode']['value'];
-		$tempLon = 0.0;
-		$tempLat = 0.0;
+		$temp_lon = 0.0;
+		$temp_lat = 0.0;
 		if(isset($provider['mlo:location']['mlo:address']))
 		{
 			foreach($provider['mlo:location']['mlo:address'] as $address_line)
 			{
 				if((isset($address_line['attr']['xsi:type'])) AND ($address_line['attr']['xsi:type'] === 'geo:lat'))
-					$tempLat = $address_line['value'];
+					$temp_lat = $address_line['value'];
 				elseif((isset($address_line['attr']['xsi:type'])) AND ($address_line['attr']['xsi:type'] === 'geo:long'))
-					$tempLon = $address_line['value'];
+					$temp_lon = $address_line['value'];
 				else
 					$institution['location']['address'][] = $address_line['value'];
 			}
 			
-			if(($tempLon != 0.0) AND ($tempLat != 0.0))
-				$institution['location']['geo'] = array(floatval($tempLat), floatval($tempLon));
+			if(($temp_lon !== 0.0) AND ($temp_lat !== 0.0))
+				$institution['location']['geo'] = array(floatval($temp_lat), floatval($temp_lon));
 		}
 		
 		if(isset($provider['mlo:location']['mlo:phone']))
@@ -1528,11 +1528,7 @@ class Dummy_data_model extends CI_Model {
 				
 	}
 		
-	
-	
-	
-	
-	/** 
+		/** 
  	* xml2array() will convert the given XML text to an array in the XML structure. 
  	*
  	* @param string $contents       the Contents string
@@ -1678,6 +1674,8 @@ class Dummy_data_model extends CI_Model {
 
 	return($xml_array);
 	}
+
+
 }
 
 // End of file dummy_data_model.php
