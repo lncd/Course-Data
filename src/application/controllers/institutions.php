@@ -59,7 +59,7 @@ class Institutions extends CI_Controller {
 			$results['count'] = count($output);
 			if(count($output) > 50)
 				$results['message'] = 'Amount of potential results is greater than 50. Please narrow your search using more parameters, or more specific search terms.';
-			$results['courses'] = $output;
+			$results['institutions'] = $output;
 			}
 			else
 			{
@@ -76,8 +76,7 @@ class Institutions extends CI_Controller {
 		}
 		
 		
-		echo json_encode($results);
-	}	
+		echo json_encode($results);	}	
 }
 
 // End of file institutions.php 

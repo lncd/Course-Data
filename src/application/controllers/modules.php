@@ -71,21 +71,34 @@ class Modules extends CI_Controller {
 		}
 			
 		$output = $this->mongo_db->get('modules');
-			
-		if($output !== NULL)
+		if($this->mongo_db->get_wheres() > 0)
 		{
+			
+			if((isset($output)) AND (count($output) !== 0))
+			{
+
 			$results['error'] = 0;
 			$results['count'] = count($output);
+			if(count($output) > 50)
+				$results['message'] = 'Amount of potential results is greater than 50. Please narrow your search using more parameters, or more specific search terms.';
 			$results['modules'] = $output;
+			}
+			else
+			{
+			$results['error'] = 0;
+			$results['count'] = 0;
+			$results['message'] = 'No results returned.';
+			}
 		}
 		else
 		{
 			$results['error'] = 1;
-			$results['message'] = 'No results returned. Sorry';
-		}		
-		echo '<pre>'; 
-		print_r($results); 
-		echo '</pre>';
+			$results['count'] = 0;
+			$results['message'] = 'No valid criteria specified. ';
+		}
+		
+		
+		echo json_encode($results);
 	}
 }
 
