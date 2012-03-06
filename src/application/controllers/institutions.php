@@ -40,8 +40,8 @@ class Institutions extends CI_Controller {
 			$this->mongo_db->like('institutionName', $this->input->get('name'));
 		if($this->input->get('near'))
 		{
-			$nearArray = explode(',', $this->input->get('near'));
-			if(sizeof($nearArray === 4))
+			$near_array = explode(',', $this->input->get('near'));
+			if(sizeof($near_array === 4))
 			{
 				// Lon, lat, radius, limit
 			}
