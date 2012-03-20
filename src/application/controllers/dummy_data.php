@@ -36,7 +36,7 @@ class Dummy_data extends CI_Controller {
 		$data['output'] = $this->dummy_data_model->remove_kis_data();
 		$data['output'].= $this->_create_kis_data();
 		$this->load->view('dummyData.php', $data);
-		$this->dummy_data_model->xcri('http://localhost/xcri.xml');
+		$this->dummy_data_model->xcri('http://localhost/Course-Data/src/xcri.xml');
 	}
 		
 	/**

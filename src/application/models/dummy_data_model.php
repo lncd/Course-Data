@@ -152,7 +152,7 @@ class Dummy_data_model extends CI_Model {
 		$courses['employment']['workAndStudy'] = 3.7;
 		$courses['employment']['other'] = 6.1;
 		$courses['employment']['unemployed'] = 14.6;
-		$courses['modules'] = array();
+		$courses['modules'] = array('level1'=>array(), 'level2'=>array(), 'level3'=>array(), 'level4' => array());
 		$username = 'root';
 		$password = 'root';
 		$hostname = 'localhost';	
@@ -163,7 +163,13 @@ class Dummy_data_model extends CI_Model {
 		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$courses['modules'][] = $a_row['moduleCode'];
+			$level_identifier = substr($a_row['moduleCode'],3,1);
+			if($level_identifier === '1')
+				$courses['modules']['level1'][] = $a_row['moduleCode'];
+			elseif($level_identifier === '2')
+				$courses['modules']['level2'][] = $a_row['moduleCode'];
+			else
+				$courses['modules']['level3'][] = $a_row['moduleCode'];
 		}
 		
 		$courses['entryPoints'][0]['lower'] = 120;
@@ -316,9 +322,14 @@ class Dummy_data_model extends CI_Model {
 		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$course1['modules'][] = $a_row['moduleCode'];
+			$level_identifier = substr($a_row['moduleCode'],3,1);
+			if($level_identifier === '1')
+				$course1['modules']['level1'][] = $a_row['moduleCode'];
+			elseif($level_identifier === '2')
+				$course1['modules']['level2'][] = $a_row['moduleCode'];
+			else
+				$course1['modules']['level3'][] = $a_row['moduleCode'];
 		}
-
 
 		$course1['entryPoints'][0]['lower'] = 160;
 		$course1['entryPoints'][0]['upper'] = 199;
@@ -469,7 +480,13 @@ class Dummy_data_model extends CI_Model {
 		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$course2['modules'][] = $a_row['moduleCode'];
+			$level_identifier = substr($a_row['moduleCode'],3,1);
+			if($level_identifier === '1')
+				$course2['modules']['level1'][] = $a_row['moduleCode'];
+			elseif($level_identifier === '2')
+				$course2['modules']['level2'][] = $a_row['moduleCode'];
+			else
+				$course2['modules']['level3'][] = $a_row['moduleCode'];
 		}
 		
 		$course2['entryPoints'][0]['lower'] = 160;
@@ -621,7 +638,13 @@ class Dummy_data_model extends CI_Model {
 		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$course3['modules'][] = $a_row['moduleCode'];
+			$level_identifier = substr($a_row['moduleCode'],3,1);
+			if($level_identifier === '1')
+				$course3['modules']['level1'][] = $a_row['moduleCode'];
+			elseif($level_identifier === '2')
+				$course3['modules']['level2'][] = $a_row['moduleCode'];
+			else
+				$course3['modules']['level3'][] = $a_row['moduleCode'];
 		}
 		
 		$course3['entryPoints'][0]['lower'] = 160;
@@ -766,7 +789,13 @@ class Dummy_data_model extends CI_Model {
 		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$course['modules'][] = $a_row['moduleCode'];
+			$level_identifier = substr($a_row['moduleCode'],3,1);
+			if($level_identifier === '1')
+				$course['modules']['level1'][] = $a_row['moduleCode'];
+			elseif($level_identifier === '2')
+				$course['modules']['level2'][] = $a_row['moduleCode'];
+			else
+				$course['modules']['level3'][] = $a_row['moduleCode'];
 		}
 
 		$course['entryPoints'][0]['lower'] = 160;
@@ -910,7 +939,13 @@ class Dummy_data_model extends CI_Model {
 		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$course['modules'][] = $a_row['moduleCode'];
+			$level_identifier = substr($a_row['moduleCode'],3,1);
+			if($level_identifier === '1')
+				$course['modules']['level1'][] = $a_row['moduleCode'];
+			elseif($level_identifier === '2')
+				$course['modules']['level2'][] = $a_row['moduleCode'];
+			else
+				$course['modules']['level3'][] = $a_row['moduleCode'];
 		}
 
 		$course['entryPoints'][0]['lower'] = 0;
@@ -1066,7 +1101,13 @@ class Dummy_data_model extends CI_Model {
 		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$course['modules'][] = $a_row['moduleCode'];
+			$level_identifier = substr($a_row['moduleCode'],3,1);
+			if($level_identifier === '1')
+				$course['modules']['level1'][] = $a_row['moduleCode'];
+			elseif($level_identifier === '2')
+				$course['modules']['level2'][] = $a_row['moduleCode'];
+			else
+				$course['modules']['level3'][] = $a_row['moduleCode'];
 		}
 		
 		$course['entryPoints'][0]['lower'] = 160;
@@ -1210,7 +1251,13 @@ class Dummy_data_model extends CI_Model {
 		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$course['modules'][] = $a_row['moduleCode'];
+			$level_identifier = substr($a_row['moduleCode'],3,1);
+			if($level_identifier === '1')
+				$course['modules']['level1'][] = $a_row['moduleCode'];
+			elseif($level_identifier === '2')
+				$course['modules']['level2'][] = $a_row['moduleCode'];
+			else
+				$course['modules']['level3'][] = $a_row['moduleCode'];
 		}
 		
 		$course['entryPoints'][0]['lower'] = 0;
