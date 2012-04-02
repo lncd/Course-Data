@@ -165,11 +165,11 @@ class Dummy_data_model extends CI_Model {
 		{
 			$level_identifier = substr($a_row['moduleCode'],3,1);
 			if($level_identifier === '1')
-				$courses['modules']['level1'][] = $a_row['moduleCode'];
+				$courses['modules']['level1'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 			elseif($level_identifier === '2')
-				$courses['modules']['level2'][] = $a_row['moduleCode'];
+				$courses['modules']['level2'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 			else
-				$courses['modules']['level3'][] = $a_row['moduleCode'];
+				$courses['modules']['level3'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 		}
 		
 		$courses['entryPoints'][0]['lower'] = 120;
@@ -324,11 +324,11 @@ class Dummy_data_model extends CI_Model {
 		{
 			$level_identifier = substr($a_row['moduleCode'],3,1);
 			if($level_identifier === '1')
-				$course1['modules']['level1'][] = $a_row['moduleCode'];
+				$course1['modules']['level1'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 			elseif($level_identifier === '2')
-				$course1['modules']['level2'][] = $a_row['moduleCode'];
+				$course1['modules']['level2'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 			else
-				$course1['modules']['level3'][] = $a_row['moduleCode'];
+				$course1['modules']['level3'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 		}
 
 		$course1['entryPoints'][0]['lower'] = 160;
@@ -482,11 +482,11 @@ class Dummy_data_model extends CI_Model {
 		{
 			$level_identifier = substr($a_row['moduleCode'],3,1);
 			if($level_identifier === '1')
-				$course2['modules']['level1'][] = $a_row['moduleCode'];
+				$course2['modules']['level1'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 			elseif($level_identifier === '2')
-				$course2['modules']['level2'][] = $a_row['moduleCode'];
+				$course2['modules']['level2'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 			else
-				$course2['modules']['level3'][] = $a_row['moduleCode'];
+				$course2['modules']['level3'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 		}
 		
 		$course2['entryPoints'][0]['lower'] = 160;
@@ -640,11 +640,11 @@ class Dummy_data_model extends CI_Model {
 		{
 			$level_identifier = substr($a_row['moduleCode'],3,1);
 			if($level_identifier === '1')
-				$course3['modules']['level1'][] = $a_row['moduleCode'];
+				$course3['modules']['level1'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 			elseif($level_identifier === '2')
-				$course3['modules']['level2'][] = $a_row['moduleCode'];
+				$course3['modules']['level2'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 			else
-				$course3['modules']['level3'][] = $a_row['moduleCode'];
+				$course3['modules']['level3'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 		}
 		
 		$course3['entryPoints'][0]['lower'] = 160;
@@ -791,11 +791,11 @@ class Dummy_data_model extends CI_Model {
 		{
 			$level_identifier = substr($a_row['moduleCode'],3,1);
 			if($level_identifier === '1')
-				$course['modules']['level1'][] = $a_row['moduleCode'];
+				$course['modules']['level1'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 			elseif($level_identifier === '2')
-				$course['modules']['level2'][] = $a_row['moduleCode'];
+				$course['modules']['level2'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 			else
-				$course['modules']['level3'][] = $a_row['moduleCode'];
+				$course['modules']['level3'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 		}
 
 		$course['entryPoints'][0]['lower'] = 160;
@@ -941,11 +941,11 @@ class Dummy_data_model extends CI_Model {
 		{
 			$level_identifier = substr($a_row['moduleCode'],3,1);
 			if($level_identifier === '1')
-				$course['modules']['level1'][] = $a_row['moduleCode'];
+				$course['modules']['level1'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 			elseif($level_identifier === '2')
-				$course['modules']['level2'][] = $a_row['moduleCode'];
+				$course['modules']['level2'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 			else
-				$course['modules']['level3'][] = $a_row['moduleCode'];
+				$course['modules']['level3'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 		}
 
 		$course['entryPoints'][0]['lower'] = 0;
@@ -1103,11 +1103,11 @@ class Dummy_data_model extends CI_Model {
 		{
 			$level_identifier = substr($a_row['moduleCode'],3,1);
 			if($level_identifier === '1')
-				$course['modules']['level1'][] = $a_row['moduleCode'];
+				$course['modules']['level1'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 			elseif($level_identifier === '2')
-				$course['modules']['level2'][] = $a_row['moduleCode'];
+				$course['modules']['level2'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 			else
-				$course['modules']['level3'][] = $a_row['moduleCode'];
+				$course['modules']['level3'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 		}
 		
 		$course['entryPoints'][0]['lower'] = 160;
@@ -1253,13 +1253,12 @@ class Dummy_data_model extends CI_Model {
 		{
 			$level_identifier = substr($a_row['moduleCode'],3,1);
 			if($level_identifier === '1')
-				$course['modules']['level1'][] = $a_row['moduleCode'];
+				$course['modules']['level1'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 			elseif($level_identifier === '2')
-				$course['modules']['level2'][] = $a_row['moduleCode'];
+				$course['modules']['level2'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 			else
-				$course['modules']['level3'][] = $a_row['moduleCode'];
-		}
-		
+				$course['modules']['level3'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
+		}		
 		$course['entryPoints'][0]['lower'] = 0;
 		$course['entryPoints'][0]['upper'] = 119;
 		$course['entryPoints'][0]['amount'] = 1;
