@@ -24,6 +24,13 @@
 
 class Dummy_data_model extends CI_Model {
 
+	$username = 'root';
+	$password = 'root';
+	$hostname = 'localhost';	
+	$dbha = mysql_connect($hostname, $username, $password) OR die('Unable to connect to MySQL');
+	
+
+
 	/**
 	* Constructor function for model.
 	*
@@ -70,6 +77,7 @@ class Dummy_data_model extends CI_Model {
 	*/
 	function lincoln_g403()
 	{
+		mysql_select_db('modules', $dbha);
 		$courses = array();
 		$courses['_id'] = '123456'; //kisCourseIdentifier
 		$courses['kisType'] = 1;
@@ -153,17 +161,12 @@ class Dummy_data_model extends CI_Model {
 		$courses['employment']['other'] = 6.1;
 		$courses['employment']['unemployed'] = 14.6;
 		$courses['modules'] = array('level1'=>array(), 'level2'=>array(), 'level3'=>array(), 'level4' => array());
-		$username = 'root';
-		$password = 'root';
-		$hostname = 'localhost';	
-		$dbha = mysql_connect($hostname, $username, $password) OR die('Unable to connect to MySQL');
-		mysql_select_db('modules', $dbha);
-		
+				
 		$sqla = "SELECT * FROM 13_programmes WHERE programme = '" . $courses['ucasProgrammeCode'] . "'";
 		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$level_identifier = substr($a_row['moduleCode'],3,1);
+			$level_identifier = substr($a_row['moduleCode'], 3, 1);
 			if($level_identifier === '1')
 				$courses['modules']['level1'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 			elseif($level_identifier === '2')
@@ -225,6 +228,7 @@ class Dummy_data_model extends CI_Model {
 	*/
 	function lincoln_p500()
 	{
+		mysql_select_db('modules', $dbha);
 		$course1 = array();
 		$course1['_id'] = '123457'; //kisCourseIdentifier
 		$course1['kisType'] = 1;
@@ -312,17 +316,12 @@ class Dummy_data_model extends CI_Model {
 		$course1['employment']['workAndStudy'] = 1.8;
 		$course1['employment']['other'] = 1.8;
 		$course1['employment']['unemployed'] = 12.5;
-		$username = 'root';
-		$password = 'root';
-		$hostname = 'localhost';	
-		$dbha = mysql_connect($hostname, $username, $password) OR die('Unable to connect to MySQL');
-		mysql_select_db('modules', $dbha);
-		
+				
 		$sqla = "SELECT * FROM 13_programmes WHERE programme = '" . $course1['ucasProgrammeCode'] . "'";
 		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$level_identifier = substr($a_row['moduleCode'],3,1);
+			$level_identifier = substr($a_row['moduleCode'], 3, 1);
 			if($level_identifier === '1')
 				$course1['modules']['level1'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 			elseif($level_identifier === '2')
@@ -388,6 +387,7 @@ class Dummy_data_model extends CI_Model {
 	*/
 	function lincoln_g500()
 	{
+		mysql_select_db('modules', $dbha);
 		$course2 = array();
 		$course2['_id'] = '123458'; //kisCourseIdentifier
 		$course2['kisType'] = 1;
@@ -470,17 +470,12 @@ class Dummy_data_model extends CI_Model {
 		$course2['employment']['workAndStudy'] = 3.7;
 		$course2['employment']['other'] = 6.1;
 		$course2['employment']['unemployed'] = 14.6;
-		$username = 'root';
-		$password = 'root';
-		$hostname = 'localhost';	
-		$dbha = mysql_connect($hostname, $username, $password) OR die('Unable to connect to MySQL');
-		mysql_select_db('modules', $dbha);
-		
+
 		$sqla = "SELECT * FROM 13_programmes WHERE programme = '" . $course2['ucasProgrammeCode'] . "'";
 		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$level_identifier = substr($a_row['moduleCode'],3,1);
+			$level_identifier = substr($a_row['moduleCode'], 3, 1);
 			if($level_identifier === '1')
 				$course2['modules']['level1'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 			elseif($level_identifier === '2')
@@ -546,6 +541,7 @@ class Dummy_data_model extends CI_Model {
 	*/
 	function lincoln_g401()
 	{
+		mysql_select_db('modules', $dbha);
 		$course3 = array();
 		$course3['_id'] = '123459'; //kisCourseIdentifier
 		$course3['kisType'] = 1;
@@ -628,17 +624,12 @@ class Dummy_data_model extends CI_Model {
 		$course3['employment']['workAndStudy'] = 3.7;
 		$course3['employment']['other'] = 6.1;
 		$course3['employment']['unemployed'] = 14.6;
-		$username = 'root';
-		$password = 'root';
-		$hostname = 'localhost';	
-		$dbha = mysql_connect($hostname, $username, $password) OR die('Unable to connect to MySQL');
-		mysql_select_db('modules', $dbha);
-		
+				
 		$sqla = "SELECT * FROM 13_programmes WHERE programme = '" . $course3['ucasProgrammeCode'] . "'";
 		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$level_identifier = substr($a_row['moduleCode'],3,1);
+			$level_identifier = substr($a_row['moduleCode'], 3, 1);
 			if($level_identifier === '1')
 				$course3['modules']['level1'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 			elseif($level_identifier === '2')
@@ -705,6 +696,7 @@ class Dummy_data_model extends CI_Model {
 	*/
 	function lincoln_d490()
 	{
+		mysql_select_db('modules', $dbha);
 		$course = array();
 		$course['_id'] = '123460'; //kisCourseIdentifier
 		$course['kisType'] = 1;
@@ -779,17 +771,12 @@ class Dummy_data_model extends CI_Model {
 		$course['nss']['development']['communication'] = 71;
 		$course['nss']['development']['unfamiliar'] = 67;
 		$course['nss']['studentsUnion']['impact'] = 75;
-		$username = 'root';
-		$password = 'root';
-		$hostname = 'localhost';	
-		$dbha = mysql_connect($hostname, $username, $password) OR die('Unable to connect to MySQL');
-		mysql_select_db('modules', $dbha);
-		
+				
 		$sqla = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
 		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$level_identifier = substr($a_row['moduleCode'],3,1);
+			$level_identifier = substr($a_row['moduleCode'], 3, 1);
 			if($level_identifier === '1')
 				$course['modules']['level1'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 			elseif($level_identifier === '2')
@@ -847,6 +834,7 @@ class Dummy_data_model extends CI_Model {
 	*/
 	function lincoln_w290()
 	{
+		mysql_select_db('modules', $dbha);
 		$course = array();
 		$course['_id'] = '123461'; //kisCourseIdentifier
 		$course['kisType'] = 1;
@@ -929,17 +917,12 @@ class Dummy_data_model extends CI_Model {
 		$course['employment']['workAndStudy'] = 2.9;
 		$course['employment']['other'] = 1.4;
 		$course['employment']['unemployed'] = 4.3;
-		$username = 'root';
-		$password = 'root';
-		$hostname = 'localhost';	
-		$dbha = mysql_connect($hostname, $username, $password) OR die('Unable to connect to MySQL');
-		mysql_select_db('modules', $dbha);
-		
+				
 		$sqla = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
 		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$level_identifier = substr($a_row['moduleCode'],3,1);
+			$level_identifier = substr($a_row['moduleCode'], 3, 1);
 			if($level_identifier === '1')
 				$course['modules']['level1'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 			elseif($level_identifier === '2')
@@ -1004,6 +987,7 @@ class Dummy_data_model extends CI_Model {
 	*/
 	function lincoln_n400()
 	{
+		mysql_select_db('modules', $dbha);
 		$course = array();
 		$course['_id'] = '123462'; //kisCourseIdentifier
 		$course['kisType'] = 1;
@@ -1091,17 +1075,13 @@ class Dummy_data_model extends CI_Model {
 		$course['employment']['workAndStudy'] = 0.0;
 		$course['employment']['other'] = 0.0;
 		$course['employment']['unemployed'] = 17.2;
-		$username = 'root';
-		$password = 'root';
-		$hostname = 'localhost';	
-		$dbha = mysql_connect($hostname, $username, $password) OR die('Unable to connect to MySQL');
-		mysql_select_db('modules', $dbha);
+		
 		
 		$sqla = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
 		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$level_identifier = substr($a_row['moduleCode'],3,1);
+			$level_identifier = substr($a_row['moduleCode'], 3, 1);
 			if($level_identifier === '1')
 				$course['modules']['level1'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 			elseif($level_identifier === '2')
@@ -1158,6 +1138,7 @@ class Dummy_data_model extends CI_Model {
 	*/
 	function lincoln_cn85()
 	{
+		mysql_select_db('modules', $dbha);
 		$course = array();
 		$course['_id'] = '123463'; //kisCourseIdentifier
 		$course['kisType'] = 1;
@@ -1241,17 +1222,12 @@ class Dummy_data_model extends CI_Model {
 		$course['employment']['other'] = 3.1;
 		$course['employment']['unemployed'] = 6.7;
 		$course['studentsUnion']['impact'] = 75.0;
-		$username = 'root';
-		$password = 'root';
-		$hostname = 'localhost';	
-		$dbha = mysql_connect($hostname, $username, $password) OR die('Unable to connect to MySQL');
-		mysql_select_db('modules', $dbha);
-		
+				
 		$sqla = "SELECT * FROM 13_programmes WHERE programme = '" . $course['ucasProgrammeCode'] . "'";
 		$results = mysql_query($sqla) OR die('Didnt work.');
 		while($a_row = mysql_fetch_array($results, MYSQL_ASSOC))
 		{
-			$level_identifier = substr($a_row['moduleCode'],3,1);
+			$level_identifier = substr($a_row['moduleCode'], 3, 1);
 			if($level_identifier === '1')
 				$course['modules']['level1'][] = array('code' => $a_row['moduleCode'],'optional' => $a_row['option']);
 			elseif($level_identifier === '2')
