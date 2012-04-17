@@ -131,8 +131,10 @@
 		<exec executable="phpcpd">
 			<arg value="--log-pmd" />
 			<arg value="${basedir}/build/logs/pmd-cpd.xml" />
-			<arg path="${basedir}/src/xcri/application" />
-			<arg path="${basedir}/src/badges/application" />
+			<arg path="${basedir}/src/xcri/application/controllers" />
+			<arg path="${basedir}/src/xcri/application/models" />
+			<arg path="${basedir}/src/badges/application/controllers" />
+			<arg path="${basedir}/src/badges/application/models" />
 		</exec>
 	</target>
 	
