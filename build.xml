@@ -45,7 +45,12 @@
 		<apply executable="php" failonerror="true">
 			<arg value="-l" />
 			
-			<fileset dir="${basedir}/src/application">
+			<fileset dir="${basedir}/src/xcri/application">
+				<include name="**/*.php" />
+				<modified />
+			</fileset>
+			
+			<fileset dir="${basedir}/src/badges/application">
 				<include name="**/*.php" />
 				<modified />
 			</fileset>
@@ -68,7 +73,8 @@
 			<arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
 			<arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
 			<arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
-			<arg path="${basedir}/src/application" />
+			<arg path="${basedir}/src/xcri/application" />
+			<arg path="${basedir}/src/badges/application" />
 		</exec>
 	</target>
 	
