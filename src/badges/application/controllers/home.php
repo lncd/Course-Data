@@ -31,11 +31,9 @@ class Home extends CI_Controller {
 	*/
 	public function index()
 	{
-			$this->load->model('assertions','assertions', true);
-			$data['assertions'] = $this->assertions->earn_badge('002944',1,'jmahoney@lincoln.ac.uk');
 			$output  = $this->load->view('header_view', '', true);
 			$output .= $this->load->view('nav_view', '', true);
-			$output .= $this->load->view('index_view', $data, true);
+			$output .= $this->load->view('index_view', '', true);
 			$output .= $this->load->view('footer_view', '', true);
 
 			$this->output->set_output($output);
