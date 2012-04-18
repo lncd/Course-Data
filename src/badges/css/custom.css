@@ -1,0 +1,48 @@
+.home
+{
+    margin-bottom: 40px !important;
+    text-align: center;
+}
+
+.btn-home
+{
+    width: 200px;
+    margin-left: 40px;
+    vertical-align: middle !important;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.module
+{
+    background-color: #F7F7F9;
+    margin-bottom: 30px;
+}
+
+.module h3
+{
+    background-color: #DEDEE7;
+}
+
+.bumper
+{
+    margin-top: 20px;
+}
+
+.title
+{
+    text-transform: capitalize;
+}
+
+.centered
+{
+    text-align:center;
+}
+
+.cancel_form{
+    display:inline !important;
+}
+
+.delete_page_form{
+    display:inline !important;
+}
