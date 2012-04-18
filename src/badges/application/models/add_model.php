@@ -46,7 +46,7 @@ class Add_model extends CI_Model
 	*/
 	public function check_objective_exists($obj_text)
 	{
-		$this->db->where('objective_text', mysql_escape_string($this->input->get('text')));
+		$this->db->where('objective_text', $obj_text);
 		$this->db->from('objectives');
 		return $this->db->count_all_results();		
 	}
@@ -55,14 +55,14 @@ class Add_model extends CI_Model
 	* Function adds the objective data to the database
 	*
 	* @param string $obj_text Text describing the objective
-	* @param int $obj_type ID number of objective type
+	* @param int    $obj_type ID number of objective type
 	* 
 	* @return Nothing
 	* @access Public
 	*/
 	public function add_objective_data($obj_text, $obj_type)
 	{
-		$data = array('objective_text' => mysql_escape_string($this->input->get('text')), 'objective_type_id' => (int)$this->input->get('type'));
+		$data = array('objective_text' => $obj_text, 'objective_type_id' => $obj_type);
 		$this->db->insert('objectives', $data);
 	}
 	
@@ -74,14 +74,13 @@ class Add_model extends CI_Model
 	* @return ID of objective. If returns 0, error occured.
 	* @access Public
 	*/
-	function get_objective_id($obj_text)
+	public function get_objective_id($obj_text)
 	{
 		$obj_id = 0;
 		
 		$query = $this->db
 						->select()
-						->where('objective_text', mysql_escape_string($this->input->get('text')))
-						->where('objective_type_id', (int)$this->input->get('type'))
+						->where('objective_text', $obj_text)
 						->get('objectives');
 						
 		foreach($query->result() as $result)
@@ -91,4 +90,38 @@ class Add_model extends CI_Model
 		
 		return $obj_id;
 	}
+	
+	/**
+	* Function checks if a person has already completed an objective
+	*
+	* @param string $person 	ID of a person
+	* @param int	$objective	ID of the objective
+	* 
+	* @return ID of objective. If returns 0, error occured.
+	* @access Public
+	*/
+	public function check_objective_complete($person, $objective)
+	{
+		$this->db->where('person_id', $person);
+		$this->db->where('objective_id', (int)$objective);
+		$this->db->from('objectives_complete');
+		return $this->db->count_all_results();
+	}
+	
+	/**
+	* Function adds an objective completion to the database
+	*
+	* @param string $person 	ID of a person
+	* @param int	$objective	ID of the objective
+	* 
+	* @return Nothing
+	* @access Public
+	*/
+	public function add_completed_objective($person, $objective)
+	{
+		$data = array('person_id' => $person, 'objective_id' => $objective);
+		$this->db->insert('objectives_complete', $data);
+	}
+	
+	
 }

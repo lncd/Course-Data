@@ -34,6 +34,12 @@ class Add extends CI_Controller {
 			
 	}
 	
+	/**
+	* API function for adding an objective
+	*
+	* @return Success or error messages.
+	* @access Public
+	*/
 	public function objective()
 	{
 		$this->load->model('add_model');
@@ -62,7 +68,39 @@ class Add extends CI_Controller {
 		}
 		$this->output->append_output(json_encode($returning));
 	}
+	
+	/**
+	* API function to mark an objective as complete for a user.
+	*
+	* @return Success or error messages.
+	* @access Public
+	*/
+	public function objective_complete()
+	{
+		$this->load->model('add_model');
+		
+		//First, check required parameters exist and are valid
+		if(($this->input->get('person')) && ($this->input->get('objective')) && (is_numeric($this->input->get('objective'))))
+		{
+			//Has the person already completed the objective?
+			if($this->add_model->check_objective_complete($this->input->get('person'), $this->input->get('objective')) == 0)
+			{
+				$this->add_model->add_completed_objective($this->input->get('person'), $this->input->get('objective'));
+				$returning = array('error' => 0, 'message' => 'Objective completion successfully added');
+			}
+			else
+			{
+				$returning = array('error' => 1, 'message' => 'Objective has already been completed by this user.');
+			}
+		}
+		else
+		{
+			$returning = array('error' => 1, 'message' => 'Parameters are not valid. Are you passing the person identifier and the objective_id (as an integer) ?');
+		}
+		
+		$this->output->append_output(json_encode($returning));
+	}
 }
 
 // End of file home.php 
-// Location: ./controllers/home.php
+// Location: ./controllers/add.php
