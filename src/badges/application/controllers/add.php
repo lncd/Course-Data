@@ -80,13 +80,14 @@ class Add extends CI_Controller {
 		$this->load->model('add_model');
 		
 		//First, check required parameters exist and are valid
-		if(($this->input->get('person')) && ($this->input->get('objective')) && (is_numeric($this->input->get('objective'))))
+		if(($this->input->get('person')) && ($this->input->get('objective')) && ($this->input->get('email')) && (is_numeric($this->input->get('objective'))))
 		{
 			//Has the person already completed the objective?
 			if($this->add_model->check_objective_complete($this->input->get('person'), $this->input->get('objective')) == 0)
 			{
 				$this->add_model->add_completed_objective($this->input->get('person'), $this->input->get('objective'));
-				$returning = array('error' => 0, 'message' => 'Objective completion successfully added');
+				$awarded = $this->add_model->check_new_badges($this->input->get('person'), $this->input->get('objective'), $this->input->get('email'));
+				$returning = array('error' => 0, 'message' => 'Objective completion successfully added', 'badges_awarded' => $awarded);
 			}
 			else
 			{
@@ -100,6 +101,44 @@ class Add extends CI_Controller {
 		
 		$this->output->append_output(json_encode($returning));
 	}
+	
+	/**
+	* API function to add an objective type to the system
+	*
+	* @return Success or error messages
+	* @access Public
+	*/
+	public function objective_type()
+	{
+		$this->load->model('add_model');
+		
+		//First, check that the required parameters have been passed
+		if($this->input->get('text'))
+		{
+			//Make string safe
+			$type_text = mysql_escape_string($this->input->get('text'));
+			
+			//Does the objective type text already exist in the database?
+			if($this->add_model->check_objective_type($type_text) == 0)
+			{
+				$this->add_model->add_objective_type($type_text);
+				$id = $this->add_model->get_objective_type_id($type_text);
+				$returning = array('error' => 0, 'message' => 'Objective type successfully added to database', 'data' => array('objective_type_text' => $type_text, 'objective_type_id' => $id));
+			}
+			else
+			{
+				$id = $this->add_model->get_objective_type_id($type_text);
+				$returning = array('error' => 1, 'message' => 'Objective type text already exists in the database', 'data' => array('objective_type_text' => $type_text, 'objective_type_id' => $id));
+			}
+		}
+		else
+		{
+			$returning = array('error' => 1, 'message' => 'The parameter "text" was not passed, or is not valid.');
+		}
+		
+		$this->output->append_output(json_encode($returning));
+	}
+	 
 }
 
 // End of file home.php 
