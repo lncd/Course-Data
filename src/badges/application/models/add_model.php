@@ -4,10 +4,10 @@
  *
  * PHP Version 5
  *
- * @category DummyData
- * @package  DummyData
- * @author   Jamie Mahoney <jmahoney127@googlemail.com>
- * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
+ * @category Badges
+ * @package  Models
+ * @author   Jamie Mahoney <jmahoney@lincoln.ac.uk>
+ * @license  GNU Affero General Public License 3.0
  * @link     coursedata.blogs.lincoln.ac.uk
  *
  */
@@ -17,10 +17,30 @@
  *
  * @category DummyData
  * @package  DummyData
- * @author   Jamie Mahoney <jmahoney127@googlemail.com>
- * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
+ * @author   Jamie Mahoney <jmahoney@lincoln.ac.uk>
+ * @license  GNU Affero General Public License 3.0
  * @link     coursedata.blogs.lincoln.ac.uk
  */
+
+/*
+	Copyright 2012 University of Lincoln
+	
+	
+	This file is part of Badges.
+
+    Badges is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Affero Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Badges is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with Badges.  If not, see <http://www.gnu.org/licenses/>. 
+*/
 
 class Add_model extends CI_Model 
 {
